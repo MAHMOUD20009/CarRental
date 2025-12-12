@@ -1,0 +1,235 @@
+using System;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace CarRental_DataAccessLayer
+{
+    public static class clsRentalTransactionDataAccess
+    {
+        public static bool FindRentalTransactionByTransactionID(int TransactionID, ref int BookingID, ref int? ReturnID, ref string PaymentDetails, ref float PaidInitialTotalDueAmount, ref float ActualTotalDueAmount, ref float TotalRemaining, ref float TotalRefundedAmount, ref DateTime TransactionDate, ref DateTime UpdatedTransactionDate)
+        {
+            string query = @"SELECT * FROM RentalTransaction
+                        WHERE TransactionID = @TransactionID";
+
+            bool IsFound = false;
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand(query, Connection))
+                    {
+                        Command.Parameters.AddWithValue("@TransactionID", TransactionID);
+
+                        using (SqlDataReader Reader = Command.ExecuteReader())
+                        {
+                            if (Reader.Read())
+                            {
+                                BookingID = (int)Reader["BookingID"];
+
+                                if (Reader["ReturnID"] == DBNull.Value) ReturnID = (int)Reader["ReturnID"];
+                                else ReturnID = null;
+                                PaymentDetails = (string)Reader["PaymentDetails"];
+                                PaidInitialTotalDueAmount = (float)Reader["PaidInitialTotalDueAmount"];
+                                PaidInitialTotalDueAmount = (float)Reader["PaidInitialTotalDueAmount"];
+                                ActualTotalDueAmount = (float)Reader["ActualTotalDueAmount"];
+                                TotalRemaining = (float)Reader["TotalRemaining"];
+                                TotalRefundedAmount = (float)Reader["TotalRefundedAmount"];
+                                TransactionDate = (DateTime)Reader["TransactionDate"];
+                                UpdatedTransactionDate = (DateTime)Reader["UpdatedTransactionDate"];
+
+                                IsFound = true;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLogger.Log(ex.Message);
+            }
+
+            return IsFound;
+        }
+
+        public static int? AddNewRentalTransaction(int BookingID, int? ReturnID, string PaymentDetails, float PaidInitialTotalDueAmount, float ActualTotalDueAmount, float TotalRemaining, float TotalRefundedAmount, DateTime TransactionDate, DateTime UpdatedTransactionDate)
+        {
+            string query = @"INSERT INTO RentalTransaction (BookingID, ReturnID, PaymentDetails, PaidInitialTotalDueAmount, ActualTotalDueAmount, TotalRemaining, TotalRefundedAmount, TransactionDate, UpdatedTransactionDate)
+                     VALUES (@BookingID, @ReturnID, @PaymentDetails, @PaidInitialTotalDueAmount, @ActualTotalDueAmount, @TotalRemaining, @TotalRefundedAmount, @TransactionDate, @UpdatedTransactionDate);
+                     SELECT SCOPE_IDENINTY();";
+
+            int? InsertedID = null;
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand(query, Connection))
+                    {
+                        Command.Parameters.AddWithValue("@BookingID", BookingID);
+
+                        if (ReturnID == null)
+                            Command.Parameters.AddWithValue("@ReturnID", DBNull.Value);
+                        else
+                            Command.Parameters.AddWithValue("@ReturnID", ReturnID);
+
+                        Command.Parameters.AddWithValue("@PaymentDetails", PaymentDetails);
+                        Command.Parameters.AddWithValue("@PaidInitialTotalDueAmount", PaidInitialTotalDueAmount);
+                        Command.Parameters.AddWithValue("@ActualTotalDueAmount", ActualTotalDueAmount);
+                        Command.Parameters.AddWithValue("@TotalRemaining", TotalRemaining);
+                        Command.Parameters.AddWithValue("@TotalRefundedAmount", TotalRefundedAmount);
+                        Command.Parameters.AddWithValue("@TransactionDate", TransactionDate);
+                        Command.Parameters.AddWithValue("@UpdatedTransactionDate", UpdatedTransactionDate);
+
+                        object Result = Command.ExecuteScalar();
+
+                        if (Result != null)
+                            InsertedID = Convert.ToInt32(Result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLogger.Log(ex.Message);
+            }
+
+            return InsertedID;
+        }
+
+        public static bool UpdateRentalTransaction(int TransactionID, int BookingID, int? ReturnID, string PaymentDetails, float PaidInitialTotalDueAmount, float ActualTotalDueAmount, float TotalRemaining, float TotalRefundedAmount, DateTime TransactionDate, DateTime UpdatedTransactionDate)
+        {
+            string query = @"Update RentalTransaction 
+                        SET 
+                            BookingID = @BookingID, 
+                            ReturnID = @ReturnID, 
+                            PaymentDetails = @PaymentDetails, 
+                            PaidInitialTotalDueAmount = @PaidInitialTotalDueAmount, 
+                            ActualTotalDueAmount = @ActualTotalDueAmount, 
+                            TotalRemaining = @TotalRemaining, 
+                            TotalRefundedAmount = @TotalRefundedAmount, 
+                            TransactionDate = @TransactionDate, 
+                            UpdatedTransactionDate = @UpdatedTransactionDate
+                        WHERE TransactionID = @TransactionID";
+
+            int RowsAffected = 0;
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand(query, Connection))
+                    {
+                        Command.Parameters.AddWithValue("@TransactionID", TransactionID);
+                        Command.Parameters.AddWithValue("@BookingID", BookingID);
+                        if (ReturnID == null)
+                            Command.Parameters.AddWithValue("@ReturnID", DBNull.Value);
+                        else
+                            Command.Parameters.AddWithValue("@ReturnID", ReturnID);
+                        Command.Parameters.AddWithValue("@PaymentDetails", PaymentDetails);
+                        Command.Parameters.AddWithValue("@PaidInitialTotalDueAmount", PaidInitialTotalDueAmount);
+                        Command.Parameters.AddWithValue("@ActualTotalDueAmount", ActualTotalDueAmount);
+                        Command.Parameters.AddWithValue("@TotalRemaining", TotalRemaining);
+                        Command.Parameters.AddWithValue("@TotalRefundedAmount", TotalRefundedAmount);
+                        Command.Parameters.AddWithValue("@TransactionDate", TransactionDate);
+                        Command.Parameters.AddWithValue("@UpdatedTransactionDate", UpdatedTransactionDate);
+
+                        RowsAffected = Command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLogger.Log(ex.Message);
+            }
+
+            return (RowsAffected > 0);
+        }
+
+        public static bool DeleteRentalTransaction(int TransactionID)
+        {
+            string query = @"Delete RentalTransaction 
+                     WHERE TransactionID = @TransactionID";
+
+            int RowsAffected = 0;
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand(query, Connection))
+                    {
+                        Command.Parameters.AddWithValue("@TransactionID", TransactionID);
+
+                        RowsAffected = Command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLogger.Log(ex.Message);
+            }
+
+            return (RowsAffected > 0);
+        }
+
+        public static DataTable GetAllRentalTransactions()
+        {
+            string query = @"SELECT * From RentalTransaction";
+
+            DataTable DT = new DataTable();
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand(query, Connection))
+                    {
+                        using (SqlDataReader Reader = Command.ExecuteReader())
+                        {
+                            if (Reader.HasRows)
+                            {
+                                DT.Load(Reader);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLogger.Log(ex.Message);
+            }
+
+            return DT;
+        }
+
+        public static bool IsRentalTransactionExists(int TransactionID)
+        {
+            string query = @"IF EXISTS(SELECT 1 RentalTransaction
+                     WHERE TransactionID = @TransactionID) SELECT 1; ELSE SELECT 0;";
+
+            bool IsFound = false;
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand(query, Connection))
+                    {
+                        Command.Parameters.AddWithValue("@TransactionID", TransactionID);
+
+                        object Result = Command.ExecuteScalar();
+
+                        if (Result != null)
+                            IsFound = Convert.ToBoolean(Result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLogger.Log(ex.Message);
+            }
+
+            return IsFound;
+        }
+    }
+}
