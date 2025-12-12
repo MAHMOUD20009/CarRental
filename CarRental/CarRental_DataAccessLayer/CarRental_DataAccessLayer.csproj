@@ -50,8 +50,8 @@
     <Compile Include="RentalTransaction.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Vehicle.cs" />
-    <Compile Include="VehicleCategories.cs" />
-    <Compile Include="VehicleReturns.cs" />
+    <Compile Include="VehicleCategory.cs" />
+    <Compile Include="VehicleReturn.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

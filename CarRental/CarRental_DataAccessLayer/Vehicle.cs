@@ -224,5 +224,35 @@ namespace CarRental_DataAccessLayer
             return IsFound;
         }
 
+        public static bool IsVehicleAvailable(int VehicleID)
+        {
+            string query = @"SELECT IsAvailableForRent FROM Vehicles 
+                     WHERE VehicleID = @VehicleID";
+
+            bool IsVehicleAvailable = false;
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand(query, Connection))
+                    {
+                        Command.Parameters.AddWithValue("@VehicleID", VehicleID);
+
+                        object Result = Command.ExecuteScalar();
+
+                        if (Result != null)
+                            IsVehicleAvailable = Convert.ToBoolean(Result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLogger.Log(ex.Message);
+            }
+
+            return IsVehicleAvailable;
+        }
+
     }
 }

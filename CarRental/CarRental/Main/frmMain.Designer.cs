@@ -40,7 +40,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlSidebar = new System.Windows.Forms.Panel();
-            this.pbImageSidebar = new System.Windows.Forms.PictureBox();
             this.btnUsers = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.btnReturn = new Guna.UI2.WinForms.Guna2Button();
@@ -49,12 +48,13 @@
             this.btnBooking = new Guna.UI2.WinForms.Guna2Button();
             this.btnPeople = new Guna.UI2.WinForms.Guna2Button();
             this.pnlFormTitle = new System.Windows.Forms.Panel();
-            this.btnClose = new Guna.UI.WinForms.GunaButton();
             this.lblFormTitle = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.btnClose = new Guna.UI.WinForms.GunaButton();
+            this.pbImageSidebar = new System.Windows.Forms.PictureBox();
             this.pnlSidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImageSidebar)).BeginInit();
             this.pnlFormTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImageSidebar)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSidebar
@@ -73,16 +73,6 @@
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(162, 621);
             this.pnlSidebar.TabIndex = 0;
-            // 
-            // pbImageSidebar
-            // 
-            this.pbImageSidebar.Image = ((System.Drawing.Image)(resources.GetObject("pbImageSidebar.Image")));
-            this.pbImageSidebar.Location = new System.Drawing.Point(135, 91);
-            this.pbImageSidebar.Name = "pbImageSidebar";
-            this.pbImageSidebar.Size = new System.Drawing.Size(35, 60);
-            this.pbImageSidebar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImageSidebar.TabIndex = 2;
-            this.pbImageSidebar.TabStop = false;
             // 
             // btnUsers
             // 
@@ -264,6 +254,28 @@
             this.pnlFormTitle.Size = new System.Drawing.Size(932, 46);
             this.pnlFormTitle.TabIndex = 1;
             // 
+            // lblFormTitle
+            // 
+            this.lblFormTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblFormTitle.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFormTitle.ForeColor = System.Drawing.Color.White;
+            this.lblFormTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblFormTitle.Name = "lblFormTitle";
+            this.lblFormTitle.Size = new System.Drawing.Size(932, 46);
+            this.lblFormTitle.TabIndex = 0;
+            this.lblFormTitle.Text = "Form Title";
+            this.lblFormTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFormTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblFormTitle_MouseDown);
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.BackColor = System.Drawing.Color.White;
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(162, 46);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(932, 575);
+            this.pnlMain.TabIndex = 2;
+            // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -289,27 +301,15 @@
             this.btnClose.TabIndex = 2;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblFormTitle
+            // pbImageSidebar
             // 
-            this.lblFormTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFormTitle.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFormTitle.ForeColor = System.Drawing.Color.White;
-            this.lblFormTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblFormTitle.Name = "lblFormTitle";
-            this.lblFormTitle.Size = new System.Drawing.Size(932, 46);
-            this.lblFormTitle.TabIndex = 0;
-            this.lblFormTitle.Text = "Form Title";
-            this.lblFormTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblFormTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblFormTitle_MouseDown);
-            // 
-            // pnlMain
-            // 
-            this.pnlMain.BackColor = System.Drawing.Color.White;
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(162, 46);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(932, 575);
-            this.pnlMain.TabIndex = 2;
+            this.pbImageSidebar.Image = ((System.Drawing.Image)(resources.GetObject("pbImageSidebar.Image")));
+            this.pbImageSidebar.Location = new System.Drawing.Point(135, 91);
+            this.pbImageSidebar.Name = "pbImageSidebar";
+            this.pbImageSidebar.Size = new System.Drawing.Size(35, 60);
+            this.pbImageSidebar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImageSidebar.TabIndex = 2;
+            this.pbImageSidebar.TabStop = false;
             // 
             // frmMain
             // 
@@ -325,8 +325,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.pnlSidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImageSidebar)).EndInit();
             this.pnlFormTitle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImageSidebar)).EndInit();
             this.ResumeLayout(false);
 
         }

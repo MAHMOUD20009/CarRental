@@ -85,7 +85,7 @@ namespace CarRental_BusinessLogicLayer
             return false;
         }
 
-        public static clsVehicle FindVehicleByVehicleID(int VehicleID)
+        public static clsVehicle FindVehicle(int VehicleID)
         {
             string Make = string.Empty, Model = string.Empty, PlateNumber = string.Empty;
             int Year = -1, Mileage = -1, FuelTypeID = -1, CarCategoryID = -1;
@@ -111,6 +111,11 @@ namespace CarRental_BusinessLogicLayer
         public static bool IsVehicleExists(int VehicleID)
         {
             return clsVehicleDataAccess.IsVehicleExists(VehicleID);
+        }
+
+        public static bool IsVehicleAvailable(int VehicleID)
+        {
+            return clsVehicleDataAccess.IsVehicleAvailable(VehicleID);
         }
     }
 }

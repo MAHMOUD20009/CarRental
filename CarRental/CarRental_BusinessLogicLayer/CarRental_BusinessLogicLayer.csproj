@@ -46,10 +46,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RentalBooking.cs" />
     <Compile Include="RentalTransaction.cs" />
-    <Compile Include="Users.cs" />
+    <Compile Include="SecurityUtils.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Vehicle.cs" />
-    <Compile Include="VehicleCategories.cs" />
-    <Compile Include="VehicleReturns.cs" />
+    <Compile Include="VehicleCategory.cs" />
+    <Compile Include="VehicleReturn.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CarRental_DataAccessLayer\CarRental_DataAccessLayer.csproj">

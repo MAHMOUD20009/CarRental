@@ -6,7 +6,7 @@ namespace CarRental_DataAccessLayer
 {
     public static class clsCustomerDataAccess
     {
-        public static bool FindCustomer(int CustomerID, ref int PersonID, ref string DriverLicenseNumber)
+        public static bool FindCustomerByCustomerID(int CustomerID, ref int PersonID, ref string DriverLicenseNumber)
         {
             string query = @"SELECT * FROM Customer
                      WHERE CustomerID = @CustomerID";
@@ -26,6 +26,42 @@ namespace CarRental_DataAccessLayer
                             if(Reader.Read())
                             {
                                 PersonID = (int)Reader["PersonID"];
+                                DriverLicenseNumber = (string)Reader["DriverLicenseNumber"];
+
+                                IsFound = true;
+                            }
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLogger.Log(ex.Message);
+            }
+            return IsFound;
+        }
+
+        public static bool FindCustomerByPersonID(int PersonID, ref int CustomerID, ref string DriverLicenseNumber)
+        {
+            string query = @"SELECT * FROM Customer
+                     WHERE PersonID = @PersonID";
+
+            bool IsFound = false;
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand(query, Connection))
+                    {
+                        Command.Parameters.AddWithValue("@PersonID", PersonID);
+
+                        using (SqlDataReader Reader = Command.ExecuteReader())
+                        {
+                            if (Reader.Read())
+                            {
+                                CustomerID = (int)Reader["CustomerID"];
                                 DriverLicenseNumber = (string)Reader["DriverLicenseNumber"];
 
                                 IsFound = true;

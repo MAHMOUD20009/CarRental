@@ -21,6 +21,9 @@ namespace CarRental_BusinessLogicLayer
         public DateTime? TransactionDate { set; get; }
         public DateTime? UpdatedTransactionDate { set; get; }
 
+        public clsRentalBooking RentalBookingInfo { set; get; }
+        public clsVehicleReturn VehicleReturnInfo { set; get; }
+
         public clsRentalTransaction()
         {
             this.TransactionID = null;
@@ -49,6 +52,9 @@ namespace CarRental_BusinessLogicLayer
             this.TotalRefundedAmount = TotalRefundedAmount;
             this.TransactionDate = TransactionDate;
             this.UpdatedTransactionDate = UpdatedTransactionDate;
+
+            this.RentalBookingInfo = clsRentalBooking.FindRentalBooking(BookingID);
+            this.VehicleReturnInfo = clsVehicleReturn.FindVehicleReturn(ReturnID);
 
             this.Mode = enMode.Update;
         }
@@ -92,11 +98,27 @@ namespace CarRental_BusinessLogicLayer
             int BookingID = -1;
             int? ReturnID = -1;
             string PaymentDetails = string.Empty; 
-            float PaidInitialTotalDueAmount = 0, ActualTotalDueAmount = 0, TotalRemaining = 0, TotalRefundedAmount = 0;
+            float PaidInitialTotalDueAmount = 0;
+            float? ActualTotalDueAmount = 0, TotalRemaining = 0, TotalRefundedAmount = 0;
             DateTime TransactionDate = DateTime.Now, UpdatedTransactionDate = DateTime.Now;
 
             if (clsRentalTransactionDataAccess.FindRentalTransactionByTransactionID(TransactionID, ref BookingID, ref ReturnID, ref PaymentDetails, ref PaidInitialTotalDueAmount, ref ActualTotalDueAmount, ref TotalRemaining, ref TotalRefundedAmount, ref TransactionDate, ref UpdatedTransactionDate))
-                return new clsRentalTransaction(TransactionID, BookingID, ReturnID.Value, PaymentDetails, PaidInitialTotalDueAmount, ActualTotalDueAmount, TotalRemaining, TotalRefundedAmount, TransactionDate, UpdatedTransactionDate);
+                return new clsRentalTransaction(TransactionID, BookingID, ReturnID.Value, PaymentDetails, PaidInitialTotalDueAmount, ActualTotalDueAmount.GetValueOrDefault(), TotalRemaining.GetValueOrDefault(), TotalRefundedAmount.GetValueOrDefault(), TransactionDate, UpdatedTransactionDate);
+
+            return null;
+        }
+
+        public static clsRentalTransaction FindRentalTransactionByBookingID(int BookingID)
+        {
+            int TransactionID = -1;
+            int? ReturnID = -1;
+            string PaymentDetails = string.Empty;
+            float PaidInitialTotalDueAmount = 0;
+            float? ActualTotalDueAmount = 0, TotalRemaining = 0, TotalRefundedAmount = 0;
+            DateTime TransactionDate = DateTime.Now, UpdatedTransactionDate = DateTime.Now;
+
+            if (clsRentalTransactionDataAccess.FindRentalTransactionByBookingID(BookingID, ref TransactionID, ref ReturnID, ref PaymentDetails, ref PaidInitialTotalDueAmount, ref ActualTotalDueAmount, ref TotalRemaining, ref TotalRefundedAmount, ref TransactionDate, ref UpdatedTransactionDate))
+                return new clsRentalTransaction(TransactionID, BookingID, ReturnID.Value, PaymentDetails, PaidInitialTotalDueAmount, ActualTotalDueAmount.GetValueOrDefault(), TotalRemaining.GetValueOrDefault(), TotalRefundedAmount.GetValueOrDefault(), TransactionDate, UpdatedTransactionDate);
 
             return null;
         }

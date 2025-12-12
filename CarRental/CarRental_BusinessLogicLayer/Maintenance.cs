@@ -16,6 +16,8 @@ namespace CarRental_BusinessLogicLayer
         public DateTime? MaintenanceDate { set; get; }
         public float? Cost { set; get; }
 
+        public clsVehicle VehicleInfo { set; get; }
+
         public clsMaintenance()
         {
             this.MaintenanceID = null;
@@ -34,6 +36,8 @@ namespace CarRental_BusinessLogicLayer
             this.Description = Description;
             this.MaintenanceDate = MaintenanceDate;
             this.Cost = Cost;
+
+            this.VehicleInfo = clsVehicle.FindVehicle(VehicleID);
 
             this.Mode = enMode.Update;
         }

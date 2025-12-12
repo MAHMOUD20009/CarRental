@@ -18,7 +18,9 @@ namespace CarRental_BusinessLogicLayer
         public int? Permissions { set; get; }
         public bool? IsActive { set; get; }
 
-        public clsPerson PersonInfo { private set; get; }
+        private string OldPassword;
+
+        public clsPerson PersonInfo { set; get; }
 
         public clsUser()
         {
@@ -28,7 +30,7 @@ namespace CarRental_BusinessLogicLayer
             this.Password = null;
             this.Permissions = null;
             this.IsActive = null;
-
+            this.OldPassword = null;
             this.Mode = enMode.AddNew;
         }
 
@@ -38,6 +40,7 @@ namespace CarRental_BusinessLogicLayer
             this.PersonID = PersonID;
             this.UserName = UserName;
             this.Password = Password;
+            this.OldPassword = Password;
             this.Permissions = Permissions;
             this.IsActive = IsActive;
             this.PersonInfo = clsPerson.FindPerson(PersonID);
@@ -48,14 +51,15 @@ namespace CarRental_BusinessLogicLayer
 
         private bool _AddNewUser()
         {
-            this.UserID = clsUserDataAccess.AddNewUser(this.PersonID.GetValueOrDefault(), this.UserName, this.Password, this.Permissions.GetValueOrDefault(), this.IsActive.GetValueOrDefault());
+            this.UserID = clsUserDataAccess.AddNewUser(this.PersonID.GetValueOrDefault(), this.UserName, clsSecurityUtils.Encryption(this.Password), this.Permissions.GetValueOrDefault(), this.IsActive.GetValueOrDefault());
             return (this.UserID != null);
         }
 
-
         private bool _UpdateUser()
         {
-            return clsUserDataAccess.UpdateUser(this.UserID.GetValueOrDefault(), this.PersonID.GetValueOrDefault(), this.UserName, this.Password, this.Permissions.GetValueOrDefault(), this.IsActive.GetValueOrDefault());
+            string FinalPassword = (this.Password == this.OldPassword) ? this.Password : clsSecurityUtils.Encryption(this.Password);
+
+            return clsUserDataAccess.UpdateUser(this.UserID.GetValueOrDefault(), this.PersonID.GetValueOrDefault(), this.UserName, FinalPassword, this.Permissions.GetValueOrDefault(), this.IsActive.GetValueOrDefault());
         }
 
         public bool Save()

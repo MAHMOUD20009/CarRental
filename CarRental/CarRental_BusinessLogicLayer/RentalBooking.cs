@@ -22,6 +22,9 @@ namespace CarRental_BusinessLogicLayer
         public float? InitialTotalDueAmount { set; get; }
         public string InitialCheckNotes { set; get; }
 
+        public clsCustomer CustomerInfo { set; get; }
+        public clsVehicle VehicleInfo { set; get; }
+
         public clsRentalBooking()
         {
             this.BookingID = null;
@@ -52,6 +55,10 @@ namespace CarRental_BusinessLogicLayer
             this.RentalPricePerDay = RentalPricePerDay;
             this.InitialTotalDueAmount = InitialTotalDueAmount;
             this.InitialCheckNotes = InitialCheckNotes;
+
+            this.CustomerInfo = clsCustomer.FindCustomerByCustomerID(CustomerID);
+            this.VehicleInfo = clsVehicle.FindVehicle(VehicleID);
+
 
             this.Mode = enMode.Update;
         }

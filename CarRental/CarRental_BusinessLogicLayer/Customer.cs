@@ -67,12 +67,23 @@ namespace CarRental_BusinessLogicLayer
             return false;
         }
 
-        public static clsCustomer FindCustomer(int CustomerID)
+        public static clsCustomer FindCustomerByCustomerID(int CustomerID)
         {
             int PersonID = -1;
             string DriverLicenseNumber = string.Empty;
 
-            if (clsCustomerDataAccess.FindCustomer(CustomerID, ref PersonID, ref DriverLicenseNumber))
+            if (clsCustomerDataAccess.FindCustomerByCustomerID(CustomerID, ref PersonID, ref DriverLicenseNumber))
+                return new clsCustomer(CustomerID, PersonID, DriverLicenseNumber);
+
+            return null;
+        }
+
+        public static clsCustomer FindCustomerByPersonID(int PersonID)
+        {
+            int CustomerID = -1;
+            string DriverLicenseNumber = string.Empty;
+
+            if (clsCustomerDataAccess.FindCustomerByPersonID(PersonID, ref CustomerID, ref DriverLicenseNumber))
                 return new clsCustomer(CustomerID, PersonID, DriverLicenseNumber);
 
             return null;
