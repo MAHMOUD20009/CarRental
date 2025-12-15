@@ -87,7 +87,7 @@ namespace CarRental_BusinessLogicLayer
             return clsPersonDataAccess.DeletePerson(PersonID);
         }
 
-        public static DataTable GetAllData()
+        public static DataTable GetAllPeople()
         {
             return clsPersonDataAccess.GetAllPeople();
         }
@@ -95,6 +95,11 @@ namespace CarRental_BusinessLogicLayer
         public static bool IsPersonExists(int PersonID)
         {
             return clsPersonDataAccess.IsPersonExists(PersonID);
+        }
+
+        public static int GetTotalPeople()
+        {
+            return clsPersonDataAccess.GetTotalPeople();
         }
     }
 }

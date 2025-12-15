@@ -54,7 +54,7 @@ namespace CarRental_DataAccessLayer
         {
             string query = @"INSERT INTO RentalBooking (BookingID, CustomerID, VehicleID, RentalStartDate, RentalEndDate, PickupLocation, DropoffLocation, InitialRentalDays, RentalPricePerDay, InitialTotalDueAmount, InitialCheckNotes)
                      VALUES (@CustomerID, @VehicleID, @RentalStartDate, @RentalEndDate, @PickupLocation, @DropoffLocation, @InitialRentalDays, @RentalPricePerDay, @InitialTotalDueAmount, @InitialCheckNotes);
-                     SELECT SCOPE_IDENINTY();";
+                     SELECT SCOPE_IDENTITY();";
 
             int? InsertedID = null;
             try
@@ -233,6 +233,33 @@ namespace CarRental_DataAccessLayer
             }
 
             return IsFound;
+        }
+
+        public static int GetTotalBookings()
+        {
+            string query = @"SELECT COUNT(BookingID) FROM RentalBooking ";
+
+            int? TotalBookings = null;
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand(query, Connection))
+                    {
+                        object Result = Command.ExecuteScalar();
+
+                        if (Result != null)
+                            TotalBookings = Convert.ToInt32(Result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLogger.Log(ex.Message);
+            }
+
+            return TotalBookings.GetValueOrDefault();
         }
     }
 }

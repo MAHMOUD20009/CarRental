@@ -108,5 +108,10 @@ namespace CarRental_BusinessLogicLayer
         {
             return clsVehicleReturnDataAccess.IsVehicleReturnExists(ReturnID);
         }
+    
+        public static int GetTotalTotalReturns()
+        {
+            return clsVehicleReturnDataAccess.GetTotalTotalReturns();
+        }
     }
 }

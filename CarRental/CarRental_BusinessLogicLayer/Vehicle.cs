@@ -117,5 +117,15 @@ namespace CarRental_BusinessLogicLayer
         {
             return clsVehicleDataAccess.IsVehicleAvailable(VehicleID);
         }
+
+        public static int GetTotalVehicles()
+        {
+            return clsVehicleDataAccess.GetTotalVehicles();
+        }
+
+        public static int GetTotalVehiclesAvailable()
+        {
+            return clsVehicleDataAccess.GetTotalVehiclesAvailable();
+        }
     }
 }

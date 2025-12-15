@@ -81,7 +81,7 @@ namespace CarRental_DataAccessLayer
         {
             string query = @"INSERT INTO FuelTypes (FuelType)
                      VALUES (@FuelType);
-                     SELECT SCOPE_IDENINTY();";
+                     SELECT SCOPE_IDENTITY();";
 
             int? InsertedID = null;
             try

@@ -40,6 +40,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.pbImageSidebar = new System.Windows.Forms.PictureBox();
             this.btnUsers = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.btnReturn = new Guna.UI2.WinForms.Guna2Button();
@@ -48,13 +49,12 @@
             this.btnBooking = new Guna.UI2.WinForms.Guna2Button();
             this.btnPeople = new Guna.UI2.WinForms.Guna2Button();
             this.pnlFormTitle = new System.Windows.Forms.Panel();
+            this.btnClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.lblFormTitle = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.btnClose = new Guna.UI.WinForms.GunaButton();
-            this.pbImageSidebar = new System.Windows.Forms.PictureBox();
             this.pnlSidebar.SuspendLayout();
-            this.pnlFormTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImageSidebar)).BeginInit();
+            this.pnlFormTitle.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSidebar
@@ -71,8 +71,18 @@
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
             this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Size = new System.Drawing.Size(162, 621);
+            this.pnlSidebar.Size = new System.Drawing.Size(162, 655);
             this.pnlSidebar.TabIndex = 0;
+            // 
+            // pbImageSidebar
+            // 
+            this.pbImageSidebar.Image = ((System.Drawing.Image)(resources.GetObject("pbImageSidebar.Image")));
+            this.pbImageSidebar.Location = new System.Drawing.Point(135, 91);
+            this.pbImageSidebar.Name = "pbImageSidebar";
+            this.pbImageSidebar.Size = new System.Drawing.Size(35, 60);
+            this.pbImageSidebar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImageSidebar.TabIndex = 2;
+            this.pbImageSidebar.TabStop = false;
             // 
             // btnUsers
             // 
@@ -86,7 +96,7 @@
             this.btnUsers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnUsers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnUsers.FillColor = System.Drawing.Color.Transparent;
-            this.btnUsers.Font = new System.Drawing.Font("Microsoft New Tai Lue", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsers.ForeColor = System.Drawing.Color.Black;
             this.btnUsers.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnUsers.Location = new System.Drawing.Point(5, 410);
@@ -111,7 +121,7 @@
             this.btnDashboard.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDashboard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDashboard.FillColor = System.Drawing.Color.Transparent;
-            this.btnDashboard.Font = new System.Drawing.Font("Microsoft New Tai Lue", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnDashboard.ForeColor = System.Drawing.Color.Black;
             this.btnDashboard.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnDashboard.Location = new System.Drawing.Point(5, 101);
@@ -135,7 +145,7 @@
             this.btnReturn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnReturn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnReturn.FillColor = System.Drawing.Color.Transparent;
-            this.btnReturn.Font = new System.Drawing.Font("Microsoft New Tai Lue", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.ForeColor = System.Drawing.Color.Black;
             this.btnReturn.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnReturn.Location = new System.Drawing.Point(5, 358);
@@ -143,7 +153,7 @@
             this.btnReturn.Size = new System.Drawing.Size(149, 43);
             this.btnReturn.TabIndex = 8;
             this.btnReturn.Tag = "131, 332";
-            this.btnReturn.Text = "Return";
+            this.btnReturn.Text = "Returns";
             this.btnReturn.Tile = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
@@ -159,7 +169,7 @@
             this.btnTransactions.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnTransactions.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnTransactions.FillColor = System.Drawing.Color.Transparent;
-            this.btnTransactions.Font = new System.Drawing.Font("Microsoft New Tai Lue", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransactions.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransactions.ForeColor = System.Drawing.Color.Black;
             this.btnTransactions.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnTransactions.Location = new System.Drawing.Point(5, 306);
@@ -183,7 +193,7 @@
             this.btnCustomers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCustomers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCustomers.FillColor = System.Drawing.Color.Transparent;
-            this.btnCustomers.Font = new System.Drawing.Font("Microsoft New Tai Lue", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.ForeColor = System.Drawing.Color.Black;
             this.btnCustomers.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnCustomers.Location = new System.Drawing.Point(5, 202);
@@ -207,7 +217,7 @@
             this.btnBooking.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnBooking.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnBooking.FillColor = System.Drawing.Color.Transparent;
-            this.btnBooking.Font = new System.Drawing.Font("Microsoft New Tai Lue", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBooking.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBooking.ForeColor = System.Drawing.Color.Black;
             this.btnBooking.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnBooking.Location = new System.Drawing.Point(5, 254);
@@ -231,7 +241,7 @@
             this.btnPeople.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPeople.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPeople.FillColor = System.Drawing.Color.Transparent;
-            this.btnPeople.Font = new System.Drawing.Font("Microsoft New Tai Lue", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPeople.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnPeople.ForeColor = System.Drawing.Color.Black;
             this.btnPeople.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnPeople.Location = new System.Drawing.Point(5, 150);
@@ -251,8 +261,23 @@
             this.pnlFormTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlFormTitle.Location = new System.Drawing.Point(162, 0);
             this.pnlFormTitle.Name = "pnlFormTitle";
-            this.pnlFormTitle.Size = new System.Drawing.Size(932, 46);
+            this.pnlFormTitle.Size = new System.Drawing.Size(949, 32);
             this.pnlFormTitle.TabIndex = 1;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BorderColor = System.Drawing.Color.Transparent;
+            this.btnClose.BorderRadius = 15;
+            this.btnClose.ControlBoxStyle = Guna.UI2.WinForms.Enums.ControlBoxStyle.Custom;
+            this.btnClose.CustomIconSize = 15F;
+            this.btnClose.FillColor = System.Drawing.Color.Transparent;
+            this.btnClose.IconColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(902, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(47, 32);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblFormTitle
             // 
@@ -261,7 +286,7 @@
             this.lblFormTitle.ForeColor = System.Drawing.Color.White;
             this.lblFormTitle.Location = new System.Drawing.Point(0, 0);
             this.lblFormTitle.Name = "lblFormTitle";
-            this.lblFormTitle.Size = new System.Drawing.Size(932, 46);
+            this.lblFormTitle.Size = new System.Drawing.Size(949, 32);
             this.lblFormTitle.TabIndex = 0;
             this.lblFormTitle.Text = "Form Title";
             this.lblFormTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -271,52 +296,17 @@
             // 
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(162, 46);
+            this.pnlMain.Location = new System.Drawing.Point(162, 32);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(932, 575);
+            this.pnlMain.Size = new System.Drawing.Size(949, 623);
             this.pnlMain.TabIndex = 2;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.AnimationHoverSpeed = 0.07F;
-            this.btnClose.AnimationSpeed = 0.03F;
-            this.btnClose.BaseColor = System.Drawing.Color.Transparent;
-            this.btnClose.BorderColor = System.Drawing.Color.Black;
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnClose.FocusedColor = System.Drawing.Color.Empty;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Image = global::CarRental.Properties.Resources.CloseBlack;
-            this.btnClose.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnClose.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnClose.Location = new System.Drawing.Point(887, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.OnHoverBaseColor = System.Drawing.Color.Transparent;
-            this.btnClose.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnClose.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnClose.OnHoverImage = null;
-            this.btnClose.OnPressedColor = System.Drawing.Color.Black;
-            this.btnClose.Size = new System.Drawing.Size(45, 43);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // pbImageSidebar
-            // 
-            this.pbImageSidebar.Image = ((System.Drawing.Image)(resources.GetObject("pbImageSidebar.Image")));
-            this.pbImageSidebar.Location = new System.Drawing.Point(135, 91);
-            this.pbImageSidebar.Name = "pbImageSidebar";
-            this.pbImageSidebar.Size = new System.Drawing.Size(35, 60);
-            this.pbImageSidebar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImageSidebar.TabIndex = 2;
-            this.pbImageSidebar.TabStop = false;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1094, 621);
+            this.ClientSize = new System.Drawing.Size(1111, 655);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlFormTitle);
             this.Controls.Add(this.pnlSidebar);
@@ -324,19 +314,20 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnlSidebar.ResumeLayout(false);
-            this.pnlFormTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbImageSidebar)).EndInit();
+            this.pnlFormTitle.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI.WinForms.GunaButton btnClose;
         private Guna.UI2.WinForms.Guna2Button btnReturn;
         private Guna.UI2.WinForms.Guna2Button btnUsers;
         private System.Windows.Forms.Panel pnlMain;
+        private Guna.UI2.WinForms.Guna2ControlBox btnClose;
 
     }
 }

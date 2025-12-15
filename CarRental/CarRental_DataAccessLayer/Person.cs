@@ -51,7 +51,8 @@ namespace CarRental_DataAccessLayer
         {
             string query = @"INSERT INTO People (Name, DateOfBirth, Gender, Email, Phone)
                      VALUES (@Name, @DateOfBirth, @Gender, @Email, @Phone);
-                     SELECT SCOPE_IDENINTY();";
+                     SELECT SCOPE_IDENTITY();";
+                     
 
             int? InsertedID = null;
             try
@@ -152,7 +153,7 @@ namespace CarRental_DataAccessLayer
 
         public static DataTable GetAllPeople()
         {
-            string query = @"SELECT * FROM People";
+            string query = @"SELECT PersonID, Name, DateOfBirth, Case When Gender = 0 Then 'Male' When Gender = 1 then 'Female' end as Gender, Phone, Email FROM People";
 
             DataTable DT = new DataTable();
             try
@@ -208,6 +209,33 @@ namespace CarRental_DataAccessLayer
             }
 
             return IsFound;
+        }
+
+        public static int GetTotalPeople()
+        {
+            string query = @"SELECT COUNT(PersonID) FROM People ";
+
+            int? TotalPeople = null;
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand(query, Connection))
+                    {
+                        object Result = Command.ExecuteScalar();
+
+                        if (Result != null)
+                            TotalPeople = Convert.ToInt32(Result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLogger.Log(ex.Message);
+            }
+
+            return TotalPeople.GetValueOrDefault();
         }
     }
 }

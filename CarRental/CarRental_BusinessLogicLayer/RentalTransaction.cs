@@ -137,5 +137,10 @@ namespace CarRental_BusinessLogicLayer
         {
             return clsRentalTransactionDataAccess.IsRentalTransactionExists(TransactionID);
         }
+
+        public static int GetTotalTransactions()
+        {
+            return clsRentalTransactionDataAccess.GetTotalTransactions();
+        }
     }
 }

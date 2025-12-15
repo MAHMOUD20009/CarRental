@@ -82,7 +82,7 @@ namespace CarRental_DataAccessLayer
         {
             string query = @"INSERT INTO Customer (PersonID, DriverLicenseNumber)
                      VALUES (@PersonID, @DriverLicenseNumber);
-                     SELECT SCOPE_IDENINTY();";
+                     SELECT SCOPE_IDENTITY();";
 
             int? InsertedID = null;
             try
@@ -172,7 +172,7 @@ namespace CarRental_DataAccessLayer
 
         public static DataTable GetAllCustomers()
         {
-            string query = @"SELECT * FROM Customer ";
+            string query = @"SELECT CustomerID, Customer.PersonID, Name, DriverLicenseNumber FROM Customer INNER JOIN People ON Customer.PersonID = People.PersonID";
 
             DataTable DT = new DataTable();
             try
@@ -228,6 +228,33 @@ namespace CarRental_DataAccessLayer
             }
 
             return IsFound;
+        }
+
+        public static int GetTotalCustomers()
+        {
+            string query = @"SELECT COUNT(CustomerID) FROM Customer ";
+
+            int? TotalCustomers = null;
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand(query, Connection))
+                    {
+                        object Result = Command.ExecuteScalar();
+
+                        if (Result != null)
+                            TotalCustomers = Convert.ToInt32(Result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLogger.Log(ex.Message);
+            }
+
+            return TotalCustomers.GetValueOrDefault();
         }
     }
 }

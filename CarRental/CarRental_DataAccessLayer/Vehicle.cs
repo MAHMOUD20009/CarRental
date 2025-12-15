@@ -54,7 +54,7 @@ namespace CarRental_DataAccessLayer
         {
             string query = @"INSERT INTO Vehicles (Make, Model, Year, Mileage, FuelTypeID, PlateNumber, CarCategoryID, RentalPricePerDay, IsAvailableForRent)
                      VALUES (@Make, @Model, @Year, @Mileage, @FuelTypeID, @PlateNumber, @CarCategoryID, @RentalPricePerDay, @IsAvailableForRent);
-                     SELECT SCOPE_IDENINTY();";
+                     SELECT SCOPE_IDENTITY();";
 
             int? InsertedID = null;
             try
@@ -254,5 +254,58 @@ namespace CarRental_DataAccessLayer
             return IsVehicleAvailable;
         }
 
+        public static int GetTotalVehicles()
+        {
+            string query = @"SELECT COUNT(VehicleID) FROM Vehicles ";
+
+            int? TotalVehicles = null;
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand(query, Connection))
+                    {
+                        object Result = Command.ExecuteScalar();
+
+                        if (Result != null)
+                            TotalVehicles = Convert.ToInt32(Result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLogger.Log(ex.Message);
+            }
+
+            return TotalVehicles.GetValueOrDefault();
+        }
+
+        public static int GetTotalVehiclesAvailable()
+        {
+            string query = @"SELECT COUNT(VehicleID) FROM Vehicles WHERE IsAvailableForRent = 1";
+
+            int? TotalVehiclesAvailable = null;
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand(query, Connection))
+                    {
+                        object Result = Command.ExecuteScalar();
+
+                        if (Result != null)
+                            TotalVehiclesAvailable = Convert.ToInt32(Result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLogger.Log(ex.Message);
+            }
+
+            return TotalVehiclesAvailable.GetValueOrDefault();
+        }
     }
 }

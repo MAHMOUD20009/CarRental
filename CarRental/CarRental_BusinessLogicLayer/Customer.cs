@@ -104,5 +104,10 @@ namespace CarRental_BusinessLogicLayer
             return clsCustomerDataAccess.IsCustomerExists(CustomerID);
         }
 
+        public static int GetTotalCustomers()
+        {
+            return clsCustomerDataAccess.GetTotalCustomers();
+        }
+
     }
 }

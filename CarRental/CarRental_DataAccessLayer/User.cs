@@ -89,7 +89,7 @@ namespace CarRental_DataAccessLayer
         {
             string query = @"INSERT INTO Users (PersonID, UserName, Password, Permissions, IsActive)
                      VALUES (@PersonID, @UserName, @Password, @Permissions, @IsActive);
-                     SELECT SCOPE_IDENINTY();";
+                     SELECT SCOPE_IDENTITY();";
 
             int? InsertedID = null;
             try
@@ -281,6 +281,33 @@ namespace CarRental_DataAccessLayer
             }
 
             return IsFound;
+        }
+
+        public static int GetTotalUsers()
+        {
+            string query = @"SELECT COUNT(UserID) FROM Users ";
+
+            int? TotalUsers = null;
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand(query, Connection))
+                    {
+                        object Result = Command.ExecuteScalar();
+
+                        if (Result != null)
+                            TotalUsers = Convert.ToInt32(Result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLogger.Log(ex.Message);
+            }
+
+            return TotalUsers.GetValueOrDefault();
         }
     }
 }

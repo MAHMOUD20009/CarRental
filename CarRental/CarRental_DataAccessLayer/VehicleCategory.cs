@@ -80,7 +80,7 @@ namespace CarRental_DataAccessLayer
         {
             string query = @"INSERT INTO VehiclesCategories (CategoryName)
                      VALUES (@CategoryName);
-                     SELECT SCOPE_IDENINTY();";
+                     SELECT SCOPE_IDENTITY();";
 
             int? InsertedID = null;
             try

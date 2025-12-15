@@ -31,13 +31,13 @@ namespace CarRental.Login
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
         private bool PasswordVisible = false;
-        private void txtPassword_IconRightClick(object sender, EventArgs e)
+        private void TogglePasswordVisibility_OnIconRightClick(object sender, EventArgs e)
         {
             txtPassword.UseSystemPasswordChar = PasswordVisible;
 
@@ -72,14 +72,14 @@ namespace CarRental.Login
             return true;
         }
 
-        private bool CheckUserInfo()
+        private bool AuthenticateUserCretentials()
         {
             if (!ValidateUserNameAndPassword())
                 return false;
 
             clsGlobal.CurrentUser = clsUser.FindUser(txtUserName.Text.Trim());
 
-            if (clsGlobal.CurrentUser == null || clsSecurityUtils.Encryption(txtPassword.Text.Trim()) != clsGlobal.CurrentUser.Password)
+            if (clsGlobal.CurrentUser == null || clsGlobal.CurrentUser.Password != clsSecurityUtils.Encryption(txtPassword.Text.Trim()))
             {
                 MessageBox.Show("Invaild UserName/Password!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -95,20 +95,36 @@ namespace CarRental.Login
 
         private void OpenMainForm()
         {
+            var frm = new Main.frmMain();
+
             this.Hide();
-
-            Main.frmMain frm = new Main.frmMain();
             frm.ShowDialog();
-
             this.Show();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (CheckUserInfo())
+            if (AuthenticateUserCretentials())
             {
+                if (chkRememberMe.Checked) clsGlobal.SaveLoginToRegistry(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+                else clsGlobal.SaveLoginToRegistry(null, null);
+                   
                 OpenMainForm();
             }
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            string UserName = null, Password = null;
+
+            if(clsGlobal.LoadLoginInfoFromRegistry(ref UserName, ref Password))
+            {
+                txtUserName.Text = UserName;
+                txtPassword.Text = Password;
+                chkRememberMe.Checked = true;
+            }
+        }
+
+        
     }
 }

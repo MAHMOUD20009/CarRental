@@ -116,7 +116,7 @@ namespace CarRental_DataAccessLayer
         {
             string query = @"INSERT INTO RentalTransaction (BookingID, ReturnID, PaymentDetails, PaidInitialTotalDueAmount, ActualTotalDueAmount, TotalRemaining, TotalRefundedAmount, TransactionDate, UpdatedTransactionDate)
                      VALUES (@BookingID, @ReturnID, @PaymentDetails, @PaidInitialTotalDueAmount, @ActualTotalDueAmount, @TotalRemaining, @TotalRefundedAmount, @TransactionDate, @UpdatedTransactionDate);
-                     SELECT SCOPE_IDENINTY();";
+                     SELECT SCOPE_IDENTITY();";
 
             int? InsertedID = null;
             try
@@ -318,6 +318,33 @@ namespace CarRental_DataAccessLayer
             }
 
             return IsFound;
+        }
+
+        public static int GetTotalTransactions()
+        {
+            string query = @"SELECT COUNT(TransactionID) FROM RentalTransaction ";
+
+            int? TotalTransactions = null;
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand(query, Connection))
+                    {
+                        object Result = Command.ExecuteScalar();
+
+                        if (Result != null)
+                            TotalTransactions = Convert.ToInt32(Result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLogger.Log(ex.Message);
+            }
+
+            return TotalTransactions.GetValueOrDefault();
         }
     }
 }

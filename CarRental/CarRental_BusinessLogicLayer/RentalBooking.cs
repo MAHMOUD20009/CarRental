@@ -125,5 +125,10 @@ namespace CarRental_BusinessLogicLayer
         {
             return clsRentalBookingDataAccess.IsRentalBookingExists(BookingID);
         }
+
+        public static int GetTotalBookings()
+        {
+            return clsRentalBookingDataAccess.GetTotalBookings();
+        }
     }
 }

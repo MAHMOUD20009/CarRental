@@ -13,7 +13,7 @@ namespace CarRental.GlobalClasses
         private const string _KeyName1 = "UserName";
         private const string _KeyName2 = "Password";
 
-        public static bool ResetLoginInfoFromRegistry()
+        private static bool ResetLoginInfoFromRegistry()
         {
             try
             {
@@ -37,10 +37,35 @@ namespace CarRental.GlobalClasses
             return false;
         }
 
+        private static bool CreateSubKey(string SubKeyPath)
+        {
+            try
+            {
+                using (RegistryKey BaseKey = RegistryKey.OpenBaseKey(RegistryHive.CurrentUser, RegistryView.Registry64))
+                {
+                    using (RegistryKey SubKey = BaseKey.OpenSubKey(SubKeyPath, true))
+                    {
+                        if (SubKey == null)
+                        {
+                            BaseKey.CreateSubKey(SubKeyPath);
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            { }
+
+            return false;
+        }
+
         public static bool SaveLoginToRegistry(string UserName, string Password)
         {
-            if (UserName == string.Empty || Password == string.Empty)
+            if (string.IsNullOrWhiteSpace(UserName) || string.IsNullOrWhiteSpace(Password))
                 return ResetLoginInfoFromRegistry();
+
+            if (!CreateSubKey(_LoginInfoPath))
+                return false;
 
             try
             {

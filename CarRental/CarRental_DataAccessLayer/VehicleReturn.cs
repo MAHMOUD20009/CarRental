@@ -52,7 +52,7 @@ namespace CarRental_DataAccessLayer
         {
             string AddNewRecordQuery = @"INSERT INTO VehicleReturns (ActualReturnDate, ActualRentalDays, Mileage, ConsumedMileage, FinalCheckNotes, AdditionalCharges, ActualTotalDueAmount)
                      VALUES (@ActualReturnDate, @ActualRentalDays, @Mileage, @ConsumedMileage, @FinalCheckNotes, @AdditionalCharges, @ActualTotalDueAmount);
-                     SELECT SCOPE_IDENINTY();";
+                     SELECT SCOPE_IDENTITY();";
 
             string UpdateRecordQuery = @"UPDATE RentalTransaction
                                         SET ReturnID = @ReturnID
@@ -244,6 +244,33 @@ namespace CarRental_DataAccessLayer
             }
 
             return IsFound;
+        }
+
+        public static int GetTotalTotalReturns()
+        {
+            string query = @"SELECT COUNT(ReturnID) FROM VehicleReturns ";
+
+            int? TotalReturns = null;
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                {
+                    Connection.Open();
+                    using (SqlCommand Command = new SqlCommand(query, Connection))
+                    {
+                        object Result = Command.ExecuteScalar();
+
+                        if (Result != null)
+                            TotalReturns = Convert.ToInt32(Result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                clsLogger.Log(ex.Message);
+            }
+
+            return TotalReturns.GetValueOrDefault();
         }
     }
 }

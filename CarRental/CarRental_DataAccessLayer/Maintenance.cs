@@ -46,7 +46,7 @@ namespace CarRental_DataAccessLayer
         {
             string query = @"INSERT INTO Maintenance (VehicleID, Description, MaintenanceDate, Cost)
                      VALUES (@VehicleID, @Description, @MaintenanceDate, @Cost);
-                     SELECT SCOPE_IDENINTY();";
+                     SELECT SCOPE_IDENTITY();";
 
             int? InsertedID = null;
             try
