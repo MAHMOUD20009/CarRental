@@ -1,0 +1,779 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB8226F8-5CAC-408A-83B2-BD6E0ECDA321}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CarRental</RootNamespace>
+    <AssemblyName>CarRental</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomContorls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CustomContorls\CustomContorls\bin\Debug\CustomContorls.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UI Librarys\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UI Librarys\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bookings\Controls\ctrlBookingCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bookings\Controls\ctrlBookingCard.designer.cs">
+      <DependentUpon>ctrlBookingCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bookings\Controls\ctrlBookingCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bookings\Controls\ctrlBookingCardWithFilter.designer.cs">
+      <DependentUpon>ctrlBookingCardWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bookings\frmAddUpdateBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bookings\frmAddUpdateBooking.designer.cs">
+      <DependentUpon>frmAddUpdateBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bookings\frmBookingsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bookings\frmBookingsList.Designer.cs">
+      <DependentUpon>frmBookingsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bookings\frmFindBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bookings\frmFindBooking.designer.cs">
+      <DependentUpon>frmFindBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bookings\frmBookingDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bookings\frmBookingDetails.designer.cs">
+      <DependentUpon>frmBookingDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListBase\frmListBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListBase\frmListBase.Designer.cs">
+      <DependentUpon>frmListBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Returns\Controls\ctrlReturnCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Returns\Controls\ctrlReturnCard.designer.cs">
+      <DependentUpon>ctrlReturnCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Returns\Controls\ctrlReturnCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Returns\Controls\ctrlReturnCardWithFilter.designer.cs">
+      <DependentUpon>ctrlReturnCardWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Returns\frmAddUpdateReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Returns\frmAddUpdateReturn.designer.cs">
+      <DependentUpon>frmAddUpdateReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Returns\frmFindReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Returns\frmFindReturn.designer.cs">
+      <DependentUpon>frmFindReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Returns\frmReturnsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Returns\frmReturnsList.Designer.cs">
+      <DependentUpon>frmReturnsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Returns\frmReturnDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Returns\frmReturnDetails.designer.cs">
+      <DependentUpon>frmReturnDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Controls\ctrlTransactionCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Transactions\Controls\ctrlTransactionCardWithFilter.designer.cs">
+      <DependentUpon>ctrlTransactionCardWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Controls\ctrlTransactionCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Transactions\Controls\ctrlTransactionCard.designer.cs">
+      <DependentUpon>ctrlTransactionCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmFindTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmFindTransaction.designer.cs">
+      <DependentUpon>frmFindTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmTransactionDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmTransactionDetails.designer.cs">
+      <DependentUpon>frmTransactionDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\frmTransactionsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\frmTransactionsList.Designer.cs">
+      <DependentUpon>frmTransactionsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Controls\ctrlUserCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\Controls\ctrlUserCardWithFilter.designer.cs">
+      <DependentUpon>ctrlUserCardWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Controls\ctrlUserCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\Controls\ctrlUserCard.designer.cs">
+      <DependentUpon>ctrlUserCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmAddUpdateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmAddUpdateUser.designer.cs">
+      <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmUserDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmUserDetails.designer.cs">
+      <DependentUpon>frmUserDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmFindUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmFindUser.designer.cs">
+      <DependentUpon>frmFindUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmUsersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmUsersList.Designer.cs">
+      <DependentUpon>frmUsersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\Controls\ctrlCustomerCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customers\Controls\ctrlCustomerCard.designer.cs">
+      <DependentUpon>ctrlCustomerCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\Controls\ctrlCustomerCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customers\Controls\ctrlCustomerCardWithFilter.designer.cs">
+      <DependentUpon>ctrlCustomerCardWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\frmCustomerDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers\frmCustomerDetails.designer.cs">
+      <DependentUpon>frmCustomerDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\frmFindCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers\frmFindCustomer.designer.cs">
+      <DependentUpon>frmFindCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalClasses\clsValidatoin.cs" />
+    <Compile Include="GlobalClasses\Global.cs" />
+    <Compile Include="Login\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\frmAddUpdateCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers\frmAddUpdateCustomer.designer.cs">
+      <DependentUpon>frmAddUpdateCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\frmCustomersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customers\frmCustomersList.Designer.cs">
+      <DependentUpon>frmCustomersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\Controls\ctrlPersonCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\Controls\ctrlPersonCard.designer.cs">
+      <DependentUpon>ctrlPersonCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\Controls\ctrlPersonCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\Controls\ctrlPersonCardWithFilter.designer.cs">
+      <DependentUpon>ctrlPersonCardWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\frmAddUpdatePerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\frmAddUpdatePerson.designer.cs">
+      <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\frmFindPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\frmFindPerson.designer.cs">
+      <DependentUpon>frmFindPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\frmPeopleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\frmPeopleList.Designer.cs">
+      <DependentUpon>frmPeopleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\frmPersonDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\frmPersonDetails.designer.cs">
+      <DependentUpon>frmPersonDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vehicles\Controls\ctrlVehicleCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vehicles\Controls\ctrlVehicleCard.designer.cs">
+      <DependentUpon>ctrlVehicleCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicles\Controls\ctrlVehicleCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vehicles\Controls\ctrlVehicleCardWithFilter.designer.cs">
+      <DependentUpon>ctrlVehicleCardWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicles\frmAddUpdateVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehicles\frmAddUpdateVehicle.designer.cs">
+      <DependentUpon>frmAddUpdateVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicles\frmFindVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehicles\frmFindVehicle.designer.cs">
+      <DependentUpon>frmFindVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicles\frmVehicleDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehicles\frmVehicleDetails.designer.cs">
+      <DependentUpon>frmVehicleDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicles\frmVehiclesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehicles\frmVehiclesList.Designer.cs">
+      <DependentUpon>frmVehiclesList.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Bookings\Controls\ctrlBookingCard.resx">
+      <DependentUpon>ctrlBookingCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bookings\Controls\ctrlBookingCardWithFilter.resx">
+      <DependentUpon>ctrlBookingCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bookings\frmAddUpdateBooking.resx">
+      <DependentUpon>frmAddUpdateBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bookings\frmBookingsList.resx">
+      <DependentUpon>frmBookingsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bookings\frmFindBooking.aa-DJ.resx">
+      <DependentUpon>frmFindBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bookings\frmFindBooking.resx">
+      <DependentUpon>frmFindBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bookings\frmBookingDetails.resx">
+      <DependentUpon>frmBookingDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListBase\frmListBase.resx">
+      <DependentUpon>frmListBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Returns\Controls\ctrlReturnCard.resx">
+      <DependentUpon>ctrlReturnCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Returns\Controls\ctrlReturnCardWithFilter.resx">
+      <DependentUpon>ctrlReturnCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Returns\frmAddUpdateReturn.resx">
+      <DependentUpon>frmAddUpdateReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Returns\frmFindReturn.aa-DJ.resx">
+      <DependentUpon>frmFindReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Returns\frmFindReturn.resx">
+      <DependentUpon>frmFindReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Returns\frmReturnsList.resx">
+      <DependentUpon>frmReturnsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Returns\frmReturnDetails.resx">
+      <DependentUpon>frmReturnDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Controls\ctrlTransactionCardWithFilter.resx">
+      <DependentUpon>ctrlTransactionCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Controls\ctrlTransactionCard.resx">
+      <DependentUpon>ctrlTransactionCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmFindTransaction.aa-DJ.resx">
+      <DependentUpon>frmFindTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmFindTransaction.resx">
+      <DependentUpon>frmFindTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmTransactionDetails.resx">
+      <DependentUpon>frmTransactionDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\frmTransactionsList.resx">
+      <DependentUpon>frmTransactionsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\Controls\ctrlUserCardWithFilter.resx">
+      <DependentUpon>ctrlUserCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\Controls\ctrlUserCard.resx">
+      <DependentUpon>ctrlUserCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmAddUpdateUser.resx">
+      <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmUserDetails.resx">
+      <DependentUpon>frmUserDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmFindUser.aa-DJ.resx">
+      <DependentUpon>frmFindUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmFindUser.resx">
+      <DependentUpon>frmFindUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmUsersList.resx">
+      <DependentUpon>frmUsersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\Controls\ctrlCustomerCard.resx">
+      <DependentUpon>ctrlCustomerCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\Controls\ctrlCustomerCardWithFilter.resx">
+      <DependentUpon>ctrlCustomerCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\frmCustomerDetails.resx">
+      <DependentUpon>frmCustomerDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\frmFindCustomer.aa-DJ.resx">
+      <DependentUpon>frmFindCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\frmFindCustomer.resx">
+      <DependentUpon>frmFindCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\frmAddUpdateCustomer.resx">
+      <DependentUpon>frmAddUpdateCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customers\frmCustomersList.resx">
+      <DependentUpon>frmCustomersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\Controls\ctrlPersonCard.resx">
+      <DependentUpon>ctrlPersonCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\Controls\ctrlPersonCardWithFilter.resx">
+      <DependentUpon>ctrlPersonCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\frmAddUpdatePerson.resx">
+      <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\frmFindPerson.aa-DJ.resx">
+      <DependentUpon>frmFindPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\frmFindPerson.resx">
+      <DependentUpon>frmFindPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\frmPeopleList.resx">
+      <DependentUpon>frmPeopleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\frmPersonDetails.resx">
+      <DependentUpon>frmPersonDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\Controls\ctrlVehicleCard.resx">
+      <DependentUpon>ctrlVehicleCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\Controls\ctrlVehicleCardWithFilter.resx">
+      <DependentUpon>ctrlVehicleCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\frmAddUpdateVehicle.resx">
+      <DependentUpon>frmAddUpdateVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\frmFindVehicle.aa-DJ.resx">
+      <DependentUpon>frmFindVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\frmFindVehicle.resx">
+      <DependentUpon>frmFindVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\frmVehicleDetails.resx">
+      <DependentUpon>frmVehicleDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehicles\frmVehiclesList.resx">
+      <DependentUpon>frmVehiclesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarRental_BusinessLogicLayer\CarRental_BusinessLogicLayer.csproj">
+      <Project>{48509151-8579-49cc-b90e-8d2763c446a4}</Project>
+      <Name>CarRental_BusinessLogicLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Passed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ID %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone-call.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye_Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye_Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CarRentalLogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-name32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\model.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\available-car32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Address.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Date1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sticky-note1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mileage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\active-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inactive-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\People.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CustomersBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CustomersWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboardBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReturnCarBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReturnCarWhite-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TransactionBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsersBlue125-.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsersWhite-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VehiclesBlue-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VehilcesWhite-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-name321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sticky-note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-fuel-type32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DashboardWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DashboardWhite1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PeopleBlue1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TransactionWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TransactionBlue1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PeopleBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookingBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookingWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReturnBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReturnWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PeopleWhite2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewBooking32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewBooking24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BookingDetails.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteBooking24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpdateBooking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewCustomer24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewCustomer32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CustomeDetails24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteCustomer24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditCustomer24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewPerson24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewPerson32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeletePerson24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditPerson24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PersonDateils24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewVehicleReturn24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewVehicleReturn32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Details.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpdateVehicleReturn24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TransactionDetails.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewUser24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewUser32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpdateUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserDetails.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewVehicle24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewVehicle32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteVehicle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpdateVehicle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VehicleDtails24.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
