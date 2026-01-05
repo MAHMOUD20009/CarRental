@@ -22,7 +22,7 @@ namespace CarRental.Users
 
         public bool IsDataChanged { private set; get; }
 
-        private int? _PersonID = null;
+        private clsPerson _Person;
 
         private clsUser _User;
         private int _UserID;
@@ -87,10 +87,10 @@ namespace CarRental.Users
                 chkMangeUsers.Checked = _User.CheckUserPermission(clsUser.enPermissions.MangeUsers);
             }
 
-            _PersonID = _User.PersonID;
+            _Person = _User.PersonInfo;
 
-            lblShowPersonID.Text = "[" + _PersonID + "]";
-            txtName.Text = _User.PersonInfo.Name;
+            lblShowPersonID.Text = "[" + _Person.PersonID + "]";
+            txtName.Text = _Person.Name;
 
             txtUserName.ReadOnly = true;
         }
@@ -138,46 +138,38 @@ namespace CarRental.Users
             }
         }
 
-        private bool ValidatePersonID()
-        {
-            if (_PersonID == null)
-            {
-                MessageBox.Show("Please select a Person first.", "Missing Selection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                btnSave.Enabled = false;
-                return false;
-            }
-
-            if (_Mode == enMode.AddNew && clsUser.IsUserExistsByPersonID(_PersonID.Value))
-            {
-                MessageBox.Show("This person is already in use by another User", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                btnSave.Enabled = false;
-                return false;
-            }
-
-            btnSave.Enabled = true;
-            return true;
-        }
-
         private void btnSelectPerson_Click(object sender, EventArgs e)
         {
-            var frm = new People.frmFindPerson();
+            var frm = _Mode == enMode.AddNew? new People.frmFindPerson() : new People.frmFindPerson(_Person.PersonID.Value);
             frm.OnPersonSelected += frmFindPerson_OnPersonSelected;
             frm.ShowDialog();
         }
 
+        private void ResetControlsPerson()
+        {
+            lblShowPersonID.Text = "[?????]";
+            txtName.Clear();
+        }
+
         private void frmFindPerson_OnPersonSelected(int PersonID)
         {
-            _PersonID = PersonID;
-
-            if (_PersonID == null)
+            _Person = clsPerson.FindPerson(PersonID);
+            if (_Person == null)
+            {
+                ResetControlsPerson();
                 return;
+            }
 
-            clsPerson Person = clsPerson.FindPerson(_PersonID.Value);
-            if (Person == null)
+            if (_Mode == enMode.AddNew && clsUser.IsUserExistsByPersonID(PersonID))
+            {
+                MessageBox.Show("This person is already in use by another User", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _Person = null;
+                ResetControlsPerson();
                 return;
+            }
 
-            lblShowPersonID.Text = "[" + _PersonID + "]";
-            txtName.Text = Person.Name;
+            lblShowPersonID.Text = "[" + _Person.PersonID + "]";
+            txtName.Text = _Person.Name;
         }
 
         private int GetPermissions()
@@ -222,10 +214,16 @@ namespace CarRental.Users
                 return;
             }
 
+            if(_Person == null)
+            {
+                MessageBox.Show("Please select a person first.", "Missing Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (_User == null)
                 _User = new clsUser();
 
-            _User.PersonID = _PersonID;
+            _User.PersonID = _Person.PersonID;
             _User.UserName = txtUserName.Text.Trim();
 
             if (_Mode == enMode.AddNew || !string.IsNullOrEmpty(txtPassword.Text.Trim()))
@@ -263,6 +261,11 @@ namespace CarRental.Users
             chkMangeTransactions.Checked = chkAllPermissions.Checked;
             chkMangeReturns.Checked = chkAllPermissions.Checked;
             chkMangeUsers.Checked = chkAllPermissions.Checked;
+        }
+
+        private void txtUserName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = e.KeyChar == ' ';
         }
 
     }

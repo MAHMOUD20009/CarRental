@@ -10,8 +10,12 @@ namespace CarRental.Returns
         public frmReturnsList()
         {
             InitializeComponent();
-            TotalPages = clsVehicleReturn.GetPageCount(RowsPerPage);
             InitializeInheritedControls();
+        }
+
+        private void RefreshTotalPages()
+        {
+            TotalPages = clsVehicleReturn.GetPageCount(RowsPerPage);
         }
 
         protected override async void OnPageChanged()
@@ -21,7 +25,10 @@ namespace CarRental.Returns
 
         private  void frmReturnsList_Load(object sender, EventArgs e)
         {
-            OnPageChanged();
+            RowsPerPage = 5;
+            PageNumber = 1;
+            RefreshTotalPages();
+            RefreshToolStripMenuItem_Click(null, null);
         }
 
         private void RefreshToolStripMenuItem_Click(object sender, EventArgs e)
@@ -51,7 +58,7 @@ namespace CarRental.Returns
 
         private void frmAddUpdateReturn_DataBack(int ReturnID)
         {
-            OnPageChanged();
+            frmReturnsList_Load(null, null);
         }
 
         private void btnAddNewRecord_Click(object sender, EventArgs e)
@@ -69,7 +76,7 @@ namespace CarRental.Returns
         private void updateReturnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new frmAddUpdateReturn((int)dgvDataList.CurrentRow.Cells[0].Value);
-            frm.DataBack += frmAddUpdateReturn_DataBack;
+            frm.DataBack += (int ReturnId) => OnPageChanged();
             frm.ShowDialog();
         }
 

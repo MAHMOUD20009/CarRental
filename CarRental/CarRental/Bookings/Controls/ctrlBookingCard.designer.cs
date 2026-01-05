@@ -102,7 +102,7 @@
             this.tcBooking.Location = new System.Drawing.Point(1, 1);
             this.tcBooking.Name = "tcBooking";
             this.tcBooking.SelectedIndex = 0;
-            this.tcBooking.Size = new System.Drawing.Size(984, 431);
+            this.tcBooking.Size = new System.Drawing.Size(970, 437);
             this.tcBooking.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.tcBooking.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.tcBooking.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -130,7 +130,7 @@
             this.tpCustomerInfo.Location = new System.Drawing.Point(4, 44);
             this.tpCustomerInfo.Margin = new System.Windows.Forms.Padding(0);
             this.tpCustomerInfo.Name = "tpCustomerInfo";
-            this.tpCustomerInfo.Size = new System.Drawing.Size(976, 383);
+            this.tpCustomerInfo.Size = new System.Drawing.Size(962, 389);
             this.tpCustomerInfo.TabIndex = 0;
             this.tpCustomerInfo.Text = "Customer Info";
             // 
@@ -149,7 +149,7 @@
             this.tpVehicleInfo.Location = new System.Drawing.Point(4, 44);
             this.tpVehicleInfo.Name = "tpVehicleInfo";
             this.tpVehicleInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tpVehicleInfo.Size = new System.Drawing.Size(976, 383);
+            this.tpVehicleInfo.Size = new System.Drawing.Size(962, 389);
             this.tpVehicleInfo.TabIndex = 1;
             this.tpVehicleInfo.Text = "Vehicle Info";
             // 
@@ -158,7 +158,7 @@
             this.ctrlVehicleCard1.BackColor = System.Drawing.Color.Transparent;
             this.ctrlVehicleCard1.Location = new System.Drawing.Point(-2, 0);
             this.ctrlVehicleCard1.Name = "ctrlVehicleCard1";
-            this.ctrlVehicleCard1.Size = new System.Drawing.Size(782, 351);
+            this.ctrlVehicleCard1.Size = new System.Drawing.Size(774, 277);
             this.ctrlVehicleCard1.TabIndex = 0;
             // 
             // tpBookingInfo
@@ -207,7 +207,7 @@
             this.tpBookingInfo.Location = new System.Drawing.Point(4, 44);
             this.tpBookingInfo.Name = "tpBookingInfo";
             this.tpBookingInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tpBookingInfo.Size = new System.Drawing.Size(976, 383);
+            this.tpBookingInfo.Size = new System.Drawing.Size(962, 389);
             this.tpBookingInfo.TabIndex = 2;
             this.tpBookingInfo.Text = "Booking Info";
             // 
@@ -226,7 +226,7 @@
             // 
             // lblShowInitialCheckNotes
             // 
-            this.lblShowInitialCheckNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowInitialCheckNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowInitialCheckNotes.ForeColor = System.Drawing.Color.White;
             this.lblShowInitialCheckNotes.Location = new System.Drawing.Point(291, 351);
             this.lblShowInitialCheckNotes.Name = "lblShowInitialCheckNotes";
@@ -237,7 +237,7 @@
             // 
             // lblShowPaymentDetails
             // 
-            this.lblShowPaymentDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowPaymentDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowPaymentDetails.ForeColor = System.Drawing.Color.White;
             this.lblShowPaymentDetails.Location = new System.Drawing.Point(291, 255);
             this.lblShowPaymentDetails.Name = "lblShowPaymentDetails";
@@ -248,20 +248,20 @@
             // 
             // lblShowPaidInitialTotalDueAmount
             // 
-            this.lblShowPaidInitialTotalDueAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowPaidInitialTotalDueAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowPaidInitialTotalDueAmount.ForeColor = System.Drawing.Color.White;
-            this.lblShowPaidInitialTotalDueAmount.Location = new System.Drawing.Point(773, 212);
+            this.lblShowPaidInitialTotalDueAmount.Location = new System.Drawing.Point(769, 212);
             this.lblShowPaidInitialTotalDueAmount.Name = "lblShowPaidInitialTotalDueAmount";
-            this.lblShowPaidInitialTotalDueAmount.Size = new System.Drawing.Size(195, 34);
+            this.lblShowPaidInitialTotalDueAmount.Size = new System.Drawing.Size(187, 33);
             this.lblShowPaidInitialTotalDueAmount.TabIndex = 68;
             this.lblShowPaidInitialTotalDueAmount.Text = "?????";
             this.lblShowPaidInitialTotalDueAmount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblShowDropoffLocation
             // 
-            this.lblShowDropoffLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowDropoffLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowDropoffLocation.ForeColor = System.Drawing.Color.White;
-            this.lblShowDropoffLocation.Location = new System.Drawing.Point(779, 117);
+            this.lblShowDropoffLocation.Location = new System.Drawing.Point(769, 116);
             this.lblShowDropoffLocation.Name = "lblShowDropoffLocation";
             this.lblShowDropoffLocation.Size = new System.Drawing.Size(191, 34);
             this.lblShowDropoffLocation.TabIndex = 67;
@@ -270,7 +270,7 @@
             // 
             // lblShowPickupLocation
             // 
-            this.lblShowPickupLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowPickupLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowPickupLocation.ForeColor = System.Drawing.Color.White;
             this.lblShowPickupLocation.Location = new System.Drawing.Point(291, 115);
             this.lblShowPickupLocation.Name = "lblShowPickupLocation";
@@ -281,7 +281,7 @@
             // 
             // lblShowStartDate
             // 
-            this.lblShowStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowStartDate.ForeColor = System.Drawing.Color.White;
             this.lblShowStartDate.Location = new System.Drawing.Point(291, 69);
             this.lblShowStartDate.Name = "lblShowStartDate";
@@ -292,18 +292,18 @@
             // 
             // lblShowEndDate
             // 
-            this.lblShowEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowEndDate.ForeColor = System.Drawing.Color.White;
-            this.lblShowEndDate.Location = new System.Drawing.Point(781, 69);
+            this.lblShowEndDate.Location = new System.Drawing.Point(769, 66);
             this.lblShowEndDate.Name = "lblShowEndDate";
-            this.lblShowEndDate.Size = new System.Drawing.Size(187, 34);
+            this.lblShowEndDate.Size = new System.Drawing.Size(187, 35);
             this.lblShowEndDate.TabIndex = 64;
             this.lblShowEndDate.Text = "?????";
             this.lblShowEndDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblShowTotalRefundedAmount
             // 
-            this.lblShowTotalRefundedAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowTotalRefundedAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowTotalRefundedAmount.ForeColor = System.Drawing.Color.White;
             this.lblShowTotalRefundedAmount.Location = new System.Drawing.Point(291, 306);
             this.lblShowTotalRefundedAmount.Name = "lblShowTotalRefundedAmount";
@@ -324,20 +324,20 @@
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(6, 302);
+            this.label5.Location = new System.Drawing.Point(6, 306);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(235, 34);
+            this.label5.Size = new System.Drawing.Size(215, 34);
             this.label5.TabIndex = 61;
             this.label5.Text = "Total Refunded Amount";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblShowTotalRemaining
             // 
-            this.lblShowTotalRemaining.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowTotalRemaining.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowTotalRemaining.ForeColor = System.Drawing.Color.White;
-            this.lblShowTotalRemaining.Location = new System.Drawing.Point(773, 256);
+            this.lblShowTotalRemaining.Location = new System.Drawing.Point(769, 255);
             this.lblShowTotalRemaining.Name = "lblShowTotalRemaining";
             this.lblShowTotalRemaining.Size = new System.Drawing.Size(191, 34);
             this.lblShowTotalRemaining.TabIndex = 60;
@@ -356,11 +356,11 @@
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(471, 255);
+            this.label4.Location = new System.Drawing.Point(467, 256);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 32);
+            this.label4.Size = new System.Drawing.Size(236, 33);
             this.label4.TabIndex = 58;
             this.label4.Text = "Total Remaining";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -377,11 +377,11 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(471, 211);
+            this.label2.Location = new System.Drawing.Point(467, 212);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(255, 26);
+            this.label2.Size = new System.Drawing.Size(236, 33);
             this.label2.TabIndex = 56;
             this.label2.Text = "Paid Ini Total Due Amount";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -398,18 +398,18 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(6, 255);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 35);
+            this.label1.Size = new System.Drawing.Size(205, 35);
             this.label1.TabIndex = 53;
             this.label1.Text = "Payment Details";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblShowInitialRentDays
             // 
-            this.lblShowInitialRentDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowInitialRentDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowInitialRentDays.ForeColor = System.Drawing.Color.White;
             this.lblShowInitialRentDays.Location = new System.Drawing.Point(291, 167);
             this.lblShowInitialRentDays.Name = "lblShowInitialRentDays";
@@ -420,11 +420,11 @@
             // 
             // lblShowRentPricePerDay
             // 
-            this.lblShowRentPricePerDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowRentPricePerDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowRentPricePerDay.ForeColor = System.Drawing.Color.White;
-            this.lblShowRentPricePerDay.Location = new System.Drawing.Point(782, 163);
+            this.lblShowRentPricePerDay.Location = new System.Drawing.Point(769, 166);
             this.lblShowRentPricePerDay.Name = "lblShowRentPricePerDay";
-            this.lblShowRentPricePerDay.Size = new System.Drawing.Size(191, 34);
+            this.lblShowRentPricePerDay.Size = new System.Drawing.Size(191, 33);
             this.lblShowRentPricePerDay.TabIndex = 50;
             this.lblShowRentPricePerDay.Text = "?????";
             this.lblShowRentPricePerDay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -441,18 +441,18 @@
             // 
             // lblInitialCheckNotes
             // 
-            this.lblInitialCheckNotes.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInitialCheckNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInitialCheckNotes.ForeColor = System.Drawing.Color.White;
-            this.lblInitialCheckNotes.Location = new System.Drawing.Point(6, 348);
+            this.lblInitialCheckNotes.Location = new System.Drawing.Point(6, 351);
             this.lblInitialCheckNotes.Name = "lblInitialCheckNotes";
-            this.lblInitialCheckNotes.Size = new System.Drawing.Size(180, 37);
+            this.lblInitialCheckNotes.Size = new System.Drawing.Size(215, 32);
             this.lblInitialCheckNotes.TabIndex = 47;
             this.lblInitialCheckNotes.Text = "Ini Check Notes";
             this.lblInitialCheckNotes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblShowInitialTotalDueAmount
             // 
-            this.lblShowInitialTotalDueAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowInitialTotalDueAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowInitialTotalDueAmount.ForeColor = System.Drawing.Color.White;
             this.lblShowInitialTotalDueAmount.Location = new System.Drawing.Point(291, 211);
             this.lblShowInitialTotalDueAmount.Name = "lblShowInitialTotalDueAmount";
@@ -473,11 +473,11 @@
             // 
             // lblInitialTotalDueAmount
             // 
-            this.lblInitialTotalDueAmount.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInitialTotalDueAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInitialTotalDueAmount.ForeColor = System.Drawing.Color.White;
             this.lblInitialTotalDueAmount.Location = new System.Drawing.Point(6, 211);
             this.lblInitialTotalDueAmount.Name = "lblInitialTotalDueAmount";
-            this.lblInitialTotalDueAmount.Size = new System.Drawing.Size(215, 32);
+            this.lblInitialTotalDueAmount.Size = new System.Drawing.Size(205, 32);
             this.lblInitialTotalDueAmount.TabIndex = 44;
             this.lblInitialTotalDueAmount.Text = "Ini Total Due Amount";
             this.lblInitialTotalDueAmount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -494,11 +494,11 @@
             // 
             // lblRentPricePerDay
             // 
-            this.lblRentPricePerDay.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblRentPricePerDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRentPricePerDay.ForeColor = System.Drawing.Color.White;
-            this.lblRentPricePerDay.Location = new System.Drawing.Point(471, 167);
+            this.lblRentPricePerDay.Location = new System.Drawing.Point(467, 163);
             this.lblRentPricePerDay.Name = "lblRentPricePerDay";
-            this.lblRentPricePerDay.Size = new System.Drawing.Size(170, 36);
+            this.lblRentPricePerDay.Size = new System.Drawing.Size(232, 38);
             this.lblRentPricePerDay.TabIndex = 41;
             this.lblRentPricePerDay.Text = "Rent Price Per Day";
             this.lblRentPricePerDay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -515,11 +515,11 @@
             // 
             // lblInitialRentDays
             // 
-            this.lblInitialRentDays.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInitialRentDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInitialRentDays.ForeColor = System.Drawing.Color.White;
             this.lblInitialRentDays.Location = new System.Drawing.Point(6, 163);
             this.lblInitialRentDays.Name = "lblInitialRentDays";
-            this.lblInitialRentDays.Size = new System.Drawing.Size(210, 36);
+            this.lblInitialRentDays.Size = new System.Drawing.Size(205, 36);
             this.lblInitialRentDays.TabIndex = 38;
             this.lblInitialRentDays.Text = "Initial Rent Days";
             this.lblInitialRentDays.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -536,11 +536,11 @@
             // 
             // lblDropoffLocation
             // 
-            this.lblDropoffLocation.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblDropoffLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDropoffLocation.ForeColor = System.Drawing.Color.White;
-            this.lblDropoffLocation.Location = new System.Drawing.Point(471, 117);
+            this.lblDropoffLocation.Location = new System.Drawing.Point(467, 117);
             this.lblDropoffLocation.Name = "lblDropoffLocation";
-            this.lblDropoffLocation.Size = new System.Drawing.Size(164, 33);
+            this.lblDropoffLocation.Size = new System.Drawing.Size(236, 36);
             this.lblDropoffLocation.TabIndex = 34;
             this.lblDropoffLocation.Text = "Dropoff Location";
             this.lblDropoffLocation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -557,11 +557,11 @@
             // 
             // lblPickupLocation
             // 
-            this.lblPickupLocation.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPickupLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPickupLocation.ForeColor = System.Drawing.Color.White;
             this.lblPickupLocation.Location = new System.Drawing.Point(6, 115);
             this.lblPickupLocation.Name = "lblPickupLocation";
-            this.lblPickupLocation.Size = new System.Drawing.Size(210, 36);
+            this.lblPickupLocation.Size = new System.Drawing.Size(205, 36);
             this.lblPickupLocation.TabIndex = 32;
             this.lblPickupLocation.Text = "Pickup Location";
             this.lblPickupLocation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -608,22 +608,22 @@
             // 
             // lblRentEndData
             // 
-            this.lblRentEndData.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lblRentEndData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRentEndData.ForeColor = System.Drawing.Color.White;
-            this.lblRentEndData.Location = new System.Drawing.Point(471, 66);
+            this.lblRentEndData.Location = new System.Drawing.Point(467, 66);
             this.lblRentEndData.Name = "lblRentEndData";
-            this.lblRentEndData.Size = new System.Drawing.Size(151, 35);
+            this.lblRentEndData.Size = new System.Drawing.Size(236, 35);
             this.lblRentEndData.TabIndex = 28;
             this.lblRentEndData.Text = "Rent End Date";
             this.lblRentEndData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblRentStartData
             // 
-            this.lblRentStartData.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRentStartData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRentStartData.ForeColor = System.Drawing.Color.White;
             this.lblRentStartData.Location = new System.Drawing.Point(6, 68);
             this.lblRentStartData.Name = "lblRentStartData";
-            this.lblRentStartData.Size = new System.Drawing.Size(210, 35);
+            this.lblRentStartData.Size = new System.Drawing.Size(205, 35);
             this.lblRentStartData.TabIndex = 26;
             this.lblRentStartData.Text = "Rent Start Date";
             this.lblRentStartData.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -645,7 +645,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.Controls.Add(this.tcBooking);
             this.Name = "ctrlBookingCard";
-            this.Size = new System.Drawing.Size(986, 433);
+            this.Size = new System.Drawing.Size(972, 438);
             this.tcBooking.ResumeLayout(false);
             this.tpCustomerInfo.ResumeLayout(false);
             this.tpVehicleInfo.ResumeLayout(false);

@@ -107,6 +107,11 @@ namespace CarRental_BusinessLogicLayer
             return clsCustomerDataAccess.IsCustomerExistsByCustomerID(CustomerID);
         }
 
+        public static bool IsCustomerExistsByPersonID(int PersonID)
+        {
+            return clsCustomerDataAccess.IsCustomerExistsByPersonID(PersonID);
+        }
+
         public static int GetCustomerCount()
         {
             return clsCustomerDataAccess.GetCustomerCount();

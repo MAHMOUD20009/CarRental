@@ -67,7 +67,7 @@
             this.btnAddNewPerson.AnimationHoverSpeed = 0.07F;
             this.btnAddNewPerson.AnimationSpeed = 0.03F;
             this.btnAddNewPerson.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddNewPerson.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(120)))));
+            this.btnAddNewPerson.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(185)))));
             this.btnAddNewPerson.BorderColor = System.Drawing.Color.Black;
             this.btnAddNewPerson.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddNewPerson.FocusedColor = System.Drawing.Color.Empty;
@@ -75,9 +75,9 @@
             this.btnAddNewPerson.ForeColor = System.Drawing.Color.White;
             this.btnAddNewPerson.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewPerson.Image")));
             this.btnAddNewPerson.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddNewPerson.Location = new System.Drawing.Point(315, 41);
+            this.btnAddNewPerson.Location = new System.Drawing.Point(315, 37);
             this.btnAddNewPerson.Name = "btnAddNewPerson";
-            this.btnAddNewPerson.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnAddNewPerson.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(170)))));
             this.btnAddNewPerson.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnAddNewPerson.OnHoverForeColor = System.Drawing.Color.White;
             this.btnAddNewPerson.OnHoverImage = null;

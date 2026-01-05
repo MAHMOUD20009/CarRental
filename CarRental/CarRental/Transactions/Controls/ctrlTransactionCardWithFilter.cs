@@ -69,8 +69,14 @@ namespace CarRental.Controls
 
         private void txtSearchValue_TextChanged(object sender, EventArgs e)
         {
-            if (!txtSearchValue.IsValid || string.IsNullOrEmpty(txtSearchValue.Text)) ctrlTransactionCard1.ResetControls();
-            else FindNow();
+            if (string.IsNullOrWhiteSpace(txtSearchValue.Text))
+            {
+                ctrlTransactionCard1.ResetControls();
+                TransactionSelected(-1);
+                return;
+            }
+
+            if (txtSearchValue.IsValid) FindNow();
         }
 
         public void ResetControls()

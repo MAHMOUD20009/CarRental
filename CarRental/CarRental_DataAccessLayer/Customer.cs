@@ -237,12 +237,12 @@ namespace CarRental_DataAccessLayer
                 using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
                     Connection.Open();
-                    using (SqlCommand Command = new SqlCommand("SP_IsCustomerExistsByCustomerID", Connection))
+                    using (SqlCommand Command = new SqlCommand("SP_IsCustomerExistsByPersonID", Connection))
                     {
                         Command.CommandType = CommandType.StoredProcedure;
 
                         Command.Parameters.AddWithValue("@PersonID", PersonID);
-                        SqlParameter OutputIsFoundParam = new SqlParameter("@IsFound", SqlDbType.NVarChar)
+                        SqlParameter OutputIsFoundParam = new SqlParameter("@IsFound", SqlDbType.Bit)
                         {
                             Direction = ParameterDirection.Output
                         };

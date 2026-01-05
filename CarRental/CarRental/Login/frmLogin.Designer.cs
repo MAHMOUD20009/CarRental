@@ -72,7 +72,7 @@
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Image = null;
             this.btnLogin.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnLogin.Location = new System.Drawing.Point(102, 428);
+            this.btnLogin.Location = new System.Drawing.Point(95, 428);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btnLogin.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -136,6 +136,7 @@
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.ValidateInputType = true;
             this.txtPassword.IconRightClick += new System.EventHandler(this.TogglePasswordVisibility_OnIconRightClick);
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserName_KeyPress);
             // 
             // txtUserName
             // 
@@ -169,6 +170,7 @@
             this.txtUserName.Size = new System.Drawing.Size(224, 39);
             this.txtUserName.TabIndex = 0;
             this.txtUserName.ValidateInputType = true;
+            this.txtUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserName_KeyPress);
             // 
             // gunaPictureBox1
             // 

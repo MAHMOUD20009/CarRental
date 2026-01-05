@@ -26,3 +26,10 @@ C:\Users\Mahmoud\OneDrive\Desktop\CarRental\CarRental_BusinessLogicLayer\bin\Deb
 C:\Users\Mahmoud\OneDrive\Desktop\CarRental\CarRental_BusinessLogicLayer\obj\Debug\CarRental_BusinessLogicLayer.csprojResolveAssemblyReference.cache
 C:\Users\Mahmoud\OneDrive\Desktop\CarRental\CarRental_BusinessLogicLayer\obj\Debug\CarRental_BusinessLogicLayer.dll
 C:\Users\Mahmoud\OneDrive\Desktop\CarRental\CarRental_BusinessLogicLayer\obj\Debug\CarRental_BusinessLogicLayer.pdb
+C:\Users\Mahmoud\Desktop\CarRental\CarRental\CarRental_BusinessLogicLayer\bin\Debug\CarRental_BusinessLogicLayer.dll
+C:\Users\Mahmoud\Desktop\CarRental\CarRental\CarRental_BusinessLogicLayer\bin\Debug\CarRental_BusinessLogicLayer.pdb
+C:\Users\Mahmoud\Desktop\CarRental\CarRental\CarRental_BusinessLogicLayer\bin\Debug\CarRental_DataAccessLayer.dll
+C:\Users\Mahmoud\Desktop\CarRental\CarRental\CarRental_BusinessLogicLayer\bin\Debug\CarRental_DataAccessLayer.pdb
+C:\Users\Mahmoud\Desktop\CarRental\CarRental\CarRental_BusinessLogicLayer\obj\Debug\CarRental_BusinessLogicLayer.csprojResolveAssemblyReference.cache
+C:\Users\Mahmoud\Desktop\CarRental\CarRental\CarRental_BusinessLogicLayer\obj\Debug\CarRental_BusinessLogicLayer.dll
+C:\Users\Mahmoud\Desktop\CarRental\CarRental\CarRental_BusinessLogicLayer\obj\Debug\CarRental_BusinessLogicLayer.pdb

@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
 using CarRental.Returns;
+using System.Windows.Forms;
 using CarRental_BusinessLogicLayer;
 
 namespace CarRental.Controls
@@ -61,14 +61,32 @@ namespace CarRental.Controls
 
         private void txtSearchValue_TextChanged(object sender, EventArgs e)
         {
-            if (!txtSearchValue.IsValid || string.IsNullOrEmpty(txtSearchValue.Text)) ctrlReturnCard1.ResetControls();
-            else FindNow();
+            if (string.IsNullOrWhiteSpace(txtSearchValue.Text))
+            {
+                ctrlReturnCard1.ResetControls();
+                ReturnSelected(-1);
+                return;
+            }
+
+            if (txtSearchValue.IsValid) FindNow();
         }
 
         public void ResetControls()
         {
             txtSearchValue.Clear();
             ctrlReturnCard1.ResetControls();
+        }
+
+        private void frmAddUpdateReturn_DataBack(int ReturnID)
+        {
+            LoadReturnInfo(ReturnID);
+        }
+
+        private void btnAddNewVehicle_Click(object sender, EventArgs e)
+        {
+            var frm = new frmAddUpdateReturn();
+            frm.DataBack += frmAddUpdateReturn_DataBack;
+            frm.ShowDialog();
         }
     }
 }

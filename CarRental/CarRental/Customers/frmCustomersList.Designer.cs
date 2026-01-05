@@ -46,7 +46,7 @@
             this.CustomerDetailsToolStripMenuItem,
             this.ToolStripSeparator1,
             this.RefreshToolStripMenuItem,
-            this.ToolStripSeparator3,
+            this.ToolStripSeparator2,
             this.addNewCustomerToolStripMenuItem,
             this.updateToolStripMenuItem,
             this.ToolStripSeparator3,

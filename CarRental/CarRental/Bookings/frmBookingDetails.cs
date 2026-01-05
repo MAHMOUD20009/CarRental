@@ -38,7 +38,7 @@ namespace CarRental.Bookings
             ctrlBookingCard1.LoadBookingInfo(_BookingID);
         }
 
-        private void ctrlBookingCard1_MouseDown(object sender, MouseEventArgs e)
+        private void frmBookingDetails_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -46,5 +46,7 @@ namespace CarRental.Bookings
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTIN, 0);
             }
         }
+
+
     }
 }

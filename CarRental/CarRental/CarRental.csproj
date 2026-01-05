@@ -31,18 +31,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CustomContorls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CustomContorls\CustomContorls\bin\Debug\CustomContorls.dll</HintPath>
+      <HintPath>..\..\..\CustomContorls\CustomContorls\bin\Debug\CustomContorls.dll</HintPath>
     </Reference>
-    <Reference Include="Guna.UI, Version=1.9.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\UI Librarys\Guna.UI.dll</HintPath>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\UI Librarys\Guna.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\UI Librarys\Guna.UI2.dll</HintPath>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\UI Librarys\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -93,11 +94,47 @@
     <Compile Include="Bookings\frmBookingDetails.designer.cs">
       <DependentUpon>frmBookingDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Maintenance\Controls\ctrlMaintenanceCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Controls\ctrlMaintenanceCard.designer.cs">
+      <DependentUpon>ctrlMaintenanceCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\Controls\ctrlMaintenanceCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Maintenance\Controls\ctrlMaintenanceCardWithFilter.designer.cs">
+      <DependentUpon>ctrlMaintenanceCardWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\frmAddUpdateMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\frmAddUpdateMaintenance.designer.cs">
+      <DependentUpon>frmAddUpdateMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\frmFindMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\frmFindMaintenance.designer.cs">
+      <DependentUpon>frmFindMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\frmMaintenanceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\frmMaintenanceList.Designer.cs">
+      <DependentUpon>frmMaintenanceList.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormListBase\frmListBase.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormListBase\frmListBase.Designer.cs">
       <DependentUpon>frmListBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\frmMaintenanceDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintenance\frmMaintenanceDetails.designer.cs">
+      <DependentUpon>frmMaintenanceDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -357,8 +394,29 @@
     <EmbeddedResource Include="Bookings\frmBookingDetails.resx">
       <DependentUpon>frmBookingDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Controls\ctrlMaintenanceCard.resx">
+      <DependentUpon>ctrlMaintenanceCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\Controls\ctrlMaintenanceCardWithFilter.resx">
+      <DependentUpon>ctrlMaintenanceCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\frmAddUpdateMaintenance.resx">
+      <DependentUpon>frmAddUpdateMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\frmFindMaintenance.aa-DJ.resx">
+      <DependentUpon>frmFindMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\frmFindMaintenance.resx">
+      <DependentUpon>frmFindMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\frmMaintenanceList.resx">
+      <DependentUpon>frmMaintenanceList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormListBase\frmListBase.resx">
       <DependentUpon>frmListBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintenance\frmMaintenanceDetails.resx">
+      <DependentUpon>frmMaintenanceDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Returns\Controls\ctrlReturnCard.resx">
       <DependentUpon>ctrlReturnCard.cs</DependentUpon>
@@ -497,6 +555,7 @@
     <EmbeddedResource Include="Vehicles\frmVehiclesList.resx">
       <DependentUpon>frmVehiclesList.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -560,9 +619,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\model.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\available-car32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Date.png" />
@@ -638,9 +694,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sticky-note.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\car-fuel-type32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DashboardWhite.png" />
@@ -767,6 +820,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\VehicleDtails24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MaintenanceBlue32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MaintenanceWhite32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpdateMaintenance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MaintenanceDetails.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewMaintenance24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddNewMaintenance32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unavailable-car32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-fuel-type321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-fuel-type32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\available-car32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\model1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mileage1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unavailable-car321.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

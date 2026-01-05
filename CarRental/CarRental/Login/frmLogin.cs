@@ -99,6 +99,11 @@ namespace CarRental.Login
             }
         }
 
+        private void txtUserName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = e.KeyChar == ' ';
+        }
+
         
     }
 }

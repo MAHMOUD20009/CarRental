@@ -30,27 +30,27 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlCustomerCard));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbPlateNumber = new System.Windows.Forms.PictureBox();
             this.lblEditCustomerInfo = new System.Windows.Forms.LinkLabel();
             this.lblShowDriverLicenseNumber = new System.Windows.Forms.Label();
             this.lblDriverLicenseNumber = new System.Windows.Forms.Label();
-            this.pbPersonID = new System.Windows.Forms.PictureBox();
+            this.pbCustomerID = new System.Windows.Forms.PictureBox();
             this.lblShowCustomerD = new System.Windows.Forms.Label();
             this.lblCustomerID = new System.Windows.Forms.Label();
             this.ctrlPersonCard1 = new CarRental.Controls.ctrlPersonCard();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPersonID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlateNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCustomerID)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.pbPlateNumber);
             this.groupBox1.Controls.Add(this.lblEditCustomerInfo);
             this.groupBox1.Controls.Add(this.lblShowDriverLicenseNumber);
             this.groupBox1.Controls.Add(this.lblDriverLicenseNumber);
-            this.groupBox1.Controls.Add(this.pbPersonID);
+            this.groupBox1.Controls.Add(this.pbCustomerID);
             this.groupBox1.Controls.Add(this.lblShowCustomerD);
             this.groupBox1.Controls.Add(this.lblCustomerID);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -62,15 +62,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Info";
             // 
-            // pictureBox1
+            // pbPlateNumber
             // 
-            this.pictureBox1.Image = global::CarRental.Properties.Resources.VehiclesBlue_100;
-            this.pictureBox1.Location = new System.Drawing.Point(277, 116);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 48;
-            this.pictureBox1.TabStop = false;
+            this.pbPlateNumber.Image = global::CarRental.Properties.Resources.VehiclesBlue_100;
+            this.pbPlateNumber.Location = new System.Drawing.Point(277, 116);
+            this.pbPlateNumber.Name = "pbPlateNumber";
+            this.pbPlateNumber.Size = new System.Drawing.Size(33, 34);
+            this.pbPlateNumber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPlateNumber.TabIndex = 48;
+            this.pbPlateNumber.TabStop = false;
             // 
             // lblEditCustomerInfo
             // 
@@ -106,15 +106,15 @@
             this.lblDriverLicenseNumber.TabIndex = 41;
             this.lblDriverLicenseNumber.Text = "Driver License Number";
             // 
-            // pbPersonID
+            // pbCustomerID
             // 
-            this.pbPersonID.Image = ((System.Drawing.Image)(resources.GetObject("pbPersonID.Image")));
-            this.pbPersonID.Location = new System.Drawing.Point(204, 63);
-            this.pbPersonID.Name = "pbPersonID";
-            this.pbPersonID.Size = new System.Drawing.Size(33, 34);
-            this.pbPersonID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbPersonID.TabIndex = 37;
-            this.pbPersonID.TabStop = false;
+            this.pbCustomerID.Image = ((System.Drawing.Image)(resources.GetObject("pbCustomerID.Image")));
+            this.pbCustomerID.Location = new System.Drawing.Point(204, 63);
+            this.pbCustomerID.Name = "pbCustomerID";
+            this.pbCustomerID.Size = new System.Drawing.Size(33, 34);
+            this.pbCustomerID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCustomerID.TabIndex = 37;
+            this.pbCustomerID.TabStop = false;
             // 
             // lblShowCustomerD
             // 
@@ -156,8 +156,8 @@
             this.Size = new System.Drawing.Size(756, 360);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPersonID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPlateNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCustomerID)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -168,10 +168,10 @@
         private System.Windows.Forms.LinkLabel lblEditCustomerInfo;
         private System.Windows.Forms.Label lblShowDriverLicenseNumber;
         private System.Windows.Forms.Label lblDriverLicenseNumber;
-        private System.Windows.Forms.PictureBox pbPersonID;
+        private System.Windows.Forms.PictureBox pbCustomerID;
         private System.Windows.Forms.Label lblShowCustomerD;
         private System.Windows.Forms.Label lblCustomerID;
         private ctrlPersonCard ctrlPersonCard1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbPlateNumber;
     }
 }

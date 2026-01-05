@@ -42,6 +42,13 @@
             this.tpBookingInfo = new System.Windows.Forms.TabPage();
             this.ctrlBookingCardWithFilter1 = new CarRental.Controls.ctrlBookingCardWithFilter();
             this.tpReturnInfo = new System.Windows.Forms.TabPage();
+            this.lblShowTotalRefundedAmount = new System.Windows.Forms.Label();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.lblTotalRefundedAmount = new System.Windows.Forms.Label();
+            this.lblShowTotalRemaining = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.lblTotalRemaining = new System.Windows.Forms.Label();
+            this.nudMileage = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.lblShowActualTotalDueAmount = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.lblActualTotalDueAmount = new System.Windows.Forms.Label();
@@ -54,7 +61,6 @@
             this.lblShowConsumedMileage = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.lblConsumedMileage = new System.Windows.Forms.Label();
-            this.txtMileage = new CustomContorls.CustomTextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblShowActualRentalDays = new System.Windows.Forms.Label();
@@ -70,6 +76,9 @@
             this.tcReturn.SuspendLayout();
             this.tpBookingInfo.SuspendLayout();
             this.tpReturnInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMileage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -177,13 +186,20 @@
             this.ctrlBookingCardWithFilter1.FilterEnabled = true;
             this.ctrlBookingCardWithFilter1.Location = new System.Drawing.Point(3, 3);
             this.ctrlBookingCardWithFilter1.Name = "ctrlBookingCardWithFilter1";
-            this.ctrlBookingCardWithFilter1.Size = new System.Drawing.Size(987, 537);
+            this.ctrlBookingCardWithFilter1.Size = new System.Drawing.Size(983, 537);
             this.ctrlBookingCardWithFilter1.TabIndex = 0;
             this.ctrlBookingCardWithFilter1.OnBookingSelected += new System.Action<int>(this.ctrlBookingCardWithFilter1_OnBookingSelected);
             // 
             // tpReturnInfo
             // 
             this.tpReturnInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.tpReturnInfo.Controls.Add(this.lblShowTotalRefundedAmount);
+            this.tpReturnInfo.Controls.Add(this.pictureBox10);
+            this.tpReturnInfo.Controls.Add(this.lblTotalRefundedAmount);
+            this.tpReturnInfo.Controls.Add(this.lblShowTotalRemaining);
+            this.tpReturnInfo.Controls.Add(this.pictureBox9);
+            this.tpReturnInfo.Controls.Add(this.lblTotalRemaining);
+            this.tpReturnInfo.Controls.Add(this.nudMileage);
             this.tpReturnInfo.Controls.Add(this.lblShowActualTotalDueAmount);
             this.tpReturnInfo.Controls.Add(this.pictureBox8);
             this.tpReturnInfo.Controls.Add(this.lblActualTotalDueAmount);
@@ -196,7 +212,6 @@
             this.tpReturnInfo.Controls.Add(this.lblShowConsumedMileage);
             this.tpReturnInfo.Controls.Add(this.pictureBox5);
             this.tpReturnInfo.Controls.Add(this.lblConsumedMileage);
-            this.tpReturnInfo.Controls.Add(this.txtMileage);
             this.tpReturnInfo.Controls.Add(this.pictureBox3);
             this.tpReturnInfo.Controls.Add(this.label2);
             this.tpReturnInfo.Controls.Add(this.lblShowActualRentalDays);
@@ -215,11 +230,102 @@
             this.tpReturnInfo.TabIndex = 1;
             this.tpReturnInfo.Text = "Return Info";
             // 
+            // lblShowTotalRefundedAmount
+            // 
+            this.lblShowTotalRefundedAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowTotalRefundedAmount.ForeColor = System.Drawing.Color.White;
+            this.lblShowTotalRefundedAmount.Location = new System.Drawing.Point(805, 471);
+            this.lblShowTotalRefundedAmount.Name = "lblShowTotalRefundedAmount";
+            this.lblShowTotalRefundedAmount.Size = new System.Drawing.Size(178, 34);
+            this.lblShowTotalRefundedAmount.TabIndex = 49;
+            this.lblShowTotalRefundedAmount.Text = "?????";
+            this.lblShowTotalRefundedAmount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::CarRental.Properties.Resources.dollar;
+            this.pictureBox10.Location = new System.Drawing.Point(758, 471);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(41, 36);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 48;
+            this.pictureBox10.TabStop = false;
+            // 
+            // lblTotalRefundedAmount
+            // 
+            this.lblTotalRefundedAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalRefundedAmount.ForeColor = System.Drawing.Color.White;
+            this.lblTotalRefundedAmount.Location = new System.Drawing.Point(514, 471);
+            this.lblTotalRefundedAmount.Name = "lblTotalRefundedAmount";
+            this.lblTotalRefundedAmount.Size = new System.Drawing.Size(242, 36);
+            this.lblTotalRefundedAmount.TabIndex = 47;
+            this.lblTotalRefundedAmount.Text = "Total Refunded Amount";
+            this.lblTotalRefundedAmount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblShowTotalRemaining
+            // 
+            this.lblShowTotalRemaining.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowTotalRemaining.ForeColor = System.Drawing.Color.White;
+            this.lblShowTotalRemaining.Location = new System.Drawing.Point(315, 471);
+            this.lblShowTotalRemaining.Name = "lblShowTotalRemaining";
+            this.lblShowTotalRemaining.Size = new System.Drawing.Size(193, 36);
+            this.lblShowTotalRemaining.TabIndex = 46;
+            this.lblShowTotalRemaining.Text = "?????";
+            this.lblShowTotalRemaining.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::CarRental.Properties.Resources.dollar;
+            this.pictureBox9.Location = new System.Drawing.Point(267, 471);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(41, 36);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 45;
+            this.pictureBox9.TabStop = false;
+            // 
+            // lblTotalRemaining
+            // 
+            this.lblTotalRemaining.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalRemaining.ForeColor = System.Drawing.Color.White;
+            this.lblTotalRemaining.Location = new System.Drawing.Point(6, 469);
+            this.lblTotalRemaining.Name = "lblTotalRemaining";
+            this.lblTotalRemaining.Size = new System.Drawing.Size(255, 36);
+            this.lblTotalRemaining.TabIndex = 44;
+            this.lblTotalRemaining.Text = "Total Remaining";
+            this.lblTotalRemaining.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // nudMileage
+            // 
+            this.nudMileage.BackColor = System.Drawing.Color.Transparent;
+            this.nudMileage.BorderRadius = 6;
+            this.nudMileage.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.nudMileage.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.nudMileage.Location = new System.Drawing.Point(320, 184);
+            this.nudMileage.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudMileage.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudMileage.Name = "nudMileage";
+            this.nudMileage.Size = new System.Drawing.Size(163, 36);
+            this.nudMileage.TabIndex = 43;
+            this.nudMileage.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudMileage.ValueChanged += new System.EventHandler(this.nudMileage_ValueChanged);
+            // 
             // lblShowActualTotalDueAmount
             // 
             this.lblShowActualTotalDueAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowActualTotalDueAmount.ForeColor = System.Drawing.Color.White;
-            this.lblShowActualTotalDueAmount.Location = new System.Drawing.Point(315, 413);
+            this.lblShowActualTotalDueAmount.Location = new System.Drawing.Point(315, 408);
             this.lblShowActualTotalDueAmount.Name = "lblShowActualTotalDueAmount";
             this.lblShowActualTotalDueAmount.Size = new System.Drawing.Size(193, 36);
             this.lblShowActualTotalDueAmount.TabIndex = 42;
@@ -229,7 +335,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::CarRental.Properties.Resources.dollar;
-            this.pictureBox8.Location = new System.Drawing.Point(267, 413);
+            this.pictureBox8.Location = new System.Drawing.Point(267, 408);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(41, 36);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -240,7 +346,7 @@
             // 
             this.lblActualTotalDueAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblActualTotalDueAmount.ForeColor = System.Drawing.Color.White;
-            this.lblActualTotalDueAmount.Location = new System.Drawing.Point(6, 411);
+            this.lblActualTotalDueAmount.Location = new System.Drawing.Point(6, 408);
             this.lblActualTotalDueAmount.Name = "lblActualTotalDueAmount";
             this.lblActualTotalDueAmount.Size = new System.Drawing.Size(255, 36);
             this.lblActualTotalDueAmount.TabIndex = 40;
@@ -263,7 +369,7 @@
             this.txtAdditionalCharges.ForeColor = System.Drawing.Color.Black;
             this.txtAdditionalCharges.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAdditionalCharges.InputType = CustomContorls.CustomTextBox.enInputType.NumberInput;
-            this.txtAdditionalCharges.Location = new System.Drawing.Point(320, 354);
+            this.txtAdditionalCharges.Location = new System.Drawing.Point(320, 352);
             this.txtAdditionalCharges.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAdditionalCharges.MaxLength = 10;
             this.txtAdditionalCharges.Name = "txtAdditionalCharges";
@@ -278,7 +384,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::CarRental.Properties.Resources.dollar;
-            this.pictureBox7.Location = new System.Drawing.Point(267, 354);
+            this.pictureBox7.Location = new System.Drawing.Point(267, 352);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(41, 36);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -289,7 +395,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(6, 354);
+            this.label3.Location = new System.Drawing.Point(6, 352);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(247, 36);
             this.label3.TabIndex = 37;
@@ -312,7 +418,7 @@
             this.txtFinalCheckNotes.ForeColor = System.Drawing.Color.Black;
             this.txtFinalCheckNotes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFinalCheckNotes.InputType = CustomContorls.CustomTextBox.enInputType.TextOrNumberInput;
-            this.txtFinalCheckNotes.Location = new System.Drawing.Point(320, 297);
+            this.txtFinalCheckNotes.Location = new System.Drawing.Point(320, 296);
             this.txtFinalCheckNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFinalCheckNotes.MaxLength = 500;
             this.txtFinalCheckNotes.Name = "txtFinalCheckNotes";
@@ -326,7 +432,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::CarRental.Properties.Resources.sticky_note;
-            this.pictureBox6.Location = new System.Drawing.Point(267, 297);
+            this.pictureBox6.Location = new System.Drawing.Point(267, 296);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(41, 36);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -337,7 +443,7 @@
             // 
             this.lblFinalCheckNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFinalCheckNotes.ForeColor = System.Drawing.Color.White;
-            this.lblFinalCheckNotes.Location = new System.Drawing.Point(6, 297);
+            this.lblFinalCheckNotes.Location = new System.Drawing.Point(6, 296);
             this.lblFinalCheckNotes.Name = "lblFinalCheckNotes";
             this.lblFinalCheckNotes.Size = new System.Drawing.Size(247, 36);
             this.lblFinalCheckNotes.TabIndex = 34;
@@ -376,34 +482,6 @@
             this.lblConsumedMileage.Text = "Consumed Mileage";
             this.lblConsumedMileage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtMileage
-            // 
-            this.txtMileage.AllowEmpty = false;
-            this.txtMileage.BorderRadius = 10;
-            this.txtMileage.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMileage.CustomValidationMessage = "Invalid Mileage Number";
-            this.txtMileage.DefaultText = "";
-            this.txtMileage.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMileage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMileage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMileage.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMileage.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMileage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMileage.ForeColor = System.Drawing.Color.Black;
-            this.txtMileage.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMileage.InputType = CustomContorls.CustomTextBox.enInputType.NumberInput;
-            this.txtMileage.Location = new System.Drawing.Point(320, 183);
-            this.txtMileage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtMileage.MaxLength = 10;
-            this.txtMileage.Name = "txtMileage";
-            this.txtMileage.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtMileage.PlaceholderText = "Mileage";
-            this.txtMileage.SelectedText = "";
-            this.txtMileage.Size = new System.Drawing.Size(195, 36);
-            this.txtMileage.TabIndex = 0;
-            this.txtMileage.ValidateInputType = true;
-            this.txtMileage.TextChanged += new System.EventHandler(this.txtMileage_TextChanged);
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::CarRental.Properties.Resources.mileage;
@@ -418,7 +496,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(6, 183);
+            this.label2.Location = new System.Drawing.Point(6, 184);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(247, 36);
             this.label2.TabIndex = 28;
@@ -450,7 +528,7 @@
             // 
             this.lblActualRentalDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblActualRentalDays.ForeColor = System.Drawing.Color.White;
-            this.lblActualRentalDays.Location = new System.Drawing.Point(6, 126);
+            this.lblActualRentalDays.Location = new System.Drawing.Point(6, 128);
             this.lblActualRentalDays.Name = "lblActualRentalDays";
             this.lblActualRentalDays.Size = new System.Drawing.Size(247, 36);
             this.lblActualRentalDays.TabIndex = 25;
@@ -479,7 +557,7 @@
             this.dtpActualReturnDate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpActualReturnDate.ForeColor = System.Drawing.Color.Black;
             this.dtpActualReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpActualReturnDate.Location = new System.Drawing.Point(320, 69);
+            this.dtpActualReturnDate.Location = new System.Drawing.Point(320, 72);
             this.dtpActualReturnDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpActualReturnDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpActualReturnDate.Name = "dtpActualReturnDate";
@@ -497,7 +575,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CarRental.Properties.Resources.Date1;
-            this.pictureBox1.Location = new System.Drawing.Point(267, 69);
+            this.pictureBox1.Location = new System.Drawing.Point(267, 72);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(41, 36);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -529,7 +607,7 @@
             // 
             this.lblActualReturnDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblActualReturnDate.ForeColor = System.Drawing.Color.White;
-            this.lblActualReturnDate.Location = new System.Drawing.Point(6, 69);
+            this.lblActualReturnDate.Location = new System.Drawing.Point(6, 72);
             this.lblActualReturnDate.Name = "lblActualReturnDate";
             this.lblActualReturnDate.Size = new System.Drawing.Size(247, 36);
             this.lblActualReturnDate.TabIndex = 0;
@@ -542,7 +620,7 @@
             this.btnSave.AnimationHoverSpeed = 0.07F;
             this.btnSave.AnimationSpeed = 0.03F;
             this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(200)))));
             this.btnSave.BorderColor = System.Drawing.Color.Black;
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSave.FocusedColor = System.Drawing.Color.Empty;
@@ -552,7 +630,7 @@
             this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSave.Location = new System.Drawing.Point(853, 651);
             this.btnSave.Name = "btnSave";
-            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(185)))));
             this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
             this.btnSave.OnHoverImage = null;
@@ -584,6 +662,9 @@
             this.tcReturn.ResumeLayout(false);
             this.tpBookingInfo.ResumeLayout(false);
             this.tpReturnInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMileage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -612,7 +693,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblActualRentalDays;
         private System.Windows.Forms.Label lblShowReturnID;
-        private CustomContorls.CustomTextBox txtMileage;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblShowConsumedMileage;
@@ -627,6 +707,13 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label lblActualTotalDueAmount;
         private System.Windows.Forms.Label lblShowActualTotalDueAmount;
+        private Guna.UI2.WinForms.Guna2NumericUpDown nudMileage;
+        private System.Windows.Forms.Label lblShowTotalRefundedAmount;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label lblTotalRefundedAmount;
+        private System.Windows.Forms.Label lblShowTotalRemaining;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Label lblTotalRemaining;
 
 
     }

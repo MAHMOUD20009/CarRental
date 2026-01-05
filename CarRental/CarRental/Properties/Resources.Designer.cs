@@ -113,6 +113,26 @@ namespace CarRental.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap AddNewMaintenance24 {
+            get {
+                object obj = ResourceManager.GetObject("AddNewMaintenance24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap AddNewMaintenance32 {
+            get {
+                object obj = ResourceManager.GetObject("AddNewMaintenance32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap AddNewPerson24 {
             get {
                 object obj = ResourceManager.GetObject("AddNewPerson24", resourceCulture);
@@ -205,7 +225,7 @@ namespace CarRental.Properties {
         /// </summary>
         public static System.Drawing.Bitmap available_car32 {
             get {
-                object obj = ResourceManager.GetObject("available-car32", resourceCulture);
+                object obj = ResourceManager.GetObject("available_car32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -523,6 +543,36 @@ namespace CarRental.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap MaintenanceBlue32 {
+            get {
+                object obj = ResourceManager.GetObject("MaintenanceBlue32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap MaintenanceDetails {
+            get {
+                object obj = ResourceManager.GetObject("MaintenanceDetails", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap MaintenanceWhite32 {
+            get {
+                object obj = ResourceManager.GetObject("MaintenanceWhite32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap mileage {
             get {
                 object obj = ResourceManager.GetObject("mileage", resourceCulture);
@@ -533,9 +583,29 @@ namespace CarRental.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap mileage1 {
+            get {
+                object obj = ResourceManager.GetObject("mileage1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap model {
             get {
                 object obj = ResourceManager.GetObject("model", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap model1 {
+            get {
+                object obj = ResourceManager.GetObject("model1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -713,9 +783,29 @@ namespace CarRental.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap unavailable_car32 {
+            get {
+                object obj = ResourceManager.GetObject("unavailable-car32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap UpdateBooking {
             get {
                 object obj = ResourceManager.GetObject("UpdateBooking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap UpdateMaintenance {
+            get {
+                object obj = ResourceManager.GetObject("UpdateMaintenance", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -54,6 +54,13 @@ namespace CarRental.Vehicles
             InitializeComponent();
         }
 
+        public frmFindVehicle(int VehicleID)
+        {
+            InitializeComponent();
+            _VehicleID = VehicleID;
+            ctrlVehicleCardWithFilter1.LoadVehicleInfo(VehicleID);
+        }
+
         private void ctrlVehicleCardWithFilter1_OnVehicleSelected(int VehicleID)
         {
             _VehicleID = VehicleID;

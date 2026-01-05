@@ -32,18 +32,20 @@
             this.cbFilter = new Guna.UI.WinForms.GunaComboBox();
             this.txtSearchValue = new CustomContorls.CustomTextBox();
             this.ctrlReturnCard1 = new CarRental.Controls.ctrlReturnCard();
+            this.btnAddNewVehicle = new Guna.UI.WinForms.GunaButton();
             this.gbFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbFilter
             // 
+            this.gbFilter.Controls.Add(this.btnAddNewVehicle);
             this.gbFilter.Controls.Add(this.cbFilter);
             this.gbFilter.Controls.Add(this.txtSearchValue);
             this.gbFilter.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbFilter.ForeColor = System.Drawing.Color.White;
             this.gbFilter.Location = new System.Drawing.Point(4, 4);
             this.gbFilter.Name = "gbFilter";
-            this.gbFilter.Size = new System.Drawing.Size(362, 94);
+            this.gbFilter.Size = new System.Drawing.Size(499, 94);
             this.gbFilter.TabIndex = 1;
             this.gbFilter.TabStop = false;
             this.gbFilter.Text = "Filter";
@@ -102,6 +104,33 @@
             this.ctrlReturnCard1.Size = new System.Drawing.Size(935, 217);
             this.ctrlReturnCard1.TabIndex = 2;
             // 
+            // btnAddNewVehicle
+            // 
+            this.btnAddNewVehicle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNewVehicle.AnimationHoverSpeed = 0.07F;
+            this.btnAddNewVehicle.AnimationSpeed = 0.03F;
+            this.btnAddNewVehicle.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddNewVehicle.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(185)))));
+            this.btnAddNewVehicle.BorderColor = System.Drawing.Color.Black;
+            this.btnAddNewVehicle.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddNewVehicle.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAddNewVehicle.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewVehicle.ForeColor = System.Drawing.Color.White;
+            this.btnAddNewVehicle.Image = null;
+            this.btnAddNewVehicle.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnAddNewVehicle.Location = new System.Drawing.Point(362, 37);
+            this.btnAddNewVehicle.Name = "btnAddNewVehicle";
+            this.btnAddNewVehicle.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(170)))));
+            this.btnAddNewVehicle.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAddNewVehicle.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAddNewVehicle.OnHoverImage = null;
+            this.btnAddNewVehicle.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAddNewVehicle.Radius = 10;
+            this.btnAddNewVehicle.Size = new System.Drawing.Size(131, 42);
+            this.btnAddNewVehicle.TabIndex = 8;
+            this.btnAddNewVehicle.Text = "Add New Return";
+            this.btnAddNewVehicle.Click += new System.EventHandler(this.btnAddNewVehicle_Click);
+            // 
             // ctrlReturnCardWithFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,5 +151,6 @@
         private CustomContorls.CustomTextBox txtSearchValue;
         private Guna.UI.WinForms.GunaComboBox cbFilter;
         private ctrlReturnCard ctrlReturnCard1;
+        private Guna.UI.WinForms.GunaButton btnAddNewVehicle;
     }
 }

@@ -98,14 +98,20 @@ namespace CarRental.Returns
             dtpActualReturnDate.MinDate = DateTime.Today.AddMonths(-10);
             dtpActualReturnDate.MaxDate = DateTime.Today;
 
+            nudMileage.Minimum = _Return.Mileage.Value;
+            nudMileage.Value = _Return.Mileage.Value;
+            nudMileage.Maximum = _Return.Mileage.Value + 1000;
+
+
             lblShowReturnID.Text = "[" + _Return.ReturnID.Value + "]";
             dtpActualReturnDate.Value = _Return.ActualReturnDate.Value;
             lblShowActualRentalDays.Text = _Return.ActualRentalDays.Value.ToString();
-            txtMileage.Text = _Return.Mileage.Value.ToString();
             lblShowConsumedMileage.Text = _Return.ConsumedMileage.Value.ToString();
             txtFinalCheckNotes.Text = _Return.FinalCheckNotes;
             txtAdditionalCharges.Text = _Return.AdditionalCharges.Value.ToString();
             lblShowActualTotalDueAmount.Text = _Return.ActualTotalDueAmount.Value.ToString();
+            lblShowTotalRemaining.Text = _Booking.TransactionInfo.TotalRemaining.Value.ToString();
+            lblShowTotalRefundedAmount.Text = _Booking.TransactionInfo.TotalRefundedAmount.Value.ToString();
         }
 
         private void frmAddUpdateReturn_Load(object sender, EventArgs e)
@@ -130,6 +136,10 @@ namespace CarRental.Returns
                 return;
             }
 
+            nudMileage.Minimum = _Booking.VehicleInfo.Mileage.Value;
+            nudMileage.Value = _Booking.VehicleInfo.Mileage.Value;
+            nudMileage.Maximum = _Booking.VehicleInfo.Mileage.Value + 20000;
+
             dtpActualReturnDate_ValueChanged(null, null);
             UpdateSettlementAmounts();
         }
@@ -150,15 +160,15 @@ namespace CarRental.Returns
             lblShowActualRentalDays.Text = GetActualRentalDays().ToString();
         }
 
-        private void txtMileage_TextChanged(object sender, EventArgs e)
+        private void nudMileage_ValueChanged(object sender, EventArgs e)
         {
-            if (_Booking == null || !txtMileage.IsValid)
+            if (_Booking == null)
             {
                 lblShowConsumedMileage.Text = "?????";
                 return;
             }
 
-            lblShowConsumedMileage.Text = (int.Parse(txtMileage.Text) - _Booking.VehicleInfo.Mileage.Value).ToString();
+            lblShowConsumedMileage.Text = (nudMileage.Value - _Booking.VehicleInfo.Mileage.Value).ToString();
         }
 
         private void txtAdditionalCharges_TextChanged(object sender, EventArgs e)
@@ -170,41 +180,15 @@ namespace CarRental.Returns
         {
             if (_Booking == null)
             {
-                lblShowActualTotalDueAmount.Text = "0";
+                lblShowActualTotalDueAmount.Text = "?????";
                 return;
             }
 
             float AdditionalCharges = (!string.IsNullOrEmpty(txtAdditionalCharges.Text) && txtAdditionalCharges.IsValid) ? float.Parse(txtAdditionalCharges.Text) : 0;
-            byte ActualRentalDays = GetActualRentalDays();
-            float TotalDueAmount = (ActualRentalDays * _Booking.RentalPricePerDay.Value) + AdditionalCharges;
+            float TotalDueAmount = (GetActualRentalDays() * _Booking.RentalPricePerDay.Value) + AdditionalCharges;
 
-            float TotalRemaining = 0;
-            float TotalRefundedAmount = 0;
-
-            if (ActualRentalDays > _Booking.InitialRentalDays)
-            {
-                TotalRemaining = (TotalDueAmount - _Booking.InitialTotalDueAmount.Value);
-            }
-            else if (ActualRentalDays < _Booking.InitialRentalDays)
-            {
-                TotalRefundedAmount = (_Booking.InitialTotalDueAmount.Value - TotalDueAmount);
-
-                if (TotalRefundedAmount < 0)
-                {
-                    TotalRemaining = TotalRefundedAmount;
-                    TotalRefundedAmount = 0;
-                }
-            }
-            else
-            {
-                if ((_Booking.InitialTotalDueAmount.Value - TotalDueAmount) < 0)
-                    TotalRemaining = (_Booking.InitialTotalDueAmount.Value - TotalDueAmount);
-            }
 
             lblShowActualTotalDueAmount.Text = TotalDueAmount.ToString();
-            _Booking.TransactionInfo.ActualTotalDueAmount = TotalDueAmount;
-            _Booking.TransactionInfo.TotalRemaining = TotalRemaining;
-            _Booking.TransactionInfo.TotalRefundedAmount = TotalRefundedAmount;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -228,28 +212,23 @@ namespace CarRental.Returns
 
             _Return.ActualReturnDate = dtpActualReturnDate.Value;
             _Return.ActualRentalDays = byte.Parse(lblShowActualRentalDays.Text);
-            _Return.Mileage = int.Parse(txtMileage.Text);
+            _Return.Mileage = (int)nudMileage.Value;
             _Return.ConsumedMileage = int.Parse(lblShowConsumedMileage.Text);
             _Return.FinalCheckNotes = txtFinalCheckNotes.Text.Trim();
             _Return.AdditionalCharges = float.Parse(txtAdditionalCharges.Text);
             _Return.ActualTotalDueAmount = float.Parse(lblShowActualTotalDueAmount.Text);
 
-            _Booking.VehicleInfo.IsAvailableForRent = true;
-            _Booking.VehicleInfo.Mileage = int.Parse(txtMileage.Text);
-
-            if (_Return.Save(_Booking.BookingID.Value) && _Booking.VehicleInfo.Save())
+            if (_Return.Save(_Booking.BookingID.Value))
             {
-                _Booking.TransactionInfo.ReturnID = _Return.ReturnID;
-                _Booking.TransactionInfo.Save();
-
                 MessageBox.Show("Data has been saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 lblShowReturnID.Text = "[" + _Return.ReturnID + "]";
 
-                _Booking.IsVehicledReturned = true;
                 IsDataChanged = true;
 
                 _SetFormTitleByMode(enMode.Update);
+                _ReturnID = _Return.ReturnID;
+                LoadData();
 
                 if (DataBack != null)
                     DataBack.Invoke(_Return.ReturnID.Value);

@@ -54,6 +54,13 @@ namespace CarRental.Returns
             InitializeComponent();
         }
 
+        public frmFindReturn(int ReturnID)
+        {
+            InitializeComponent();
+            _ReturnID = ReturnID;
+            ctrlReturnCardWithFilter1.LoadReturnInfo(ReturnID);
+        }
+
         private void ctrlReturnCardWithFilter1_OnReturnSelected(int ReturnID)
         {
             _ReturnID = ReturnID;

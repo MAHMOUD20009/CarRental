@@ -9,7 +9,7 @@ namespace CarRental_DataAccessLayer
     {
         public static bool FindUserByUserID(int UserID, ref int PersonID, ref string UserName, ref string Password, ref int Permissions, ref bool IsActive)
         {
-            
+
             bool IsFound = false;
             try
             {
@@ -71,6 +71,7 @@ namespace CarRental_DataAccessLayer
                                 IsFound = true;
                             }
                         }
+
                     }
                 }
             }
@@ -223,7 +224,7 @@ namespace CarRental_DataAccessLayer
             {
                 using (SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
-                    Connection.Open();
+                    await Connection.OpenAsync();
                     using (SqlCommand Command = new SqlCommand("SP_GetPagedUsers", Connection))
                     {
                         Command.CommandType = CommandType.StoredProcedure;
@@ -231,10 +232,7 @@ namespace CarRental_DataAccessLayer
                         Command.Parameters.AddWithValue("@RowsPerPage", RowsPerPage);
                         using (SqlDataReader Reader = await Command.ExecuteReaderAsync())
                         {
-                            if (Reader.HasRows)
-                            {
-                                DT.Load(Reader);
-                            }
+                            DT.Load(Reader);
                         }
                     }
                 }

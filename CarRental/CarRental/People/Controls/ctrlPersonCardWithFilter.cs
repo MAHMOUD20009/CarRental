@@ -31,12 +31,7 @@ namespace CarRental.Controls
 
         private void FindNow()
         {
-            int Value;
-
-            if (!int.TryParse(txtSearchValue.Text, out Value))
-                return;
-
-            ctrlPersonCard1.LoadPersonInfo(Value);
+            ctrlPersonCard1.LoadPersonInfo(int.Parse(txtSearchValue.Text));
 
             PersonSelected(ctrlPersonCard1.PersonID.GetValueOrDefault());
         }
@@ -66,8 +61,14 @@ namespace CarRental.Controls
 
         private void txtSearchValue_TextChanged(object sender, EventArgs e)
         {
-            if (!txtSearchValue.IsValid || string.IsNullOrEmpty(txtSearchValue.Text)) ctrlPersonCard1.ResetControls();
-            else FindNow();  
+            if (string.IsNullOrWhiteSpace(txtSearchValue.Text))
+            {
+                ctrlPersonCard1.ResetControls();
+                PersonSelected(-1);
+                return;
+            }
+
+            if (txtSearchValue.IsValid) FindNow();
         }
 
         public void ResetControls()

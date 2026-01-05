@@ -95,7 +95,7 @@ namespace CarRental.Bookings
             _Vehicle = _Booking.VehicleInfo;
 
             ctrlCustomerCardWithFilter1.FilterEnabled = false;
-            ctrlCustomerCardWithFilter1.LoadCustomerInfoByCustomerID(_Booking.CustomerID.Value);
+            ctrlCustomerCardWithFilter1.LoadCustomerInfo(_Booking.CustomerID.Value);
 
             ctrlVehicleCardWithFilter1.FilterEnabled = false;
             ctrlVehicleCardWithFilter1.LoadVehicleInfo(_Booking.VehicleID.Value);

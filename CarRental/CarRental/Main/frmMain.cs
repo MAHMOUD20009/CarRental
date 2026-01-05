@@ -26,6 +26,7 @@ namespace CarRental.Main
         private Transactions.frmTransactionsList frmTransactionsList;
         private Returns.frmReturnsList frmReturnsList;
         private Users.frmUsersList frmUsersList;
+        private Maintenance.frmMaintenanceList frmMaintenanceList;
 
         public frmMain()
         {
@@ -38,6 +39,7 @@ namespace CarRental.Main
             frmTransactionsList = new Transactions.frmTransactionsList();
             frmReturnsList = new Returns.frmReturnsList();
             frmUsersList = new Users.frmUsersList();
+            frmMaintenanceList = new Maintenance.frmMaintenanceList();
         }
 
         private void lblFormTitle_MouseDown(object sender, MouseEventArgs e)
@@ -53,9 +55,6 @@ namespace CarRental.Main
         {
             this.Close();
         }
-
-        private enum enCurrentForm { None = 0, Dashboard = 1, People = 2, Customers = 3, Vehicles = 4, Booking = 5, Transactions = 6, Returns = 7, Users = 8 }
-        private enCurrentForm CurrentForm = enCurrentForm.None;
 
         private void LoadSubForm(Form frm)
         {
@@ -81,125 +80,60 @@ namespace CarRental.Main
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            if (CurrentForm == enCurrentForm.Dashboard)
-                return;
+            NavigateToSection(frmDashboard, (clsUser.enPermissions) GlobalClasses.clsGlobal.CurrentUser.Permissions, 56);
+        }
 
-            pbImageSidebar.Location = new Point(136, 88);
-            LoadSubForm(frmDashboard);
-            CurrentForm = enCurrentForm.Dashboard;
+        private void NavigateToSection(Form frm, clsUser.enPermissions Permission, int y)
+        {
+            pbImageSidebar.Location = new Point(136, y);
+
+            if (!clsGlobal.CurrentUser.CheckUserPermission(Permission))
+            {
+                MessageBox.Show("You do not have permission to access this section.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                btnDashboard.PerformClick();
+                return;
+            }
+            LoadSubForm(frm);
         }
 
         private void btnPeople_Click(object sender, EventArgs e)
         {
-            if (!clsGlobal.CurrentUser.CheckUserPermission(clsUser.enPermissions.MangePeople))
-            {
-                MessageBox.Show("You do not have permission to access this section.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                return;
-            }
-
-            if (CurrentForm == enCurrentForm.People)
-                return;
-
-            pbImageSidebar.Location = new Point(136, 140);
-            LoadSubForm(frmPeopleList);
-            CurrentForm = enCurrentForm.People;
+            NavigateToSection(frmPeopleList, clsUser.enPermissions.MangePeople, 108);
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            if (!clsGlobal.CurrentUser.CheckUserPermission(clsUser.enPermissions.MangeCustomers))
-            {
-                MessageBox.Show("You do not have permission to access this section.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                return;
-            }
-
-            if (CurrentForm == enCurrentForm.Customers)
-                return;
-
-            pbImageSidebar.Location = new Point(136, 192);
-            LoadSubForm(frmCustomersList);
-            CurrentForm = enCurrentForm.Customers;
+            NavigateToSection(frmCustomersList, clsUser.enPermissions.MangeCustomers, 160);
         }
 
         private void btnVehicles_Click(object sender, EventArgs e)
         {
-            if (!clsGlobal.CurrentUser.CheckUserPermission(clsUser.enPermissions.MangeVehicles))
-            {
-                MessageBox.Show("you do not have permission to access this section.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                return;
-            }
-
-            if (CurrentForm == enCurrentForm.Vehicles)
-                return;
-
-            pbImageSidebar.Location = new Point(141, 241);
-            LoadSubForm(frmVehiclesList);
-            CurrentForm = enCurrentForm.Vehicles;
-            
+            NavigateToSection(frmVehiclesList, clsUser.enPermissions.MangeVehicles, 209);
         }
 
         private void btnBooking_Click(object sender, EventArgs e)
         {
-            if (!clsGlobal.CurrentUser.CheckUserPermission(clsUser.enPermissions.MangeBookings))
-            {
-                MessageBox.Show("you do not have permission to access this section.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                return;
-            }
-
-            if (CurrentForm == enCurrentForm.Booking)
-                return;
-
-            pbImageSidebar.Location = new Point(141, 290);
-            LoadSubForm(frmBookingsList);
-            CurrentForm = enCurrentForm.Booking;
+            NavigateToSection(frmBookingsList, clsUser.enPermissions.MangeBookings, 258);
         }
 
         private void btnTransactions_Click(object sender, EventArgs e)
         {
-            if (!clsGlobal.CurrentUser.CheckUserPermission(clsUser.enPermissions.MangeTransactions))
-            {
-                MessageBox.Show("you do not have permission to access this section.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                return;
-            }
-
-            if (CurrentForm == enCurrentForm.Transactions)
-                return;
-
-            pbImageSidebar.Location = new Point(141, 342);
-            LoadSubForm(frmTransactionsList);
-            CurrentForm = enCurrentForm.Transactions;
+            NavigateToSection(frmTransactionsList, clsUser.enPermissions.MangeTransactions, 310);
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            if (!clsGlobal.CurrentUser.CheckUserPermission(clsUser.enPermissions.MangeReturns))
-            {
-                MessageBox.Show("you do not have permission to access this section.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                return;
-            }
-
-            if (CurrentForm == enCurrentForm.Returns)
-                return;
-
-            pbImageSidebar.Location = new Point(141, 394);
-            LoadSubForm(frmReturnsList);
-            CurrentForm = enCurrentForm.Returns;
+            NavigateToSection(frmReturnsList, clsUser.enPermissions.MangeReturns, 362);
         }
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            if (!clsGlobal.CurrentUser.CheckUserPermission(clsUser.enPermissions.MangeUsers))
-            {
-                MessageBox.Show("you do not have permission to access this section.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                return;
-            }
+            NavigateToSection(frmUsersList, clsUser.enPermissions.MangeUsers, 414);
+        }
 
-            if (CurrentForm == enCurrentForm.Users)
-                return;
-
-            pbImageSidebar.Location = new Point(141, 446);
-            LoadSubForm(frmUsersList);
-            CurrentForm = enCurrentForm.Users;
+        private void btnMaintenance_Click(object sender, EventArgs e)
+        {
+            NavigateToSection(frmMaintenanceList, clsUser.enPermissions.MangeMaintenance, 463);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

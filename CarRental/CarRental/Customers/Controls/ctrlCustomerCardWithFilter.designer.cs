@@ -79,7 +79,7 @@
             this.btnAddNewCustomer.AnimationHoverSpeed = 0.07F;
             this.btnAddNewCustomer.AnimationSpeed = 0.03F;
             this.btnAddNewCustomer.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddNewCustomer.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnAddNewCustomer.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(185)))));
             this.btnAddNewCustomer.BorderColor = System.Drawing.Color.Black;
             this.btnAddNewCustomer.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddNewCustomer.FocusedColor = System.Drawing.Color.Empty;
@@ -89,7 +89,7 @@
             this.btnAddNewCustomer.ImageSize = new System.Drawing.Size(32, 32);
             this.btnAddNewCustomer.Location = new System.Drawing.Point(380, 38);
             this.btnAddNewCustomer.Name = "btnAddNewCustomer";
-            this.btnAddNewCustomer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(120)))));
+            this.btnAddNewCustomer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(170)))));
             this.btnAddNewCustomer.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnAddNewCustomer.OnHoverForeColor = System.Drawing.Color.White;
             this.btnAddNewCustomer.OnHoverImage = null;
@@ -112,7 +112,7 @@
             this.txtSearchValue.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchValue.ForeColor = System.Drawing.Color.Black;
             this.txtSearchValue.InputType = CustomContorls.CustomTextBox.enInputType.NumberInput;
-            this.txtSearchValue.Location = new System.Drawing.Point(163, 43);
+            this.txtSearchValue.Location = new System.Drawing.Point(163, 41);
             this.txtSearchValue.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtSearchValue.MaxLength = 50;
             this.txtSearchValue.Name = "txtSearchValue";
@@ -128,7 +128,7 @@
             this.ctrlCustomerCard1.BackColor = System.Drawing.Color.Transparent;
             this.ctrlCustomerCard1.Location = new System.Drawing.Point(6, 89);
             this.ctrlCustomerCard1.Name = "ctrlCustomerCard1";
-            this.ctrlCustomerCard1.Size = new System.Drawing.Size(756, 421);
+            this.ctrlCustomerCard1.Size = new System.Drawing.Size(756, 360);
             this.ctrlCustomerCard1.TabIndex = 2;
             // 
             // ctrlCustomerCardWithFilter
@@ -139,7 +139,7 @@
             this.Controls.Add(this.gbFilter);
             this.Controls.Add(this.ctrlCustomerCard1);
             this.Name = "ctrlCustomerCardWithFilter";
-            this.Size = new System.Drawing.Size(767, 507);
+            this.Size = new System.Drawing.Size(767, 452);
             this.gbFilter.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -53,6 +53,13 @@ namespace CarRental.Customers
             InitializeComponent();
         }
 
+        public frmFindCustomer(int CustomerID)
+        {
+            InitializeComponent();
+            _CustomerID = CustomerID;
+            ctrlCustomerCardWithFilter1.LoadCustomerInfo(CustomerID);
+        }
+
         private void ctrlCustomerCardWithFilter1_OnCustomerSelected(int CustomerID)
         {
             _CustomerID = CustomerID;

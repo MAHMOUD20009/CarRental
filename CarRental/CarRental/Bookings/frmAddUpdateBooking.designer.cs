@@ -158,11 +158,11 @@
             // 
             // lblBookingID
             // 
-            this.lblBookingID.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBookingID.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBookingID.ForeColor = System.Drawing.Color.White;
             this.lblBookingID.Location = new System.Drawing.Point(8, 12);
             this.lblBookingID.Name = "lblBookingID";
-            this.lblBookingID.Size = new System.Drawing.Size(203, 36);
+            this.lblBookingID.Size = new System.Drawing.Size(203, 37);
             this.lblBookingID.TabIndex = 19;
             this.lblBookingID.Text = "Booking Id";
             // 
@@ -256,7 +256,7 @@
             this.ctrlVehicleCardWithFilter1.FilterEnabled = true;
             this.ctrlVehicleCardWithFilter1.Location = new System.Drawing.Point(3, 6);
             this.ctrlVehicleCardWithFilter1.Name = "ctrlVehicleCardWithFilter1";
-            this.ctrlVehicleCardWithFilter1.Size = new System.Drawing.Size(791, 457);
+            this.ctrlVehicleCardWithFilter1.Size = new System.Drawing.Size(791, 380);
             this.ctrlVehicleCardWithFilter1.TabIndex = 2;
             this.ctrlVehicleCardWithFilter1.OnVehicleSelected += new System.Action<int>(this.ctrlVehicleCardWithFilter1_OnVehicleSelected);
             // 
@@ -735,9 +735,9 @@
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSave.Location = new System.Drawing.Point(683, 622);
+            this.btnSave.Location = new System.Drawing.Point(683, 618);
             this.btnSave.Name = "btnSave";
-            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(185)))));
             this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
             this.btnSave.OnHoverImage = null;
@@ -756,7 +756,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(840, 673);
+            this.ClientSize = new System.Drawing.Size(840, 669);
             this.Controls.Add(this.tcBooking);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnMinimizeBox);

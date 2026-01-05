@@ -9,9 +9,13 @@ namespace CarRental.Transactions
     {
         public frmTransactionsList()
         {
-            InitializeComponent();
-            TotalPages = clsRentalTransaction.GetPageCount(RowsPerPage);
+            InitializeComponent(); 
             InitializeInheritedControls();
+        }
+
+        private void RefreshTotalPages()
+        {
+            TotalPages = clsRentalTransaction.GetPageCount(RowsPerPage);
         }
 
         protected override async void OnPageChanged()
@@ -21,11 +25,14 @@ namespace CarRental.Transactions
 
         private void frmTransactionsList_Load(object sender, EventArgs e)
         {
-            OnPageChanged();
+            RowsPerPage = 5;
+            PageNumber = 1;
+            RefreshToolStripMenuItem_Click(null, null);
         }
 
         private void RefreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            RefreshTotalPages();
             OnPageChanged();
         }
 
@@ -35,7 +42,7 @@ namespace CarRental.Transactions
 
             if (cbFilter.Text.Contains("Date"))
             {
-                txtSearchValue.Visible =false;
+                txtSearchValue.Visible = false;
                 dtpDate.Visible = true;
             }
         }

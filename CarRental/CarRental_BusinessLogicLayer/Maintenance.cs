@@ -1,6 +1,6 @@
-
 using System;
 using System.Data;
+using System.Threading.Tasks;
 using CarRental_DataAccessLayer;
 
 namespace CarRental_BusinessLogicLayer
@@ -45,14 +45,14 @@ namespace CarRental_BusinessLogicLayer
         }
 
 
-        private bool _AddNew()
+        private bool _AddNewMaintenance()
         {
             this.MaintenanceID = clsMaintenanceDataAccess.AddNewMaintenance(this.VehicleID.GetValueOrDefault(), this.Description, this.MaintenanceDate.GetValueOrDefault(), this.Cost.GetValueOrDefault());
 
             return (this.MaintenanceID != null);
         }
 
-        private bool _Update()
+        private bool _UpdateMaintenance()
         {
             return clsMaintenanceDataAccess.UpdateMaintenance(this.MaintenanceID.GetValueOrDefault(), this.VehicleID.GetValueOrDefault(), this.Description, this.MaintenanceDate.GetValueOrDefault(), this.Cost.GetValueOrDefault());
         }
@@ -62,7 +62,7 @@ namespace CarRental_BusinessLogicLayer
             switch (this.Mode)
             {
                 case enMode.AddNew:
-                    if (_AddNew())
+                    if (_AddNewMaintenance())
                     {
                         this.Mode = enMode.Update;
                         return true;
@@ -72,7 +72,7 @@ namespace CarRental_BusinessLogicLayer
                         return false;
                     }
                 case enMode.Update:
-                    return _Update();
+                    return _UpdateMaintenance();
             }
 
             return false;
@@ -96,14 +96,19 @@ namespace CarRental_BusinessLogicLayer
             return clsMaintenanceDataAccess.DeleteMaintenance(MaintenanceID);
         }
 
-        public static DataTable GetAllMaintenance()
+        public static async Task<DataTable> GetPagedMaintenance(int PageNumber, int RowsPerPage)
         {
-            return clsMaintenanceDataAccess.GetAllMaintenance();
+            return await clsMaintenanceDataAccess.GetPagedMaintenance(PageNumber, RowsPerPage);
         }
 
         public static bool IsMaintenanceExists(int MaintenanceID)
         {
             return clsMaintenanceDataAccess.IsMaintenanceExists(MaintenanceID);
+        }
+
+        public static int GetPageCount(int RowsPerPage = 100)
+        {
+            return clsMaintenanceDataAccess.GetPageCount(RowsPerPage);
         }
     }
 }

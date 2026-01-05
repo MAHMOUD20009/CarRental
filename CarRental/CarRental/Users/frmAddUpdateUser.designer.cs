@@ -159,12 +159,13 @@
             // 
             // btnSelectPerson
             // 
-            this.btnSelectPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelectPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSelectPerson.AnimationHoverSpeed = 0.07F;
             this.btnSelectPerson.AnimationSpeed = 0.03F;
             this.btnSelectPerson.BackColor = System.Drawing.Color.Transparent;
             this.btnSelectPerson.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(150)))), ((int)(((byte)(250)))));
-            this.btnSelectPerson.BorderColor = System.Drawing.Color.Black;
+            this.btnSelectPerson.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSelectPerson.BorderSize = 2;
             this.btnSelectPerson.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSelectPerson.FocusedColor = System.Drawing.Color.Empty;
             this.btnSelectPerson.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -180,7 +181,7 @@
             this.btnSelectPerson.OnPressedColor = System.Drawing.Color.Black;
             this.btnSelectPerson.Radius = 12;
             this.btnSelectPerson.Size = new System.Drawing.Size(172, 40);
-            this.btnSelectPerson.TabIndex = 11;
+            this.btnSelectPerson.TabIndex = 4;
             this.btnSelectPerson.Text = "Select Person";
             this.btnSelectPerson.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSelectPerson.Click += new System.EventHandler(this.btnSelectPerson_Click);
@@ -197,12 +198,12 @@
             // 
             // txtName
             // 
-            this.txtName.AllowEmpty = false;
+            this.txtName.AllowEmpty = true;
             this.txtName.BackColor = System.Drawing.Color.Transparent;
             this.txtName.BorderColor = System.Drawing.Color.Silver;
             this.txtName.BorderRadius = 12;
             this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtName.CustomValidationMessage = "No Person Selected";
+            this.txtName.CustomValidationMessage = "";
             this.txtName.DefaultText = "";
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtName.ForeColor = System.Drawing.Color.Black;
@@ -241,6 +242,7 @@
             this.txtUserName.Size = new System.Drawing.Size(255, 36);
             this.txtUserName.TabIndex = 0;
             this.txtUserName.ValidateInputType = true;
+            this.txtUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserName_KeyPress);
             this.txtUserName.Validating += new System.ComponentModel.CancelEventHandler(this.txtUserName_Validating);
             // 
             // lblUserName
@@ -275,7 +277,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.AllowEmpty = false;
+            this.txtPassword.AllowEmpty = true;
             this.txtPassword.BackColor = System.Drawing.Color.Transparent;
             this.txtPassword.BorderColor = System.Drawing.Color.Silver;
             this.txtPassword.BorderRadius = 12;
@@ -295,6 +297,7 @@
             this.txtPassword.Size = new System.Drawing.Size(255, 36);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.ValidateInputType = true;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserName_KeyPress);
             // 
             // lblPassword
             // 
@@ -308,7 +311,7 @@
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.AllowEmpty = false;
+            this.txtConfirmPassword.AllowEmpty = true;
             this.txtConfirmPassword.BackColor = System.Drawing.Color.Transparent;
             this.txtConfirmPassword.BorderColor = System.Drawing.Color.Silver;
             this.txtConfirmPassword.BorderRadius = 12;
@@ -328,6 +331,7 @@
             this.txtConfirmPassword.Size = new System.Drawing.Size(255, 36);
             this.txtConfirmPassword.TabIndex = 2;
             this.txtConfirmPassword.ValidateInputType = true;
+            this.txtConfirmPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUserName_KeyPress);
             this.txtConfirmPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmPassword_Validating);
             // 
             // lblConfirmPassword
@@ -436,7 +440,7 @@
             this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSave.Location = new System.Drawing.Point(662, 511);
             this.btnSave.Name = "btnSave";
-            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(185)))));
             this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
             this.btnSave.OnHoverImage = null;
@@ -459,7 +463,7 @@
             this.chkIsActive.Location = new System.Drawing.Point(286, 320);
             this.chkIsActive.Name = "chkIsActive";
             this.chkIsActive.Size = new System.Drawing.Size(44, 36);
-            this.chkIsActive.TabIndex = 34;
+            this.chkIsActive.TabIndex = 3;
             // 
             // groupBox1
             // 

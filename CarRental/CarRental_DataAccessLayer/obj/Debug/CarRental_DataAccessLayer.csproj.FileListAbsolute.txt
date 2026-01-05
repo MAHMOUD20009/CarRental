@@ -14,3 +14,8 @@ C:\Users\Mahmoud\OneDrive\Desktop\CarRental\CarRental_DataAccessLayer\bin\Debug\
 C:\Users\Mahmoud\OneDrive\Desktop\CarRental\CarRental_DataAccessLayer\bin\Debug\CarRental_DataAccessLayer.pdb
 C:\Users\Mahmoud\OneDrive\Desktop\CarRental\CarRental_DataAccessLayer\obj\Debug\CarRental_DataAccessLayer.dll
 C:\Users\Mahmoud\OneDrive\Desktop\CarRental\CarRental_DataAccessLayer\obj\Debug\CarRental_DataAccessLayer.pdb
+C:\Users\Mahmoud\Desktop\CarRental\CarRental\CarRental_DataAccessLayer\bin\Debug\CarRental_DataAccessLayer.dll
+C:\Users\Mahmoud\Desktop\CarRental\CarRental\CarRental_DataAccessLayer\bin\Debug\CarRental_DataAccessLayer.pdb
+C:\Users\Mahmoud\Desktop\CarRental\CarRental\CarRental_DataAccessLayer\obj\Debug\CarRental_DataAccessLayer.dll
+C:\Users\Mahmoud\Desktop\CarRental\CarRental\CarRental_DataAccessLayer\obj\Debug\CarRental_DataAccessLayer.pdb
+C:\Users\Mahmoud\Desktop\CarRental\CarRental\CarRental_DataAccessLayer\obj\Debug\CarRental_DataAccessLayer.csprojResolveAssemblyReference.cache

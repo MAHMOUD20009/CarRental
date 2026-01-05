@@ -124,7 +124,7 @@
             this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSave.Location = new System.Drawing.Point(600, 343);
             this.btnSave.Name = "btnSave";
-            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(185)))));
             this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
             this.btnSave.OnHoverImage = null;
@@ -311,7 +311,7 @@
             this.txtName.Location = new System.Drawing.Point(303, 276);
             this.txtName.Name = "txtName";
             this.txtName.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.txtName.PlaceholderText = "Driver License Number";
+            this.txtName.PlaceholderText = "Name";
             this.txtName.ReadOnly = true;
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(250, 36);

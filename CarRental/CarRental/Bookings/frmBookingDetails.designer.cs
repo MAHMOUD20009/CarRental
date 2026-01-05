@@ -48,7 +48,7 @@
             this.btnMinimizeBox.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MinimizeBox;
             this.btnMinimizeBox.IconColor = System.Drawing.Color.White;
             this.btnMinimizeBox.IconSize = 15F;
-            this.btnMinimizeBox.Location = new System.Drawing.Point(894, 0);
+            this.btnMinimizeBox.Location = new System.Drawing.Point(885, 0);
             this.btnMinimizeBox.Name = "btnMinimizeBox";
             this.btnMinimizeBox.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(58)))), ((int)(((byte)(183)))));
             this.btnMinimizeBox.OnHoverIconColor = System.Drawing.Color.White;
@@ -64,7 +64,7 @@
             this.btnCloseBox.AnimationSpeed = 0.03F;
             this.btnCloseBox.IconColor = System.Drawing.Color.White;
             this.btnCloseBox.IconSize = 15F;
-            this.btnCloseBox.Location = new System.Drawing.Point(945, 0);
+            this.btnCloseBox.Location = new System.Drawing.Point(936, 0);
             this.btnCloseBox.Name = "btnCloseBox";
             this.btnCloseBox.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(58)))), ((int)(((byte)(183)))));
             this.btnCloseBox.OnHoverIconColor = System.Drawing.Color.White;
@@ -85,26 +85,27 @@
             this.lblFormTitle.ForeColor = System.Drawing.Color.White;
             this.lblFormTitle.Location = new System.Drawing.Point(0, 0);
             this.lblFormTitle.Name = "lblFormTitle";
-            this.lblFormTitle.Size = new System.Drawing.Size(990, 52);
+            this.lblFormTitle.Size = new System.Drawing.Size(981, 52);
             this.lblFormTitle.TabIndex = 4;
             this.lblFormTitle.Text = "Booking Details";
             this.lblFormTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblFormTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ctrlBookingCard1_MouseDown);
+            this.lblFormTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmBookingDetails_MouseDown);
             // 
             // ctrlBookingCard1
             // 
             this.ctrlBookingCard1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ctrlBookingCard1.Location = new System.Drawing.Point(2, 55);
+            this.ctrlBookingCard1.Location = new System.Drawing.Point(6, 52);
             this.ctrlBookingCard1.Name = "ctrlBookingCard1";
-            this.ctrlBookingCard1.Size = new System.Drawing.Size(987, 433);
+            this.ctrlBookingCard1.Size = new System.Drawing.Size(972, 438);
             this.ctrlBookingCard1.TabIndex = 5;
+            this.ctrlBookingCard1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmBookingDetails_MouseDown);
             // 
             // frmBookingDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(990, 491);
+            this.ClientSize = new System.Drawing.Size(981, 491);
             this.Controls.Add(this.ctrlBookingCard1);
             this.Controls.Add(this.btnMinimizeBox);
             this.Controls.Add(this.btnCloseBox);
@@ -114,6 +115,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booking Details";
             this.Load += new System.EventHandler(this.frmBookingDetails_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmBookingDetails_MouseDown);
             this.ResumeLayout(false);
 
         }
@@ -121,6 +123,7 @@
         #endregion
 
         private Controls.ctrlBookingCard ctrlBookingCard1;
+
 
 
     }

@@ -11,8 +11,12 @@ namespace CarRental.Vehicles
         public frmVehiclesList()
         {
             InitializeComponent();
-            TotalPages = clsVehicle.GetPageCount(RowsPerPage);
             InitializeInheritedControls();
+        }
+
+        private void RefreshTotalPages()
+        {
+            TotalPages = clsVehicle.GetPageCount(RowsPerPage);
         }
 
         protected override async void OnPageChanged()
@@ -62,7 +66,10 @@ namespace CarRental.Vehicles
 
         private void LoadData()
         {
-            OnPageChanged();
+            RowsPerPage = 5;
+            PageNumber = 1;
+            RefreshTotalPages();
+            RefreshToolStripMenuItem_Click(null, null);
 
             FillMakesInComboBox();
             FillModelsInComboBox();
@@ -140,6 +147,7 @@ namespace CarRental.Vehicles
         private void frmAddUpdateVehicle_DataBack(int VehicleID)
         {
             OnPageChanged();
+            RefreshTotalPages();
         }
 
         private void btnAddNewVehicle_Click(object sender, EventArgs e)
@@ -157,7 +165,7 @@ namespace CarRental.Vehicles
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new frmAddUpdateVehicle((int)dgvDataList.CurrentRow.Cells[0].Value);
-            frm.DataBack += frmAddUpdateVehicle_DataBack;
+            frm.DataBack += (int VehicleID) => OnPageChanged();
             frm.Show();
         }
 
@@ -171,6 +179,8 @@ namespace CarRental.Vehicles
             if (clsVehicle.DeleteVehicle(VehicleID))
             {
                 MessageBox.Show("Delete Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                PageNumber = 1;
+                RefreshTotalPages();
                 OnPageChanged();
             }
             else

@@ -34,15 +34,9 @@ namespace CarRental.Controls
         {
             switch (cbFilter.Text)
             {
-                case "User Id":
-                    ctrlUserCard1.LoadUserInfo(Convert.ToInt32(txtSearchValue.Text.Trim()));
-                    break;
-                case "Person Id":
-                    ctrlUserCard1.LoadUserInfoByPersonID(Convert.ToInt32(txtSearchValue.Text.Trim()));
-                    break;
-                case "User Name":
-                    ctrlUserCard1.LoadUserInfo(txtSearchValue.Text.Trim());
-                    break;
+                case "User Id": ctrlUserCard1.LoadUserInfo(int.Parse(txtSearchValue.Text)); break;
+                case "Person Id": ctrlUserCard1.LoadUserInfoByPersonID(int.Parse(txtSearchValue.Text)); break;
+                case "User Name": ctrlUserCard1.LoadUserInfo(txtSearchValue.Text.Trim()); break;
             }
 
             UserSelected(ctrlUserCard1.UserID.GetValueOrDefault());
@@ -53,17 +47,10 @@ namespace CarRental.Controls
             txtSearchValue.Focus();
         }
 
-        public void LoadUserInfoByUserID(int UserID)
+        public void LoadUserInfo(int UserID)
         {
             txtSearchValue.Text = UserID.ToString();
             cbFilter.SelectedIndex = 0;
-            FindNow();
-        }
-
-        public void LoadUserInfoByUserName(string UserName)
-        {
-            txtSearchValue.Text = UserName;
-            cbFilter.SelectedIndex = 2;
             FindNow();
         }
 
@@ -71,6 +58,13 @@ namespace CarRental.Controls
         {
             txtSearchValue.Text = PersonID.ToString();
             cbFilter.SelectedIndex = 1;
+            FindNow();
+        }
+
+        public void LoadUserInfo(string UserName)
+        {
+            txtSearchValue.Text = UserName;
+            cbFilter.SelectedIndex = 2;
             FindNow();
         }
 
@@ -83,13 +77,19 @@ namespace CarRental.Controls
 
         private void frmAddUpdateUser_DataBack(int UserID)
         {
-            LoadUserInfoByUserID(UserID);
+            LoadUserInfo(UserID);
         }
 
         private void txtSearchValue_TextChanged(object sender, EventArgs e)
         {
-            if (!txtSearchValue.IsValid || string.IsNullOrEmpty(txtSearchValue.Text)) ctrlUserCard1.ResetControls();
-            else FindNow();
+            if (string.IsNullOrWhiteSpace(txtSearchValue.Text))
+            {
+                ctrlUserCard1.ResetControls();
+                UserSelected(-1);
+                return;
+            }
+
+            if (txtSearchValue.IsValid) FindNow();
         }
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)

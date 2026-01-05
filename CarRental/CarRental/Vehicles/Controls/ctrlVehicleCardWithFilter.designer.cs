@@ -66,7 +66,7 @@
             this.btnAddNewVehicle.AnimationHoverSpeed = 0.07F;
             this.btnAddNewVehicle.AnimationSpeed = 0.03F;
             this.btnAddNewVehicle.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddNewVehicle.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(120)))));
+            this.btnAddNewVehicle.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(185)))));
             this.btnAddNewVehicle.BorderColor = System.Drawing.Color.Black;
             this.btnAddNewVehicle.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddNewVehicle.FocusedColor = System.Drawing.Color.Empty;
@@ -74,9 +74,9 @@
             this.btnAddNewVehicle.ForeColor = System.Drawing.Color.White;
             this.btnAddNewVehicle.Image = null;
             this.btnAddNewVehicle.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnAddNewVehicle.Location = new System.Drawing.Point(322, 38);
+            this.btnAddNewVehicle.Location = new System.Drawing.Point(322, 35);
             this.btnAddNewVehicle.Name = "btnAddNewVehicle";
-            this.btnAddNewVehicle.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnAddNewVehicle.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(170)))));
             this.btnAddNewVehicle.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnAddNewVehicle.OnHoverForeColor = System.Drawing.Color.White;
             this.btnAddNewVehicle.OnHoverImage = null;
@@ -115,7 +115,7 @@
             this.ctrlVehicleCard1.BackColor = System.Drawing.Color.Transparent;
             this.ctrlVehicleCard1.Location = new System.Drawing.Point(4, 104);
             this.ctrlVehicleCard1.Name = "ctrlVehicleCard1";
-            this.ctrlVehicleCard1.Size = new System.Drawing.Size(782, 351);
+            this.ctrlVehicleCard1.Size = new System.Drawing.Size(767, 275);
             this.ctrlVehicleCard1.TabIndex = 2;
             // 
             // ctrlVehicleCardWithFilter
@@ -126,7 +126,7 @@
             this.Controls.Add(this.ctrlVehicleCard1);
             this.Controls.Add(this.gbFilter);
             this.Name = "ctrlVehicleCardWithFilter";
-            this.Size = new System.Drawing.Size(791, 457);
+            this.Size = new System.Drawing.Size(786, 384);
             this.gbFilter.ResumeLayout(false);
             this.gbFilter.PerformLayout();
             this.ResumeLayout(false);

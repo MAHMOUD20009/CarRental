@@ -48,42 +48,42 @@
             this.lblMileage = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.btnSave = new Guna.UI.WinForms.GunaButton();
             this.lblVehicleID = new System.Windows.Forms.Label();
             this.lblShowVehicleID = new System.Windows.Forms.Label();
-            this.pbVehicleID = new System.Windows.Forms.PictureBox();
-            this.pbName = new System.Windows.Forms.PictureBox();
-            this.pbGender = new System.Windows.Forms.PictureBox();
-            this.pbDateOfBirth = new System.Windows.Forms.PictureBox();
-            this.pbPhone = new System.Windows.Forms.PictureBox();
-            this.pbEmail = new System.Windows.Forms.PictureBox();
             this.cbMake = new Guna.UI.WinForms.GunaComboBox();
             this.cbModel = new Guna.UI.WinForms.GunaComboBox();
             this.nudYear = new Guna.UI.WinForms.GunaNumeric();
             this.nudMileage = new Guna.UI.WinForms.GunaNumeric();
             this.cbFuelType = new Guna.UI.WinForms.GunaComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPlateNumber = new CustomContorls.CustomTextBox();
             this.cbCarCategory = new Guna.UI.WinForms.GunaComboBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblCarCategory = new System.Windows.Forms.Label();
             this.txtRentalPricePerDay = new CustomContorls.CustomTextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblRentalPricePerDay = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.chkIsAvailable = new Guna.UI2.WinForms.Guna2ImageCheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbVehicleID)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGender)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDateOfBirth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPhone)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEmail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbFuelType = new System.Windows.Forms.PictureBox();
+            this.pbMileage = new System.Windows.Forms.PictureBox();
+            this.pbYear = new System.Windows.Forms.PictureBox();
+            this.pbModel = new System.Windows.Forms.PictureBox();
+            this.pbMake = new System.Windows.Forms.PictureBox();
+            this.pbVehicleID = new System.Windows.Forms.PictureBox();
+            this.btnSave = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFuelType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMileage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbModel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMake)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVehicleID)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCloseBox
@@ -187,33 +187,6 @@
             this.gunaElipse1.Radius = 15;
             this.gunaElipse1.TargetControl = this;
             // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.AnimationHoverSpeed = 0.07F;
-            this.btnSave.AnimationSpeed = 0.03F;
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.btnSave.BorderColor = System.Drawing.Color.Black;
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSave.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSave.Location = new System.Drawing.Point(800, 438);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSave.OnHoverImage = null;
-            this.btnSave.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSave.Radius = 15;
-            this.btnSave.Size = new System.Drawing.Size(145, 39);
-            this.btnSave.TabIndex = 9;
-            this.btnSave.Text = "Save";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // lblVehicleID
             // 
             this.lblVehicleID.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -233,66 +206,6 @@
             this.lblShowVehicleID.Size = new System.Drawing.Size(132, 39);
             this.lblShowVehicleID.TabIndex = 0;
             this.lblShowVehicleID.Text = "[?????]";
-            // 
-            // pbVehicleID
-            // 
-            this.pbVehicleID.Image = global::CarRental.Properties.Resources.ID__2_;
-            this.pbVehicleID.Location = new System.Drawing.Point(195, 75);
-            this.pbVehicleID.Name = "pbVehicleID";
-            this.pbVehicleID.Size = new System.Drawing.Size(33, 34);
-            this.pbVehicleID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbVehicleID.TabIndex = 20;
-            this.pbVehicleID.TabStop = false;
-            // 
-            // pbName
-            // 
-            this.pbName.Image = ((System.Drawing.Image)(resources.GetObject("pbName.Image")));
-            this.pbName.Location = new System.Drawing.Point(205, 134);
-            this.pbName.Name = "pbName";
-            this.pbName.Size = new System.Drawing.Size(33, 34);
-            this.pbName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbName.TabIndex = 21;
-            this.pbName.TabStop = false;
-            // 
-            // pbGender
-            // 
-            this.pbGender.Image = ((System.Drawing.Image)(resources.GetObject("pbGender.Image")));
-            this.pbGender.Location = new System.Drawing.Point(652, 138);
-            this.pbGender.Name = "pbGender";
-            this.pbGender.Size = new System.Drawing.Size(33, 34);
-            this.pbGender.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbGender.TabIndex = 22;
-            this.pbGender.TabStop = false;
-            // 
-            // pbDateOfBirth
-            // 
-            this.pbDateOfBirth.Image = ((System.Drawing.Image)(resources.GetObject("pbDateOfBirth.Image")));
-            this.pbDateOfBirth.Location = new System.Drawing.Point(205, 197);
-            this.pbDateOfBirth.Name = "pbDateOfBirth";
-            this.pbDateOfBirth.Size = new System.Drawing.Size(33, 34);
-            this.pbDateOfBirth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbDateOfBirth.TabIndex = 23;
-            this.pbDateOfBirth.TabStop = false;
-            // 
-            // pbPhone
-            // 
-            this.pbPhone.Image = ((System.Drawing.Image)(resources.GetObject("pbPhone.Image")));
-            this.pbPhone.Location = new System.Drawing.Point(652, 200);
-            this.pbPhone.Name = "pbPhone";
-            this.pbPhone.Size = new System.Drawing.Size(33, 34);
-            this.pbPhone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbPhone.TabIndex = 24;
-            this.pbPhone.TabStop = false;
-            // 
-            // pbEmail
-            // 
-            this.pbEmail.Image = ((System.Drawing.Image)(resources.GetObject("pbEmail.Image")));
-            this.pbEmail.Location = new System.Drawing.Point(205, 256);
-            this.pbEmail.Name = "pbEmail";
-            this.pbEmail.Size = new System.Drawing.Size(33, 34);
-            this.pbEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbEmail.TabIndex = 25;
-            this.pbEmail.TabStop = false;
             // 
             // cbMake
             // 
@@ -389,16 +302,6 @@
             this.cbFuelType.Size = new System.Drawing.Size(171, 30);
             this.cbFuelType.TabIndex = 4;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(652, 261);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -452,16 +355,6 @@
             this.cbCarCategory.Size = new System.Drawing.Size(171, 30);
             this.cbCarCategory.TabIndex = 6;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(205, 317);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 34);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 31;
-            this.pictureBox2.TabStop = false;
-            // 
             // lblCarCategory
             // 
             this.lblCarCategory.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -495,16 +388,6 @@
             this.txtRentalPricePerDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtRentalPricePerDay.ValidateInputType = true;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(205, 381);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(33, 34);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 33;
-            this.pictureBox3.TabStop = false;
-            // 
             // lblRentalPricePerDay
             // 
             this.lblRentalPricePerDay.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -522,9 +405,22 @@
             this.label2.Location = new System.Drawing.Point(452, 311);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(156, 39);
+            this.label2.Size = new System.Drawing.Size(184, 39);
             this.label2.TabIndex = 35;
             this.label2.Text = "Is Available";
+            // 
+            // chkIsAvailable
+            // 
+            this.chkIsAvailable.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.chkIsAvailable.CheckedState.ImageSize = new System.Drawing.Size(28, 28);
+            this.chkIsAvailable.Image = ((System.Drawing.Image)(resources.GetObject("chkIsAvailable.Image")));
+            this.chkIsAvailable.ImageOffset = new System.Drawing.Point(0, 0);
+            this.chkIsAvailable.ImageRotate = 0F;
+            this.chkIsAvailable.ImageSize = new System.Drawing.Size(28, 28);
+            this.chkIsAvailable.Location = new System.Drawing.Point(705, 320);
+            this.chkIsAvailable.Name = "chkIsAvailable";
+            this.chkIsAvailable.Size = new System.Drawing.Size(43, 30);
+            this.chkIsAvailable.TabIndex = 7;
             // 
             // pictureBox4
             // 
@@ -536,18 +432,123 @@
             this.pictureBox4.TabIndex = 36;
             this.pictureBox4.TabStop = false;
             // 
-            // chkIsAvailable
+            // pictureBox3
             // 
-            this.chkIsAvailable.CheckedState.Image = global::CarRental.Properties.Resources.available_car32;
-            this.chkIsAvailable.CheckedState.ImageSize = new System.Drawing.Size(28, 28);
-            this.chkIsAvailable.Image = global::CarRental.Properties.Resources.Close;
-            this.chkIsAvailable.ImageOffset = new System.Drawing.Point(0, 0);
-            this.chkIsAvailable.ImageRotate = 0F;
-            this.chkIsAvailable.ImageSize = new System.Drawing.Size(28, 28);
-            this.chkIsAvailable.Location = new System.Drawing.Point(705, 320);
-            this.chkIsAvailable.Name = "chkIsAvailable";
-            this.chkIsAvailable.Size = new System.Drawing.Size(43, 30);
-            this.chkIsAvailable.TabIndex = 7;
+            this.pictureBox3.Image = global::CarRental.Properties.Resources.dollar;
+            this.pictureBox3.Location = new System.Drawing.Point(205, 381);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(33, 34);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 33;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CarRental.Properties.Resources.car_name321;
+            this.pictureBox2.Location = new System.Drawing.Point(205, 317);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 34);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CarRental.Properties.Resources.car_name321;
+            this.pictureBox1.Location = new System.Drawing.Point(652, 261);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pbFuelType
+            // 
+            this.pbFuelType.Image = ((System.Drawing.Image)(resources.GetObject("pbFuelType.Image")));
+            this.pbFuelType.Location = new System.Drawing.Point(205, 256);
+            this.pbFuelType.Name = "pbFuelType";
+            this.pbFuelType.Size = new System.Drawing.Size(33, 34);
+            this.pbFuelType.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFuelType.TabIndex = 25;
+            this.pbFuelType.TabStop = false;
+            // 
+            // pbMileage
+            // 
+            this.pbMileage.Image = global::CarRental.Properties.Resources.mileage;
+            this.pbMileage.Location = new System.Drawing.Point(652, 200);
+            this.pbMileage.Name = "pbMileage";
+            this.pbMileage.Size = new System.Drawing.Size(33, 34);
+            this.pbMileage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMileage.TabIndex = 24;
+            this.pbMileage.TabStop = false;
+            // 
+            // pbYear
+            // 
+            this.pbYear.Image = ((System.Drawing.Image)(resources.GetObject("pbYear.Image")));
+            this.pbYear.Location = new System.Drawing.Point(205, 197);
+            this.pbYear.Name = "pbYear";
+            this.pbYear.Size = new System.Drawing.Size(33, 34);
+            this.pbYear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbYear.TabIndex = 23;
+            this.pbYear.TabStop = false;
+            // 
+            // pbModel
+            // 
+            this.pbModel.Image = global::CarRental.Properties.Resources.model;
+            this.pbModel.Location = new System.Drawing.Point(652, 138);
+            this.pbModel.Name = "pbModel";
+            this.pbModel.Size = new System.Drawing.Size(33, 34);
+            this.pbModel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbModel.TabIndex = 22;
+            this.pbModel.TabStop = false;
+            // 
+            // pbMake
+            // 
+            this.pbMake.Image = global::CarRental.Properties.Resources.car_name321;
+            this.pbMake.Location = new System.Drawing.Point(205, 134);
+            this.pbMake.Name = "pbMake";
+            this.pbMake.Size = new System.Drawing.Size(33, 34);
+            this.pbMake.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMake.TabIndex = 21;
+            this.pbMake.TabStop = false;
+            // 
+            // pbVehicleID
+            // 
+            this.pbVehicleID.Image = global::CarRental.Properties.Resources.ID__2_;
+            this.pbVehicleID.Location = new System.Drawing.Point(195, 75);
+            this.pbVehicleID.Name = "pbVehicleID";
+            this.pbVehicleID.Size = new System.Drawing.Size(33, 34);
+            this.pbVehicleID.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbVehicleID.TabIndex = 20;
+            this.pbVehicleID.TabStop = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.AnimationHoverSpeed = 0.07F;
+            this.btnSave.AnimationSpeed = 0.03F;
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(200)))));
+            this.btnSave.BorderColor = System.Drawing.Color.Black;
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSave.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSave.Location = new System.Drawing.Point(800, 401);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(185)))));
+            this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSave.OnHoverImage = null;
+            this.btnSave.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSave.Radius = 15;
+            this.btnSave.Size = new System.Drawing.Size(145, 39);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmAddUpdateVehicle
             // 
@@ -555,7 +556,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(957, 489);
+            this.ClientSize = new System.Drawing.Size(957, 452);
             this.Controls.Add(this.chkIsAvailable);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label2);
@@ -573,11 +574,11 @@
             this.Controls.Add(this.nudYear);
             this.Controls.Add(this.cbModel);
             this.Controls.Add(this.cbMake);
-            this.Controls.Add(this.pbEmail);
-            this.Controls.Add(this.pbPhone);
-            this.Controls.Add(this.pbDateOfBirth);
-            this.Controls.Add(this.pbGender);
-            this.Controls.Add(this.pbName);
+            this.Controls.Add(this.pbFuelType);
+            this.Controls.Add(this.pbMileage);
+            this.Controls.Add(this.pbYear);
+            this.Controls.Add(this.pbModel);
+            this.Controls.Add(this.pbMake);
             this.Controls.Add(this.pbVehicleID);
             this.Controls.Add(this.lblShowVehicleID);
             this.Controls.Add(this.lblVehicleID);
@@ -596,16 +597,16 @@
             this.Text = "Add Update Vehicle";
             this.Load += new System.EventHandler(this.frmAddUpdateVehicle_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmAddUpdateVehicle_MouseDown);
-            ((System.ComponentModel.ISupportInitialize)(this.pbVehicleID)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGender)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDateOfBirth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPhone)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEmail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFuelType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMileage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbModel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMake)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVehicleID)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -615,11 +616,11 @@
         private Guna.UI.WinForms.GunaButton btnSave;
         private System.Windows.Forms.Label lblShowVehicleID;
         private System.Windows.Forms.Label lblVehicleID;
-        private System.Windows.Forms.PictureBox pbEmail;
-        private System.Windows.Forms.PictureBox pbPhone;
-        private System.Windows.Forms.PictureBox pbDateOfBirth;
-        private System.Windows.Forms.PictureBox pbGender;
-        private System.Windows.Forms.PictureBox pbName;
+        private System.Windows.Forms.PictureBox pbFuelType;
+        private System.Windows.Forms.PictureBox pbMileage;
+        private System.Windows.Forms.PictureBox pbYear;
+        private System.Windows.Forms.PictureBox pbModel;
+        private System.Windows.Forms.PictureBox pbMake;
         private System.Windows.Forms.PictureBox pbVehicleID;
         private Guna.UI.WinForms.GunaComboBox cbMake;
         private Guna.UI.WinForms.GunaComboBox cbModel;

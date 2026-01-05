@@ -32,19 +32,10 @@ namespace CarRental.Controls
 
         private void FindNow()
         {
-            int Value;
-
-            if (!int.TryParse(txtSearchValue.Text, out Value))
-                return;
-
             switch (cbFilter.Text)
             {
-                case "Customer Id":
-                    ctrlCustomerCard1.LoadCustomerInfoByCustomerID(Value);
-                    break;
-                case "Person Id":
-                    ctrlCustomerCard1.LoadCustomerInfoByPersonID(Value);
-                    break;
+                case "Customer Id": ctrlCustomerCard1.LoadCustomerInfoByCustomerID(int.Parse(txtSearchValue.Text)); break;
+                case "Person Id": ctrlCustomerCard1.LoadCustomerInfoByPersonID(int.Parse(txtSearchValue.Text)); break;
             }
 
             CustomerSelected(ctrlCustomerCard1.CustomerID.GetValueOrDefault());
@@ -55,7 +46,7 @@ namespace CarRental.Controls
             txtSearchValue.Focus();
         }
 
-        public void LoadCustomerInfoByCustomerID(int CustomerID)
+        public void LoadCustomerInfo(int CustomerID)
         {
             txtSearchValue.Text = CustomerID.ToString();
             cbFilter.SelectedIndex = 0;
@@ -78,13 +69,19 @@ namespace CarRental.Controls
 
         private void frmAddUpdateCustomer_DataBack(int CustomerID)
         {
-            LoadCustomerInfoByCustomerID(CustomerID);
+            LoadCustomerInfo(CustomerID);
         }
 
         private void txtSearchValue_TextChanged(object sender, EventArgs e)
         {
-            if (!txtSearchValue.IsValid || string.IsNullOrEmpty(txtSearchValue.Text)) ctrlCustomerCard1.ResetControls();
-            else FindNow();
+            if(string.IsNullOrEmpty(txtSearchValue.Text))
+            {
+                ctrlCustomerCard1.ResetControls();
+                CustomerSelected(-1);
+                return;
+            }
+
+            if (txtSearchValue.IsValid) FindNow();
         }
 
         public void ResetControls()

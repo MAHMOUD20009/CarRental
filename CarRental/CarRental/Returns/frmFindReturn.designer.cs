@@ -89,7 +89,7 @@
             this.btnConfirm.AnimationHoverSpeed = 0.07F;
             this.btnConfirm.AnimationSpeed = 0.03F;
             this.btnConfirm.BackColor = System.Drawing.Color.Transparent;
-            this.btnConfirm.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(110)))), ((int)(((byte)(255)))));
+            this.btnConfirm.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(200)))));
             this.btnConfirm.BorderColor = System.Drawing.Color.Black;
             this.btnConfirm.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnConfirm.FocusedColor = System.Drawing.Color.Empty;
@@ -97,7 +97,7 @@
             this.btnConfirm.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirm.Image")));
             this.btnConfirm.ImageSize = new System.Drawing.Size(20, 20);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(255)))));
+            this.btnConfirm.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(185)))));
             this.btnConfirm.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnConfirm.OnHoverForeColor = System.Drawing.Color.White;
             this.btnConfirm.OnHoverImage = null;
@@ -119,8 +119,8 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(180)))));
-            this.Controls.Add(this.ctrlReturnCardWithFilter1);
             this.Controls.Add(this.btnConfirm);
+            this.Controls.Add(this.ctrlReturnCardWithFilter1);
             this.Controls.Add(this.btnMinimizeForm);
             this.Controls.Add(this.btnCloseForm);
             this.Controls.Add(this.lblFormTitle);

@@ -22,7 +22,7 @@ namespace CarRental.Customers
 
         public bool IsDataChanged { private set; get; }
 
-        private int? _PersonID = null;
+        private clsPerson _Person;
 
         private clsCustomer _Customer;
         private int _CustomerID;
@@ -71,11 +71,12 @@ namespace CarRental.Customers
                 return;
             }
 
+            _Person = _Customer.PersonInfo;
+
             lblShowCustomerId.Text = "[" + _Customer.CustomerID + "]";
             txtDriverLicenseNumber.Text = _Customer.DriverLicenseNumber;
-            
-            _PersonID = _Customer.PersonID;
-            lblShowPersonID.Text = "[" + _PersonID + "]";
+
+            lblShowPersonID.Text = "[" + _Person.PersonID + "]";
             txtName.Text = _Customer.PersonInfo.Name;
         }
 
@@ -96,31 +97,47 @@ namespace CarRental.Customers
 
         private void btnSelectPerson_Click(object sender, EventArgs e)
         {
-            var frm = new People.frmFindPerson();
+            var frm = _Mode == enMode.AddNew ? new People.frmFindPerson() : new People.frmFindPerson(_Person.PersonID.Value);
             frm.OnPersonSelected += frmFindPerson_OnPersonSelected;
             frm.ShowDialog();
         }
 
+        private void ResetControlsPerson()
+        {
+            lblShowPersonID.Text = "[?????]";
+            txtName.Clear();
+        }
+
         private void frmFindPerson_OnPersonSelected(int PersonID)
         {
-            clsPerson Person = clsPerson.FindPerson(PersonID);
-            if (Person == null)
+            _Person = clsPerson.FindPerson(PersonID);
+            if (_Person == null)
             {
                 MessageBox.Show("No Person With Id : " + PersonID, "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                _PersonID = null;
-                lblShowPersonID.Text = "[?????]";
-                txtName.Clear();
+                _Person = null;
+                ResetControlsPerson();
                 return;
             }
 
-            _PersonID = PersonID;
+            if(_Mode == enMode.AddNew && clsCustomer.IsCustomerExistsByPersonID(PersonID))
+            {
+                MessageBox.Show("This person is already in use by another customer", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ResetControlsPerson();
+                return;
+            }
 
             lblShowPersonID.Text = "[" + PersonID + "]";
-            txtName.Text = Person.Name;
+            txtName.Text = _Person.Name;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (_Person == null)
+            {
+                MessageBox.Show("Please select a person first.", "Missing Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (!this.ValidateChildren())
             {
                 MessageBox.Show("Some Fields are not Valid. put the mouse over the red icon(s) to see the error", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -130,7 +147,7 @@ namespace CarRental.Customers
             if (_Customer == null)
                 _Customer = new clsCustomer();
 
-            _Customer.PersonID = _PersonID;
+            _Customer.PersonID = _Person.PersonID;
             _Customer.DriverLicenseNumber = txtDriverLicenseNumber.Text.Trim();
 
             if (_Customer.Save())

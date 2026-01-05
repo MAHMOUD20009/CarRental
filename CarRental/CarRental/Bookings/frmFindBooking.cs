@@ -54,6 +54,13 @@ namespace CarRental.Bookings
             InitializeComponent();
         }
 
+        public frmFindBooking(int BookingID)
+        {
+            InitializeComponent();
+            _BookingID = BookingID;
+            ctrlBookingCardWithFilter1.LoadBookingInfo(BookingID);
+        }
+
         private void ctrlBookingCardWithFilter1_OnBookingSelected(int BookingID)
         {
             _BookingID = BookingID;

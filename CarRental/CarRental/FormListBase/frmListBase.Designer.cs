@@ -264,9 +264,10 @@
             this.btnNextPage.TabIndex = 5;
             this.btnNextPage.Text = "   Next";
             this.btnNextPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnNextPage.Visible = false;
             this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
-            // frmBase
+            // frmListBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -280,7 +281,7 @@
             this.Controls.Add(this.lblFilter);
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.dgvDataList);
-            this.Name = "frmBase";
+            this.Name = "frmListBase";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Base";

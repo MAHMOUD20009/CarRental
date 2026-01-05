@@ -9,10 +9,14 @@ namespace CarRental.Customers
     {
         public frmCustomersList()
         {
-            InitializeComponent();
-            TotalPages = clsCustomer.GetPageCount(RowsPerPage);
+            InitializeComponent();          
             InitializeInheritedControls();
         }
+
+        private void RefreshTotalPages()
+        {
+            TotalPages = clsCustomer.GetPageCount(RowsPerPage);
+        } 
 
         protected override async void OnPageChanged()
         {
@@ -21,7 +25,10 @@ namespace CarRental.Customers
 
         private void frmCustomersList_Load(object sender, EventArgs e)
         {
-            OnPageChanged();
+            RowsPerPage = 5;
+            PageNumber = 1;
+            RefreshTotalPages();
+            RefreshToolStripMenuItem_Click(null, null);
         }
 
         private void RefreshToolStripMenuItem_Click(object sender, EventArgs e)
@@ -31,6 +38,7 @@ namespace CarRental.Customers
 
         private void frmAddUpdateCustomer_DataBack(int CustomerID)
         {
+            RefreshTotalPages();
             OnPageChanged();
         }
 
@@ -49,7 +57,7 @@ namespace CarRental.Customers
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new frmAddUpdateCustomer((int)dgvDataList.CurrentRow.Cells[0].Value);
-            frm.DataBack += frmAddUpdateCustomer_DataBack;
+            frm.DataBack += (int CustomerID) => OnPageChanged();
             frm.Show();
         }
 
@@ -63,7 +71,7 @@ namespace CarRental.Customers
             if (clsCustomer.DeleteCustomer(CustomerID))
             {
                 MessageBox.Show("Delete Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                OnPageChanged();
+                frmCustomersList_Load(null, null);
             }
             else
             {

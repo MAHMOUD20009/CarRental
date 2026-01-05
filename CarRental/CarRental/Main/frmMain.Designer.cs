@@ -41,8 +41,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlSidebar = new System.Windows.Forms.Panel();
-            this.btnCurrentUserInfo = new Guna.UI2.WinForms.Guna2Button();
             this.pbImageSidebar = new System.Windows.Forms.PictureBox();
+            this.btnMaintenance = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCurrentUserInfo = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.btnUsers = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
@@ -66,8 +67,9 @@
             // pnlSidebar
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.pnlSidebar.Controls.Add(this.btnCurrentUserInfo);
             this.pnlSidebar.Controls.Add(this.pbImageSidebar);
+            this.pnlSidebar.Controls.Add(this.btnMaintenance);
+            this.pnlSidebar.Controls.Add(this.btnCurrentUserInfo);
             this.pnlSidebar.Controls.Add(this.btnLogout);
             this.pnlSidebar.Controls.Add(this.btnUsers);
             this.pnlSidebar.Controls.Add(this.btnDashboard);
@@ -83,6 +85,46 @@
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(162, 655);
             this.pnlSidebar.TabIndex = 0;
+            // 
+            // pbImageSidebar
+            // 
+            this.pbImageSidebar.Image = ((System.Drawing.Image)(resources.GetObject("pbImageSidebar.Image")));
+            this.pbImageSidebar.Location = new System.Drawing.Point(143, 56);
+            this.pbImageSidebar.Name = "pbImageSidebar";
+            this.pbImageSidebar.Size = new System.Drawing.Size(35, 60);
+            this.pbImageSidebar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImageSidebar.TabIndex = 2;
+            this.pbImageSidebar.TabStop = false;
+            // 
+            // btnMaintenance
+            // 
+            this.btnMaintenance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btnMaintenance.BorderRadius = 15;
+            this.btnMaintenance.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnMaintenance.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnMaintenance.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaintenance.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.btnMaintenance.CustomImages.CheckedImage = global::CarRental.Properties.Resources.MaintenanceBlue32;
+            this.btnMaintenance.CustomImages.Image = global::CarRental.Properties.Resources.MaintenanceWhite32;
+            this.btnMaintenance.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMaintenance.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMaintenance.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMaintenance.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMaintenance.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMaintenance.FillColor = System.Drawing.Color.Transparent;
+            this.btnMaintenance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaintenance.ForeColor = System.Drawing.Color.White;
+            this.btnMaintenance.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.btnMaintenance.Location = new System.Drawing.Point(5, 473);
+            this.btnMaintenance.Name = "btnMaintenance";
+            this.btnMaintenance.Size = new System.Drawing.Size(149, 43);
+            this.btnMaintenance.TabIndex = 8;
+            this.btnMaintenance.Tag = "";
+            this.btnMaintenance.Text = "Maintenance";
+            this.btnMaintenance.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMaintenance.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnMaintenance.Tile = true;
+            this.btnMaintenance.Click += new System.EventHandler(this.btnMaintenance_Click);
             // 
             // btnCurrentUserInfo
             // 
@@ -104,21 +146,11 @@
             this.btnCurrentUserInfo.Margin = new System.Windows.Forms.Padding(13, 3, 0, 3);
             this.btnCurrentUserInfo.Name = "btnCurrentUserInfo";
             this.btnCurrentUserInfo.Size = new System.Drawing.Size(161, 43);
-            this.btnCurrentUserInfo.TabIndex = 10;
+            this.btnCurrentUserInfo.TabIndex = 9;
             this.btnCurrentUserInfo.Tag = "131, 384";
             this.btnCurrentUserInfo.Text = "Current User";
             this.btnCurrentUserInfo.Tile = true;
             this.btnCurrentUserInfo.Click += new System.EventHandler(this.btnCurrentUserInfo_Click);
-            // 
-            // pbImageSidebar
-            // 
-            this.pbImageSidebar.Image = ((System.Drawing.Image)(resources.GetObject("pbImageSidebar.Image")));
-            this.pbImageSidebar.Location = new System.Drawing.Point(136, 88);
-            this.pbImageSidebar.Name = "pbImageSidebar";
-            this.pbImageSidebar.Size = new System.Drawing.Size(35, 60);
-            this.pbImageSidebar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImageSidebar.TabIndex = 2;
-            this.pbImageSidebar.TabStop = false;
             // 
             // btnLogout
             // 
@@ -140,7 +172,7 @@
             this.btnLogout.Margin = new System.Windows.Forms.Padding(13, 0, 0, 0);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(161, 43);
-            this.btnLogout.TabIndex = 9;
+            this.btnLogout.TabIndex = 10;
             this.btnLogout.Tag = "131, 384";
             this.btnLogout.Text = "Log out";
             this.btnLogout.Tile = true;
@@ -152,6 +184,7 @@
             this.btnUsers.BorderRadius = 15;
             this.btnUsers.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnUsers.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnUsers.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsers.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btnUsers.CustomImages.CheckedImage = global::CarRental.Properties.Resources.UsersBlue125_;
             this.btnUsers.CustomImages.Image = global::CarRental.Properties.Resources.UsersWhite_64;
@@ -164,7 +197,7 @@
             this.btnUsers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsers.ForeColor = System.Drawing.Color.White;
             this.btnUsers.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnUsers.Location = new System.Drawing.Point(5, 456);
+            this.btnUsers.Location = new System.Drawing.Point(5, 424);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(149, 43);
             this.btnUsers.TabIndex = 7;
@@ -182,6 +215,7 @@
             this.btnDashboard.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnDashboard.Checked = true;
             this.btnDashboard.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnDashboard.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btnDashboard.CustomImages.CheckedImage = global::CarRental.Properties.Resources.dashboardBlue;
             this.btnDashboard.CustomImages.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
@@ -192,10 +226,10 @@
             this.btnDashboard.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDashboard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDashboard.FillColor = System.Drawing.Color.Transparent;
-            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnDashboard.Location = new System.Drawing.Point(5, 98);
+            this.btnDashboard.Location = new System.Drawing.Point(5, 66);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(149, 43);
             this.btnDashboard.TabIndex = 0;
@@ -212,6 +246,7 @@
             this.btnReturn.BorderRadius = 15;
             this.btnReturn.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnReturn.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnReturn.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btnReturn.CustomImages.CheckedImage = global::CarRental.Properties.Resources.ReturnBlue;
             this.btnReturn.CustomImages.Image = global::CarRental.Properties.Resources.ReturnWhite;
@@ -224,7 +259,7 @@
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.ForeColor = System.Drawing.Color.White;
             this.btnReturn.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnReturn.Location = new System.Drawing.Point(5, 404);
+            this.btnReturn.Location = new System.Drawing.Point(5, 372);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(149, 43);
             this.btnReturn.TabIndex = 6;
@@ -241,6 +276,7 @@
             this.btnTransactions.BorderRadius = 15;
             this.btnTransactions.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnTransactions.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnTransactions.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransactions.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btnTransactions.CustomImages.CheckedImage = global::CarRental.Properties.Resources.TransactionBlue1;
             this.btnTransactions.CustomImages.Image = global::CarRental.Properties.Resources.TransactionWhite;
@@ -253,7 +289,7 @@
             this.btnTransactions.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransactions.ForeColor = System.Drawing.Color.White;
             this.btnTransactions.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnTransactions.Location = new System.Drawing.Point(5, 352);
+            this.btnTransactions.Location = new System.Drawing.Point(5, 320);
             this.btnTransactions.Name = "btnTransactions";
             this.btnTransactions.Size = new System.Drawing.Size(149, 43);
             this.btnTransactions.TabIndex = 5;
@@ -270,6 +306,7 @@
             this.btnCustomers.BorderRadius = 15;
             this.btnCustomers.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnCustomers.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnCustomers.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btnCustomers.CustomImages.CheckedImage = global::CarRental.Properties.Resources.CustomersBlue;
             this.btnCustomers.CustomImages.Image = global::CarRental.Properties.Resources.CustomersWhite;
@@ -282,7 +319,7 @@
             this.btnCustomers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.ForeColor = System.Drawing.Color.White;
             this.btnCustomers.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnCustomers.Location = new System.Drawing.Point(5, 202);
+            this.btnCustomers.Location = new System.Drawing.Point(5, 170);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(149, 43);
             this.btnCustomers.TabIndex = 2;
@@ -299,6 +336,7 @@
             this.btnBooking.BorderRadius = 15;
             this.btnBooking.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnBooking.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnBooking.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBooking.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btnBooking.CustomImages.CheckedImage = global::CarRental.Properties.Resources.BookingBlue;
             this.btnBooking.CustomImages.Image = global::CarRental.Properties.Resources.BookingWhite;
@@ -312,7 +350,7 @@
             this.btnBooking.ForeColor = System.Drawing.Color.White;
             this.btnBooking.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.btnBooking.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnBooking.Location = new System.Drawing.Point(5, 300);
+            this.btnBooking.Location = new System.Drawing.Point(5, 268);
             this.btnBooking.Name = "btnBooking";
             this.btnBooking.Size = new System.Drawing.Size(149, 43);
             this.btnBooking.TabIndex = 4;
@@ -329,6 +367,7 @@
             this.btnPeople.BorderRadius = 15;
             this.btnPeople.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnPeople.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnPeople.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPeople.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btnPeople.CustomImages.CheckedImage = ((System.Drawing.Image)(resources.GetObject("resource.CheckedImage")));
             this.btnPeople.CustomImages.Image = global::CarRental.Properties.Resources.PeopleWhite;
@@ -338,10 +377,10 @@
             this.btnPeople.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPeople.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPeople.FillColor = System.Drawing.Color.Transparent;
-            this.btnPeople.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnPeople.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPeople.ForeColor = System.Drawing.Color.White;
             this.btnPeople.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnPeople.Location = new System.Drawing.Point(5, 150);
+            this.btnPeople.Location = new System.Drawing.Point(5, 118);
             this.btnPeople.Name = "btnPeople";
             this.btnPeople.Size = new System.Drawing.Size(149, 43);
             this.btnPeople.TabIndex = 1;
@@ -358,6 +397,7 @@
             this.btnVehicles.BorderRadius = 15;
             this.btnVehicles.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnVehicles.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnVehicles.CheckedState.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVehicles.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
             this.btnVehicles.CustomImages.CheckedImage = global::CarRental.Properties.Resources.VehiclesBlue_100;
             this.btnVehicles.CustomImages.Image = global::CarRental.Properties.Resources.VehilcesWhite_90;
@@ -370,7 +410,7 @@
             this.btnVehicles.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVehicles.ForeColor = System.Drawing.Color.White;
             this.btnVehicles.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.btnVehicles.Location = new System.Drawing.Point(5, 251);
+            this.btnVehicles.Location = new System.Drawing.Point(5, 219);
             this.btnVehicles.Name = "btnVehicles";
             this.btnVehicles.Size = new System.Drawing.Size(149, 43);
             this.btnVehicles.TabIndex = 3;
@@ -476,6 +516,7 @@
         private Guna.UI2.WinForms.Guna2Button btnLogout;
         private Guna.UI2.WinForms.Guna2Button btnCurrentUserInfo;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Button btnMaintenance;
 
     }
 }

@@ -10,8 +10,12 @@ namespace CarRental.People
         public frmPeopleList()
         {
             InitializeComponent();
-            TotalPages = clsPerson.GetPageCount(RowsPerPage);
             InitializeInheritedControls();
+        }
+
+        private void RefreshTotalPages()
+        {
+            TotalPages = clsPerson.GetPageCount(RowsPerPage);
         }
 
         protected override async void OnPageChanged()
@@ -21,6 +25,9 @@ namespace CarRental.People
 
         private void frmPeopleList_Load(object sender, EventArgs e)
         {
+            RowsPerPage = 5;
+            PageNumber = 1;
+            RefreshTotalPages();
             OnPageChanged();
         }
 
@@ -59,6 +66,7 @@ namespace CarRental.People
         private void frmAddUpdatePerson_DataBack(int PersonID)
         {
             OnPageChanged();
+            RefreshTotalPages();
         }
 
         private void btnAddNewPerson_Click(object sender, EventArgs e)
@@ -76,7 +84,7 @@ namespace CarRental.People
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new frmAddUpdatePerson((int)dgvDataList.CurrentRow.Cells[0].Value);
-            frm.DataBack += frmAddUpdatePerson_DataBack;
+            frm.DataBack += (int PersonID) => OnPageChanged();
             frm.Show();
         }
 
@@ -90,7 +98,7 @@ namespace CarRental.People
             if (clsPerson.DeletePerson(PersonID))
             {
                 MessageBox.Show("Delete Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                OnPageChanged();
+                frmPeopleList_Load(null, null);
             }
             else
             {

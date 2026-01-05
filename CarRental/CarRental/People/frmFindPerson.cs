@@ -54,6 +54,13 @@ namespace CarRental.People
             InitializeComponent();
         }
 
+        public frmFindPerson(int PersonID)
+        {
+            InitializeComponent();
+            _PersonID = PersonID;
+            ctrlPersonCardWithFilter1.LoadPersonInfo(PersonID);
+        }
+
         private void ctrlPersonCardWithFilter1_OnPersonSelected(int PersonID)
         {
             _PersonID = PersonID;

@@ -28,6 +28,7 @@ namespace CarRental.Controls
             lblShowPlateNumber.Text = Vehicle.PlateNumber;
             lblShowCarCategory.Text = Vehicle.CarCategotyInfo.CategoryName;
             lblShowIsAvailable.Text = (Vehicle.IsAvailableForRent.Value)? "Available" :"Not Available";
+            pictureBox3.Image = (Vehicle.IsAvailableForRent.Value) ? Properties.Resources.available_car32 : Properties.Resources.unavailable_car32;
             lblShowRentPricePerDay.Text = Vehicle.RentalPricePerDay.ToString();
 
             lblEditVehicleInfo.Enabled = true;

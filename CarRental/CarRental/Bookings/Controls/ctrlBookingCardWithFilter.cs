@@ -32,7 +32,7 @@ namespace CarRental.Controls
 
         private void FindNow()
         {
-            ctrlBookingCard1.LoadBookingInfo(Convert.ToInt32(txtSearchValue.Text.Trim()));
+            ctrlBookingCard1.LoadBookingInfo(int.Parse(txtSearchValue.Text.Trim()));
 
             BookingSelected(ctrlBookingCard1.BookingID.GetValueOrDefault());
         }
@@ -62,8 +62,14 @@ namespace CarRental.Controls
 
         private void txtSearchValue_TextChanged(object sender, EventArgs e)
         {
-            if (!txtSearchValue.IsValid || string.IsNullOrEmpty(txtSearchValue.Text)) ctrlBookingCard1.ResetControls();
-            else FindNow();
+            if(string.IsNullOrWhiteSpace(txtSearchValue.Text))
+            {
+                ctrlBookingCard1.ResetControls();
+                BookingSelected(-1);
+                return;
+            }
+
+            if (txtSearchValue.IsValid) FindNow();
         }
 
         public void ResetControls()

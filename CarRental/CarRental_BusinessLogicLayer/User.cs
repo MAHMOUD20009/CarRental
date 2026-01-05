@@ -10,7 +10,7 @@ namespace CarRental_BusinessLogicLayer
         private enum enMode { AddNew = 0, Update = 1 };
         private enMode Mode;
 
-        public enum enPermissions { AllPermissions = -1, MangePeople = 1, MangeCustomers = 2, MangeVehicles = 4, MangeBookings = 8, MangeTransactions = 16, MangeReturns = 32, MangeUsers = 64 }
+        public enum enPermissions { AllPermissions = -1, MangePeople = 1, MangeCustomers = 2, MangeVehicles = 4, MangeBookings = 8, MangeTransactions = 16, MangeReturns = 32, MangeUsers = 64, MangeMaintenance = 128 }
 
         public int? UserID { set; get; }
         public int? PersonID { set; get; }

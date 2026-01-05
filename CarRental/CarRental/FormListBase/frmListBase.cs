@@ -18,21 +18,43 @@ namespace CarRental.FormListBase
         }
 
         private int _TotalPages;
+        private int _PageNumber;
+        private int _RowsPerPage;
 
-        protected int PageNumber = 1;
-        protected int RowsPerPage = 5;
+        protected int PageNumber { 
+            set 
+            {
+                _PageNumber = value <= 1 ? 1 : value;
+                btnPreviousPage.Visible = _PageNumber > 1;
+            }
+            get
+            {
+                return _PageNumber;
+            }
+        }
+        
+        protected int RowsPerPage 
+        {
+            set
+            {
+                _RowsPerPage = value <= 1 ? 1 : value;
+            }
+            get
+            {
+                return _RowsPerPage;
+            }
+        }
+
         protected int TotalPages
         {
             set
             {
-                _TotalPages = value;
-
-                if (_TotalPages == 1)
-                    btnNextPage.Visible = false;
+                _TotalPages = value <= 0 ? 0 : value;
+                btnNextPage.Visible = _TotalPages > 1;
             }
-            get 
-            { 
-                return _TotalPages; 
+            get
+            {
+                return _TotalPages;
             }
         }
 
@@ -89,7 +111,7 @@ namespace CarRental.FormListBase
                 DTDataList.DefaultView.RowFilter = "[" + ColumnName + "] Like '" + txtSearchValue.Text.Trim() + "%'";
             }
 
-            lblRecords.Text = "#Records : " + dgvDataList.Rows.Count;
+            RefreshLabelTotalRecords();
         }
 
         private void btnNextPage_Click(object sender, EventArgs e)

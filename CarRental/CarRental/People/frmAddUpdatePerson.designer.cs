@@ -87,7 +87,7 @@
             this.btnCloseBox.OnHoverIconColor = System.Drawing.Color.White;
             this.btnCloseBox.OnPressedColor = System.Drawing.Color.Black;
             this.btnCloseBox.Size = new System.Drawing.Size(45, 29);
-            this.btnCloseBox.TabIndex = 10;
+            this.btnCloseBox.TabIndex = 7;
             this.btnCloseBox.Click += new System.EventHandler(this.btnCloseBox_Click);
             // 
             // btnMinimizeBox
@@ -104,7 +104,7 @@
             this.btnMinimizeBox.OnHoverIconColor = System.Drawing.Color.White;
             this.btnMinimizeBox.OnPressedColor = System.Drawing.Color.Black;
             this.btnMinimizeBox.Size = new System.Drawing.Size(45, 29);
-            this.btnMinimizeBox.TabIndex = 11;
+            this.btnMinimizeBox.TabIndex = 8;
             this.btnMinimizeBox.Click += new System.EventHandler(this.btnMinimizeBox_Click);
             // 
             // lblFormTitle
@@ -151,7 +151,7 @@
             this.rbMale.Location = new System.Drawing.Point(242, 200);
             this.rbMale.Name = "rbMale";
             this.rbMale.Size = new System.Drawing.Size(67, 25);
-            this.rbMale.TabIndex = 3;
+            this.rbMale.TabIndex = 1;
             this.rbMale.Text = "Male";
             // 
             // rbFemale
@@ -165,7 +165,7 @@
             this.rbFemale.Location = new System.Drawing.Point(315, 200);
             this.rbFemale.Name = "rbFemale";
             this.rbFemale.Size = new System.Drawing.Size(83, 25);
-            this.rbFemale.TabIndex = 4;
+            this.rbFemale.TabIndex = 2;
             this.rbFemale.Text = "Female";
             // 
             // lblDateOfBirth
@@ -198,7 +198,7 @@
             this.dtpDateOfBirth.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dtpDateOfBirth.OnPressedColor = System.Drawing.Color.Black;
             this.dtpDateOfBirth.Size = new System.Drawing.Size(223, 30);
-            this.dtpDateOfBirth.TabIndex = 5;
+            this.dtpDateOfBirth.TabIndex = 3;
             this.dtpDateOfBirth.Text = "11, September, 2025";
             this.dtpDateOfBirth.Value = new System.DateTime(2025, 9, 11, 15, 10, 56, 344);
             // 
@@ -233,9 +233,9 @@
             this.btnSave.AnimationHoverSpeed = 0.07F;
             this.btnSave.AnimationSpeed = 0.03F;
             this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(200)))));
             this.btnSave.BorderColor = System.Drawing.Color.Black;
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSave.FocusedColor = System.Drawing.Color.Empty;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
@@ -243,14 +243,14 @@
             this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSave.Location = new System.Drawing.Point(633, 404);
             this.btnSave.Name = "btnSave";
-            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(185)))));
             this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
             this.btnSave.OnHoverImage = null;
             this.btnSave.OnPressedColor = System.Drawing.Color.Black;
             this.btnSave.Radius = 15;
             this.btnSave.Size = new System.Drawing.Size(145, 39);
-            this.btnSave.TabIndex = 9;
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -357,7 +357,7 @@
             this.txtName.PlaceholderText = "Name";
             this.txtName.SelectedText = "";
             this.txtName.Size = new System.Drawing.Size(200, 34);
-            this.txtName.TabIndex = 26;
+            this.txtName.TabIndex = 0;
             this.txtName.ValidateInputType = true;
             // 
             // txtPhone
@@ -382,7 +382,7 @@
             this.txtPhone.PlaceholderText = "Phone";
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(200, 34);
-            this.txtPhone.TabIndex = 27;
+            this.txtPhone.TabIndex = 4;
             this.txtPhone.ValidateInputType = true;
             // 
             // txtEmail
@@ -407,11 +407,12 @@
             this.txtEmail.PlaceholderText = "Email";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(200, 34);
-            this.txtEmail.TabIndex = 28;
+            this.txtEmail.TabIndex = 5;
             this.txtEmail.ValidateInputType = true;
             // 
             // frmAddUpdatePerson
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;

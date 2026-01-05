@@ -66,7 +66,7 @@
             this.btnAddNewBooking.AnimationHoverSpeed = 0.07F;
             this.btnAddNewBooking.AnimationSpeed = 0.03F;
             this.btnAddNewBooking.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddNewBooking.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(120)))));
+            this.btnAddNewBooking.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(185)))));
             this.btnAddNewBooking.BorderColor = System.Drawing.Color.Black;
             this.btnAddNewBooking.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddNewBooking.FocusedColor = System.Drawing.Color.Empty;
@@ -76,7 +76,7 @@
             this.btnAddNewBooking.ImageSize = new System.Drawing.Size(32, 32);
             this.btnAddNewBooking.Location = new System.Drawing.Point(342, 38);
             this.btnAddNewBooking.Name = "btnAddNewBooking";
-            this.btnAddNewBooking.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnAddNewBooking.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(90)))), ((int)(((byte)(170)))));
             this.btnAddNewBooking.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnAddNewBooking.OnHoverForeColor = System.Drawing.Color.White;
             this.btnAddNewBooking.OnHoverImage = null;
@@ -113,9 +113,9 @@
             // ctrlBookingCard1
             // 
             this.ctrlBookingCard1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ctrlBookingCard1.Location = new System.Drawing.Point(1, 104);
+            this.ctrlBookingCard1.Location = new System.Drawing.Point(-1, 104);
             this.ctrlBookingCard1.Name = "ctrlBookingCard1";
-            this.ctrlBookingCard1.Size = new System.Drawing.Size(990, 432);
+            this.ctrlBookingCard1.Size = new System.Drawing.Size(972, 432);
             this.ctrlBookingCard1.TabIndex = 2;
             // 
             // ctrlBookingCardWithFilter
@@ -126,7 +126,7 @@
             this.Controls.Add(this.ctrlBookingCard1);
             this.Controls.Add(this.gbFilter);
             this.Name = "ctrlBookingCardWithFilter";
-            this.Size = new System.Drawing.Size(987, 536);
+            this.Size = new System.Drawing.Size(971, 536);
             this.gbFilter.ResumeLayout(false);
             this.gbFilter.PerformLayout();
             this.ResumeLayout(false);

@@ -95,10 +95,9 @@
             // ctrlPersonCard1
             // 
             this.ctrlPersonCard1.BackColor = System.Drawing.Color.Transparent;
-            this.ctrlPersonCard1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ctrlPersonCard1.Location = new System.Drawing.Point(0, 54);
             this.ctrlPersonCard1.Name = "ctrlPersonCard1";
-            this.ctrlPersonCard1.Size = new System.Drawing.Size(776, 253);
+            this.ctrlPersonCard1.Size = new System.Drawing.Size(776, 200);
             this.ctrlPersonCard1.TabIndex = 5;
             this.ctrlPersonCard1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ctrlPersonCard1_MouseDown);
             // 
@@ -107,7 +106,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(776, 307);
+            this.ClientSize = new System.Drawing.Size(776, 255);
             this.Controls.Add(this.btnMinimizeBox);
             this.Controls.Add(this.btnCloseBox);
             this.Controls.Add(this.lblFormTitle);

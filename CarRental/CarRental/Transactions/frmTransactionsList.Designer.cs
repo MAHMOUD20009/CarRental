@@ -39,8 +39,7 @@
             "Booking ID",
             "Return ID",
             "Payment Details",
-            "Transaction Date",
-            "Updated Transaction Date"});
+            "Date"});
         }
 
         private void InitializeContextMenuStrip()
@@ -86,26 +85,32 @@
             // 
             // cbFilter
             // 
-            this.cbFilter.Size = new System.Drawing.Size(201, 30);
+            this.cbFilter.Size = new System.Drawing.Size(171, 30);
             this.cbFilter.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.SystemDefault;
             this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
             // 
             // TransactionDetailsToolStripMenuItem
             // 
-            this.TransactionDetailsToolStripMenuItem.Text = "Transaction Details";
-            this.TransactionDetailsToolStripMenuItem.Name = "TransactionDetailsToolStripMenuItem";
+            this.TransactionDetailsToolStripMenuItem.Image = global::CarRental.Properties.Resources.TransactionDetails;
             this.TransactionDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.TransactionDetailsToolStripMenuItem.Image = Properties.Resources.TransactionDetails;
+            this.TransactionDetailsToolStripMenuItem.Name = "TransactionDetailsToolStripMenuItem";
             this.TransactionDetailsToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
+            this.TransactionDetailsToolStripMenuItem.Text = "Transaction Details";
+            this.TransactionDetailsToolStripMenuItem.Click += new System.EventHandler(this.TransactionDetailsToolStripMenuItem_Click);
+            // 
+            // ToolStripSeparator1
+            // 
+            this.ToolStripSeparator1.Name = "ToolStripSeparator1";
+            this.ToolStripSeparator1.Size = new System.Drawing.Size(6, 6);
             // 
             // RefreshToolStripMenuItem
             // 
             this.RefreshToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RefreshToolStripMenuItem.Image = global::CarRental.Properties.Resources.Refresh24;
+            this.RefreshToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem";
             this.RefreshToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
             this.RefreshToolStripMenuItem.Text = "Refresh";
-            this.RefreshToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.RefreshToolStripMenuItem.Image = Properties.Resources.Refresh24;
             this.RefreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItem_Click);
             // 
             // dtpDate
@@ -116,10 +121,10 @@
             this.dtpDate.CustomFormat = "dd/MM/yyyy";
             this.dtpDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtpDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.ForeColor = System.Drawing.Color.Black;
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDate.Location = new System.Drawing.Point(331, 70);
+            this.dtpDate.Location = new System.Drawing.Point(311, 69);
             this.dtpDate.Margin = new System.Windows.Forms.Padding(0);
             this.dtpDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -129,8 +134,8 @@
             this.dtpDate.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dtpDate.OnPressedColor = System.Drawing.Color.Black;
             this.dtpDate.Radius = 12;
-            this.dtpDate.Size = new System.Drawing.Size(137, 30);
-            this.dtpDate.TabIndex = 9;
+            this.dtpDate.Size = new System.Drawing.Size(139, 30);
+            this.dtpDate.TabIndex = 2;
             this.dtpDate.Text = "18/12/2025";
             this.dtpDate.Value = new System.DateTime(2025, 12, 18, 15, 50, 53, 22);
             this.dtpDate.Visible = false;

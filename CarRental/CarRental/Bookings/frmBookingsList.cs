@@ -10,8 +10,12 @@ namespace CarRental.Bookings
         public frmBookingsList()
         {
             InitializeComponent();
-            TotalPages = clsRentalBooking.GetPageCount(RowsPerPage);
             InitializeInheritedControls();
+        }
+
+        private void RefreshTotalPages()
+        {
+            TotalPages = clsRentalBooking.GetPageCount(RowsPerPage);
         }
 
         protected override async void OnPageChanged()
@@ -21,7 +25,10 @@ namespace CarRental.Bookings
 
         private void LoadData()
         {
+            RowsPerPage = 5;
+            PageNumber = 1;
             OnPageChanged();
+            RefreshTotalPages();
 
             dtpDate.MinDate = DateTime.Now.AddYears(-20);
             dtpDate.MaxDate = DateTime.Now.AddYears(20);
@@ -63,6 +70,7 @@ namespace CarRental.Bookings
         private void frmAddUpdateBooking_DataBack(int BookingID)
         {
             OnPageChanged();
+            RefreshTotalPages();
         }
 
         private void btnAddNewBooking_Click(object sender, EventArgs e)
@@ -80,7 +88,7 @@ namespace CarRental.Bookings
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new frmAddUpdateBooking((int)dgvDataList.CurrentRow.Cells[0].Value);
-            frm.DataBack += frmAddUpdateBooking_DataBack;
+            frm.DataBack += (int BookingID) => OnPageChanged();
             frm.Show();
         }
 
@@ -94,7 +102,7 @@ namespace CarRental.Bookings
             if (clsRentalBooking.DeleteBooking(BookingID))
             {
                 MessageBox.Show("Delete Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                OnPageChanged();
+                frmBookingsList_Load(null, null);
             }
             else
             {

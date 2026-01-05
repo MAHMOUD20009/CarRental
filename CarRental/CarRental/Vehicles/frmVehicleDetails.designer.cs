@@ -95,10 +95,9 @@
             // ctrlVehicleCard1
             // 
             this.ctrlVehicleCard1.BackColor = System.Drawing.Color.Transparent;
-            this.ctrlVehicleCard1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ctrlVehicleCard1.Location = new System.Drawing.Point(0, 42);
+            this.ctrlVehicleCard1.Location = new System.Drawing.Point(3, 55);
             this.ctrlVehicleCard1.Name = "ctrlVehicleCard1";
-            this.ctrlVehicleCard1.Size = new System.Drawing.Size(776, 345);
+            this.ctrlVehicleCard1.Size = new System.Drawing.Size(764, 275);
             this.ctrlVehicleCard1.TabIndex = 5;
             this.ctrlVehicleCard1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ctrlVehicleCard1_MouseDown);
             // 
@@ -107,7 +106,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.ClientSize = new System.Drawing.Size(776, 387);
+            this.ClientSize = new System.Drawing.Size(776, 331);
             this.Controls.Add(this.btnMinimizeBox);
             this.Controls.Add(this.btnCloseBox);
             this.Controls.Add(this.lblFormTitle);
